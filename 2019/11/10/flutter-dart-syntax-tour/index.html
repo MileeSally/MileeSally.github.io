@@ -15,15 +15,21 @@
   </script>
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>Dart 语言基础语法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="Dart 语言基础语法  首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。 接下来我将详细介绍 Dart 语言语法。 变量与常量变量显式指定类型（内置数据类型）来定义变量12String name = &amp;quot;张三&amp;quot;;num age = 18; 使用关键字 var 来定义变量12var name = &amp;quot;张三&amp;quot;;var id = 100; 使用v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart 语言基础语法">
+<meta property="og:url" content="http://yoursite.com/2019/11/10/flutter-dart-syntax-tour/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Dart 语言基础语法  首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。 接下来我将详细介绍 Dart 语言语法。 变量与常量变量显式指定类型（内置数据类型）来定义变量12String name = &amp;quot;张三&amp;quot;;num age = 18; 使用关键字 var 来定义变量12var name = &amp;quot;张三&amp;quot;;var id = 100; 使用v">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/11/10/flutter-dart-syntax-tour/flutter-dart-syntax-tour.md.svg">
+<meta property="og:updated_time" content="2019-11-10T00:22:37.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Dart 语言基础语法">
+<meta name="twitter:description" content="Dart 语言基础语法  首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。 接下来我将详细介绍 Dart 语言语法。 变量与常量变量显式指定类型（内置数据类型）来定义变量12String name = &amp;quot;张三&amp;quot;;num age = 18; 使用关键字 var 来定义变量12var name = &amp;quot;张三&amp;quot;;var id = 100; 使用v">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/10/flutter-dart-syntax-tour/flutter-dart-syntax-tour.md.svg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -109,321 +115,287 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2019/11/10/flutter-dart-syntax-tour/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./flutter-dart-syntax-tour.md.svg');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            Dart 语言基础语法
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            Dart 语言基础语法
-
-首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。
-接下来我将详细介绍 Dart 语言语法。
-变量与常量变量显式指定类型（内置数据类型）来定义变量12String name = &quot;张..
-                        </p>
-                        <p class="date text-shadow">2019-11-10</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>Dart 语言基础语法</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2019-11-10</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2019/11/09/ssh-key-copy-from-other-tips/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./0F134DB8-2AAB-4D41-8563-11AC0F049EFD.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                ssh-permissions-are-too-open-error
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                ssh-permissions-are-too-open-error
-
-将ssh-key从一台电..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-09</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2019/10/25/code-migration-svn-2-gitlab/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./7EE9C120-77D2-4292-871F-58E2E1D82D01.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                代码仓库迁移
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                代码仓库迁移—–svn迁移到gitlab—–
-
-1、背景随着Git服务的优越性，越来越多的公司将..
-            </p>
-            <p class="date text-shadow is-marginless">2019-10-25</p>
-        </div>
-    </div>
-</a>
+                <div>
+                    
+                </div>
             
         </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2019/11/09/ssh-key-copy-from-other-tips/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./0F134DB8-2AAB-4D41-8563-11AC0F049EFD.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                ssh-permissions-are-too-open-error
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                ssh-permissions-are-too-open-error
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="10"><center>Dart 语言基础语法</center></font>
 
-将ssh-key从一台电..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-09</p>
+<p>首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。<br><img src="./flutter-dart-syntax-tour.md.svg" alt="Dart 语法思维导图"></p>
+<p>接下来我将详细介绍 Dart 语言语法。</p>
+<h3 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><h5 id="显式指定类型（内置数据类型）来定义变量"><a href="#显式指定类型（内置数据类型）来定义变量" class="headerlink" title="显式指定类型（内置数据类型）来定义变量"></a>显式指定类型（<font color="red" face="宋体" size="3">内置数据类型</font>）来定义变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = &quot;张三&quot;;</span><br><span class="line">num age = 18;</span><br></pre></td></tr></table></figure>
+<h5 id="使用关键字-var-来定义变量"><a href="#使用关键字-var-来定义变量" class="headerlink" title="使用关键字 var 来定义变量"></a>使用关键字 var 来定义变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;张三&quot;;</span><br><span class="line">var id = 100;</span><br></pre></td></tr></table></figure>
+<p>使用var定义变量，即使未显式指定类型，一旦赋值后类型就被固定，因此使用var定义的变量不能改变数据类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var number = 19;</span><br><span class="line">// 以下代码错误，无法运行，number变量已确定为int类型</span><br><span class="line">number = &quot;2019&quot;;</span><br></pre></td></tr></table></figure></p>
+<h5 id="使用-dynamic-或-Object-来定义变量"><a href="#使用-dynamic-或-Object-来定义变量" class="headerlink" title="使用 dynamic 或 Object 来定义变量"></a>使用 dynamic 或 Object 来定义变量</h5><p>如想动态改变变量的数据类型，可以通过使用dynamic或Object来定义变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// dynamic声明变量</span><br><span class="line">dynamic var1 = &quot;hello&quot;;</span><br><span class="line">var1 = 19;</span><br><span class="line">print(var1);    // 19</span><br><span class="line"></span><br><span class="line">// Object声明变量</span><br><span class="line">Object var2 = 20;</span><br><span class="line">var2 = &quot;Alice&quot;;</span><br><span class="line">print(var2);    // Alice</span><br></pre></td></tr></table></figure></p>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><h5 id="使用final关键字来定义常量"><a href="#使用final关键字来定义常量" class="headerlink" title="使用final关键字来定义常量"></a>使用final关键字来定义常量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 1.使用final关键字定义常量</span><br><span class="line">final height = 10;</span><br></pre></td></tr></table></figure>
+<h5 id="使用const关键字来定义常量"><a href="#使用const关键字来定义常量" class="headerlink" title="使用const关键字来定义常量"></a>使用const关键字来定义常量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 2.使用const关键字定义常量</span><br><span class="line">const pi = 3.14;</span><br><span class="line"></span><br><span class="line">const bar = 1000000; </span><br><span class="line">const atm = 1.01325 * bar;</span><br></pre></td></tr></table></figure>
+<p><strong>final 与 const 的区别</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 1.实例变量可以为 final 但是不能是 const 。</span><br><span class="line"></span><br><span class="line">// 2.const 定义常量为编译时常量，可以直接定义 const 和其值，也可以定义一个 const 变量使用其他 const 变量的值来初始化其值。</span><br><span class="line"></span><br><span class="line">    const bar = 1000000; </span><br><span class="line">    const atm = 1.01325 * bar;</span><br><span class="line"></span><br><span class="line">// 3.final 定义的常量是运行时常量，也就是说 final 定义常量时，其值可以是一个变量，而 const 定义的常量，其值必须是一个字面常量值。</span><br><span class="line"></span><br><span class="line">    final time = new DateTime.now(); // 正确</span><br><span class="line">    const time = new DateTime.now(); // 错误</span><br><span class="line"></span><br><span class="line">    const list = const [1,2,3];       // 正确</span><br><span class="line">    const list = [1,2,3];            // 错误</span><br><span class="line"></span><br><span class="line">// 4.const 变量在类中，请定义为 static const。</span><br><span class="line"></span><br><span class="line">// 5.const 关键字不仅仅只用来定义常量，也可以用来创建不变的值，还能定义构造函数为 const 类型的，这种类型的构造函数创建的对象是不可改变的。任何变量都可以有一个不变的值。</span><br></pre></td></tr></table></figure></p>
+<h5 id="枚举常量"><a href="#枚举常量" class="headerlink" title="枚举常量"></a>枚举常量</h5><p>枚举列表中的每个符号代表一个整数值，一个大于它之前的符号。默认情况下，第一个枚举符号的值为0。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enum Status &#123; </span><br><span class="line">   none, </span><br><span class="line">   running, </span><br><span class="line">   stopped, </span><br><span class="line">   paused </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h3><h4 id="数值（num）"><a href="#数值（num）" class="headerlink" title="数值（num）"></a><a href="https://api.dartlang.org/stable/2.6.0/dart-core/num-class.html" target="_blank" rel="noopener">数值（num）</a></h4><p>Dart 支持两种数值类型：int和double</p>
+<h5 id="int数值类型"><a href="#int数值类型" class="headerlink" title="int数值类型"></a>int数值类型</h5><p>整数，取值范围-2<sup>53</sup>和2<sup>53</sup>之间。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var x = 1;</span><br><span class="line">var hex = 0xDEADBEEF;</span><br><span class="line">var bigInt = 34653465834652437659238476592374958739845729;</span><br><span class="line">int a = 1;</span><br></pre></td></tr></table></figure></p>
+<h5 id="double数值类型"><a href="#double数值类型" class="headerlink" title="double数值类型"></a>double数值类型</h5><p>浮点数，64位的双精度浮点数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var x = 1.1;</span><br><span class="line">var exponents = 1.42e5;</span><br><span class="line">double f = 0.1;</span><br></pre></td></tr></table></figure></p>
+<p><strong>常见用法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// String 转 int</span><br><span class="line">var one = int.parse(&apos;1&apos;);</span><br><span class="line"></span><br><span class="line">// String 转 double</span><br><span class="line">var onePointOne = double.parse(&apos;1.1&apos;);</span><br><span class="line"></span><br><span class="line">// int 转 String</span><br><span class="line">String oneAsStr = 1.toString();</span><br><span class="line"></span><br><span class="line">// double 转 String</span><br><span class="line">String piAsStr = 3.14159.toStringAsFixed(2); // 保留两位 &apos;3.14&apos;</span><br><span class="line"></span><br><span class="line">// Dart也支持整数位操作，&lt;&lt;、 &gt;&gt;、&amp;、|</span><br><span class="line">print((3 &lt;&lt; 1) == 6);  // 0011 &lt;&lt; 1 == 0110</span><br><span class="line">print((3 &gt;&gt; 1) == 1);  // 0011 &gt;&gt; 1 == 0001</span><br><span class="line">print((3 | 4)  == 7);  // 0011 | 0100 == 0111</span><br></pre></td></tr></table></figure></p>
+<h4 id="字符串（String）"><a href="#字符串（String）" class="headerlink" title="字符串（String）"></a><a href="https://api.dartlang.org/stable/2.6.0/dart-core/String-class.html" target="_blank" rel="noopener">字符串（String）</a></h4><p>Dart 字符串是UTF-16编码的字符序列（<font color="red" face="宋体" size="3">Dart 中用runes表示UTF-32字符序列</font>），可以使用<font color="red" face="宋体" size="3">单引号</font>或者<font color="red" face="宋体" size="3">双引号</font>来创建字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var s1 = &apos;It\&apos;s easy to escape the string delimiter.&apos;;</span><br><span class="line">var s2 = &quot;It&apos;s even easier to use the other delimiter.&quot;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>常见用法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">// 1.Dart可以使用单引号或双引号来创建字符串</span><br><span class="line">var s1 = &quot;hello&quot;;</span><br><span class="line">var s2 = &apos;world&apos;;</span><br><span class="line"></span><br><span class="line">// 2.类似Python，Dart可以使用三引号来创建包含多行的字符串</span><br><span class="line">//三个双引号</span><br><span class="line">var multiLine1 = &quot;&quot;&quot;This is also a</span><br><span class="line">multi-line1 string.&quot;&quot;&quot;;</span><br><span class="line"></span><br><span class="line">//三个单引号</span><br><span class="line">var multiLine2 = &apos;&apos;&apos;</span><br><span class="line">You can create</span><br><span class="line">multi-line2 strings like this one.</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line">// 3.类似Python，还可以在字符串字面值的前面加上`r`来创建原始字符串，则该字符串中特殊字符可以不用转义</span><br><span class="line">var path = r&quot;In a raw string, even \n isn&apos;t special.&quot;;</span><br><span class="line"></span><br><span class="line">// 4.Dart支持使用&quot;+&quot;操作符拼接字符串</span><br><span class="line">var greet = &quot;hello&quot; + &quot; world&quot;;</span><br><span class="line"></span><br><span class="line">// 5.Dart提供了插值表达式&quot;$&#123;&#125;&quot;</span><br><span class="line">var name = &quot;王五&quot;;</span><br><span class="line">var aStr = &quot;hello,$&#123;name&#125;&quot;;</span><br><span class="line">print(aStr);    // hello,王五</span><br><span class="line"></span><br><span class="line">// 当仅取变量值时，可以省略花括号</span><br><span class="line">var aStr2 = &quot;hello,$name&quot;; // hello,王五</span><br><span class="line"></span><br><span class="line">// 当拼接的是一个表达式时，则不能省略花括号</span><br><span class="line">var str1 = &quot;link&quot;;</span><br><span class="line">var str2 = &quot;click $&#123;str1.toUpperCase()&#125;&quot;;</span><br><span class="line">print(str2);   // click LINK</span><br><span class="line"></span><br><span class="line">// 6. 与Java不同，Dart使用&quot;==&quot;来比较字符串的内容</span><br><span class="line">print(&quot;hello&quot; == &quot;world&quot;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="布尔值（bool）"><a href="#布尔值（bool）" class="headerlink" title="布尔值（bool）"></a><a href="https://api.dartlang.org/stable/2.6.0/dart-core/bool-class.html" target="_blank" rel="noopener">布尔值（bool）</a></h4><p>Dart 中的布尔类型值只有true跟false两个值，不能使用0、非0或者null、非null来表达false和true。（布尔类型的默认值为null，这与Dart的所有类型都是对象特性有关）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var real = true;</span><br><span class="line">bool isReal = false;</span><br></pre></td></tr></table></figure></p>
+<h4 id="列表（Lists）"><a href="#列表（Lists）" class="headerlink" title="列表（Lists）"></a><a href="https://api.dartlang.org/stable/2.6.0/dart-core/List-class.html" target="_blank" rel="noopener">列表（Lists）</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var list = [1, 2, 3];</span><br></pre></td></tr></table></figure>
+<p><strong>常见用法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 创建列表</span><br><span class="line">var list = [1, 2, 3];</span><br><span class="line">// 下标从0开始。使用length可以访问list的长度</span><br><span class="line">print(list[0]);</span><br><span class="line">print(list.length);</span><br><span class="line"></span><br><span class="line">// 可以使用add添加元素</span><br><span class="line">list.add(5);</span><br><span class="line"></span><br><span class="line">// 可在list字面量前添加const关键字，定义一个不可改变的 列表（编译时常量）</span><br><span class="line">var constantList = const [1, 2, 3];</span><br><span class="line">constantList[1] = 1;     // 报错</span><br></pre></td></tr></table></figure></p>
+<h4 id="集合（Set）"><a href="#集合（Set）" class="headerlink" title="集合（Set）"></a><a href="https://api.dartlang.org/stable/2.6.0/dart-core/Set-class.html" target="_blank" rel="noopener">集合（Set）</a></h4><p>Dart 中的Set是无序的唯一项的集合。使用前面带有类型参数的{}，或者将{}赋给类型为Set的变量。<br><strong>常见用法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 1.简单的Dart集，使用set文字创建。</span><br><span class="line">var halogens = &#123;&apos;yiibai.com&apos;, &apos;chlorine&apos;, &apos;bromine&apos;, &apos;iodine&apos;, &apos;astatine&apos;&#125;;</span><br><span class="line">var names = &lt;String&gt;&#123;&#125;;</span><br><span class="line">Set&lt;String&gt; names = &#123;&#125;; // This works, too.</span><br><span class="line">//var names = &#123;&#125;; // Creates a map, not a set.</span><br><span class="line"></span><br><span class="line">// 2.使用add()或addAll()方法将项添加到现有集合。</span><br><span class="line">var elements = &lt;String&gt;&#123;&#125;;</span><br><span class="line">elements.add(&apos;fluorine&apos;);</span><br><span class="line">elements.addAll(halogens);</span><br><span class="line"></span><br><span class="line">// 3.使用.length来获取集合中的项目数量：</span><br><span class="line">var elements = &lt;String&gt;&#123;&#125;;</span><br><span class="line">elements.add(&apos;fluorine&apos;);</span><br><span class="line">elements.addAll(halogens);</span><br><span class="line">assert(elements.length == 5);</span><br><span class="line"></span><br><span class="line">// 4.使用const创建一个编译时常量的集合。</span><br><span class="line">final constantSet = const &#123;</span><br><span class="line">  &apos;fluorine&apos;,</span><br><span class="line">  &apos;chlorine&apos;,</span><br><span class="line">  &apos;bromine&apos;,</span><br><span class="line">  &apos;iodine&apos;,</span><br><span class="line">  &apos;astatine&apos;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h4 id="映射（Maps）"><a href="#映射（Maps）" class="headerlink" title="映射（Maps）"></a><a href="https://api.dartlang.org/stable/2.6.0/dart-core/Map-class.html" target="_blank" rel="noopener">映射（Maps）</a></h4><p><strong>常见用法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 1.通过字面量创建Map</span><br><span class="line">var gifts = &#123;</span><br><span class="line">  &apos;first&apos; : &apos;partridge&apos;,</span><br><span class="line">  &apos;second&apos;: &apos;turtledoves&apos;,</span><br><span class="line">  &apos;fifth&apos; : &apos;golden rings&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 2.使用Map类的构造函数创建对象</span><br><span class="line">var pic = new Map();</span><br><span class="line">// 往Map中添加键值对</span><br><span class="line">pic[&apos;first&apos;] = &apos;partridge&apos;;</span><br><span class="line">pic[&apos;second&apos;] = &apos;turtledoves&apos;;</span><br><span class="line">pic[&apos;fifth&apos;] = &apos;golden rings&apos;;</span><br><span class="line"></span><br><span class="line">// 3.获取Map的长度</span><br><span class="line">print(pic.length);</span><br><span class="line"></span><br><span class="line">// 4.查找Map</span><br><span class="line">pirnt(pic[&quot;first&quot;]);</span><br><span class="line">print(pic[&quot;four&quot;]);    // 键不存在则返回 null</span><br></pre></td></tr></table></figure></p>
+<h4 id="Runes（UTF-32字符集的字符）"><a href="#Runes（UTF-32字符集的字符）" class="headerlink" title="Runes（UTF-32字符集的字符）"></a><a href="https://api.dartlang.org/stable/2.6.0/dart-core/Runes-class.html" target="_blank" rel="noopener">Runes（UTF-32字符集的字符）</a></h4><p><strong>常见用法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 打印Emoji表情</span><br><span class="line">Runes input = new Runes(&apos;\u2665  \u&#123;1f605&#125;  \u&#123;1f60e&#125;  \u&#123;1f47b&#125;  \u&#123;1f596&#125;  \u&#123;1f44d&#125;&apos;);</span><br><span class="line">print(new String.fromCharCodes(input));</span><br><span class="line">输出：♥  😅  😎  👻  🖖  👍</span><br></pre></td></tr></table></figure></p>
+<h4 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a><a href="https://api.dartlang.org/stable/dart-core/Symbol-class.html" target="_blank" rel="noopener">Symbols</a></h4><p>Symbol对象表示Dart程序中声明的运算符或标识符。可能永远不需要使用符号，但它们对于按名称引用标识符的API非常有用，因为缩小会更改标识符名称而不会更改标识符符号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#radix</span><br><span class="line">#bar</span><br></pre></td></tr></table></figure></p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a><a href="https://api.dartlang.org/stable/2.6.0/dart-core/Function-class.html" target="_blank" rel="noopener">函数</a></h3><p>Dart 是一个真正的面向对象语言，方法也是对象并且具有一种类型 Function。 这意味着，方法可以赋值给变量，也可以当做其他方法的参数。也可以把 Dart 类的实例当做方法来调用。</p>
+<h4 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h4><p>在Dart中，函数类型是可选，可以省略显式的类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String greet(String name)&#123;</span><br><span class="line">    return &quot;hello,$name&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">或则</span><br><span class="line"></span><br><span class="line">greet(name)&#123;</span><br><span class="line">    return &quot;hello,$name&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="命名函数"><a href="#命名函数" class="headerlink" title="命名函数"></a>命名函数</h5><p>命名函数就是带有函数名称的函数，也就是一般普通的函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String greet(String name)&#123;</span><br><span class="line">    return &quot;hello,$name&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">或则</span><br><span class="line"></span><br><span class="line">greet(name)&#123;</span><br><span class="line">    return &quot;hello,$name&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h5><p>Dart 中可以创建没有名字的函数，称为匿名函数，也被称为lambda表达式或者闭包。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 定义匿名函数，并将其赋值给一个变量func，注意，函数体最后的花括号处必须有分号结束。</span><br><span class="line">var func = (x,y)&#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">print(func(10,11));    // 21</span><br></pre></td></tr></table></figure></p>
+<h5 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h5><p>Dart 中的箭头函数与JavaScript中的基本相同。当函数体中只包含一个语句时，我们就可以使用=&gt;箭头语法进行缩写。注意，箭头函数仅仅只是一个简洁表达的语法糖。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">add(num x, num y) =&gt; x + y;</span><br><span class="line"></span><br><span class="line">与</span><br><span class="line"></span><br><span class="line">add(num x, num y)&#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">完全等价</span><br></pre></td></tr></table></figure></p>
+<p>箭头函数省略了花括号的表达，箭头后面跟一个表达式，函数的返回值也就是这个表达式的值。另外，箭头函数也可以与匿名函数结合，形成匿名箭头函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var func = (num x, num y) =&gt; x + y;</span><br></pre></td></tr></table></figure></p>
+<h4 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h4><p>Dart 中支持两种可选参数：命名可选参数、位置可选参数。<br>在Java中通常使用方法重载来实现同名方法的不同参数调用，Dart 中则可以通过可选参数来实现相同效果。</p>
+<font color="red" face="宋体" size="3">命名可选参数 </font>中的参数与顺序无关，无需按顺序传参，且传参数时需使用冒号。<font color="red" face="宋体" size="3">位置可选参数 </font>与顺序相关，传参必须依照顺序。<br><br>##### 命名可选参数<br><br>在定义方法的时候，使用花括号 {param1, param2, …} 的形式来指定命名参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enableFlags(&#123;bool bold, bool hidden&#125;) &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>调用方法的时候，你可以使用 key-value 形式 paramName:value 来指定命名参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enableFlags(hidden:true, bold:false);</span><br></pre></td></tr></table></figure><br><br>如果在定义函数时，给参数列表中的参数设置默认值，则该参数就是可选的，函数调用时可以忽略该参数，使用默认的值。<br><br><font color="red" face="宋体" size="3">Dart SDK 1.21之前的版本中，命名参数不能使用 “=” 号来设置默认值，而SDK 1.21之后，只能使用 “=” 号来设置默认值。</font>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 定义add函数</span><br><span class="line">add(&#123;int x, int y=1, int z=0&#125;)&#123;</span><br><span class="line">    print(x + y + z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 调用</span><br><span class="line">add(x:18);              // 19</span><br><span class="line">add(x:18, y:2, z:10);   // 30</span><br></pre></td></tr></table></figure>
+<h5 id="位置可选参数"><a href="#位置可选参数" class="headerlink" title="位置可选参数"></a>位置可选参数</h5><p>在定义方法的时候，使用中括号来定义参数列表，中括号中的参数是可选的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">    // 1.定义函数（没有默认值）</span><br><span class="line">    add(int x, [int y, int z])&#123;</span><br><span class="line">        int result = x;</span><br><span class="line">        if (y !=  null)&#123;</span><br><span class="line">            result = result + y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (z !=  null)&#123;</span><br><span class="line">            result = result + z;</span><br><span class="line">        &#125;</span><br><span class="line">        print(result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 调用</span><br><span class="line">    add(18);           // 18</span><br><span class="line">    add(18,12);        // 30</span><br><span class="line">    add(18, 12, 15);   // 45</span><br><span class="line"></span><br><span class="line">    // 1.定义函数（有默认值）</span><br><span class="line">    add(int x, [int y=0, int z=0])&#123;</span><br><span class="line">        print(x +ｙ＋ｚ);</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">#### 词法闭包</span><br><span class="line"></span><br><span class="line">一个&lt;font color=red face=&quot;宋体&quot; size=3&gt; 闭包 &lt;/font&gt;是一个方法对象，不管该对象在何处被调用，该对象都可以访问其作用域内的变量。</span><br><span class="line"></span><br><span class="line">方法可以封闭定义到其作用域内的变量。</span><br></pre></td></tr></table></figure></p>
+<p>// 下面的示例中，makeAdder()捕获到了变量 addBy。不管你在那里执行 makeAdder()所返回的函数，都可以使用 addBy 参数。<br>    Function makeAdder(num addBy) {<br>        return (num i) =&gt; addBy + i;<br>    }</p>
+<pre><code>main() {
+    // Create a function that adds 2.
+    var add2 = makeAdder(2);
+
+    // Create a function that adds 4.
+    var add4 = makeAdder(4);
+
+    assert(add2(3) == 5);
+    assert(add4(3) == 7);
+}
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 运算符</span><br><span class="line"></span><br><span class="line">#### 算术运算符</span><br><span class="line"></span><br><span class="line">&lt;table class=&quot;table table-bordered table-striped table-condensed&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;操作符&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;解释&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;+&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;加号&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;–&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;减号&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;-expr&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;负号&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;*&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;乘号&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;/&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;除号&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;～/&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;除号（返回值为整数）&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;%&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;取模&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;++var&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;var = var + 1 (expression value is var + 1)&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;td&gt;var++&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;var = var + 1 (expression value is var)&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;td&gt;--var&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;var = var – 1 (expression value is var – 1)&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;td&gt;var--&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;var = var – 1 (expression value is var)&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">#### 相等相关的操作符</span><br><span class="line"></span><br><span class="line">&lt;table class=&quot;table table-bordered table-striped table-condensed&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;操作符&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;解释&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;==&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;相等&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;!=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;不等&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;&gt;&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;大于&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;&lt;&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;小于&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;&gt;=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;大于等于&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;&lt;=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;小于等于&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">#### 类型判定运算符</span><br><span class="line"></span><br><span class="line">&lt;table class=&quot;table table-bordered table-striped table-condensed&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;操作符&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;解释&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;as&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;类型转换&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;is&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;如果对象是指定的类型返回 true&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;is!&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;如果对象是指定的类型返回 false&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">使用 as 操作符把对象转换为特定的类型。一般情况下，可以把 as 当做用 is 判定类型然后调用所判定对象的函数的缩写形式。例如下面的示例：</span><br></pre></td></tr></table></figure>
+<p>if (emp is Person) { // Type check<br>  emp.firstName = ‘Bob’;<br>}</p>
+<p>使用 as 操作符可以简化上面的代码：</p>
+<p>(emp as Person).firstName = ‘Bob’;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;font color=red face=&quot;宋体&quot; size=3&gt;注意: 上面这两个代码效果是有区别的。如果 emp 是 null 或者不是 Person 类型，则第一个示例使用 is 则不会执行条件里面的代码，而第二个情况使用 as 则会抛出一个异常。&lt;/font&gt;</span><br><span class="line"></span><br><span class="line">#### 赋值操作符</span><br><span class="line">##### = 操作符</span><br></pre></td></tr></table></figure></p>
+<p>a = value;   // 给 a 变量赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##### ??= 操作符</span><br></pre></td></tr></table></figure></p>
+<p>b ??= value; // 如果 b 是 null，则赋值给 b；<br>             // 如果不是 null，则 b 的值保持不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">##### 复合赋值操作符</span><br><span class="line">&lt;table class=&quot;table table-bordered table-striped table-condensed&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;–=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;/=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;%=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;&gt;&gt;=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;^=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;+=&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;*=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;~/=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;&lt;&lt;=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;&amp;=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;|=&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">#### 逻辑操作符</span><br><span class="line">可以使用逻辑操作符来操作布尔值。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;table class=&quot;table table-bordered table-striped table-condensed&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;操作符&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;解释&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;!expr&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;对表达式结果取反（true 变为 false ，false 变为 true）&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;||&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;逻辑 OR&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;&amp;&amp;&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;逻辑 AND&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">#### 位移操作符</span><br><span class="line">&lt;table class=&quot;table table-bordered table-striped table-condensed&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;操作符&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;解释&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;&amp;&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;AND&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;|&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;OR&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;^&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;XOR&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;~expr&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;取反&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;&lt;&lt;&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;左移&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;&gt;&gt;&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;右移&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">#### 条件表达式</span><br><span class="line">&lt;table class=&quot;table table-bordered table-striped table-condensed&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;操作符&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;解释&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;condition ? expr1 : expr2&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;如果 condition 是 true，执行 expr1；否则执行 expr2。&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;expr1 ?? expr2&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;如果 expr1 是 non-null，返回其值； 否则执行 expr2。&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">如果你需要基于布尔表达式 的值来赋值， 考虑使用 ?:。</span><br><span class="line"></span><br><span class="line">    var finalStatus = m.isFinal ? &apos;final&apos; : &apos;not final&apos;;</span><br><span class="line"></span><br><span class="line">如果布尔表达式是测试值是否为 null， 考虑使用 ??。</span><br><span class="line"></span><br><span class="line">    String toString() =&gt; msg ?? super.toString();</span><br><span class="line"></span><br><span class="line">#### 级联运算符</span><br><span class="line">级联操作符 (..) 可以在同一个对象上连续调用多个函数以及访问成员变量。使用级联操作符可以避免创建临时变量，并且写出来的代码看起来更加流畅。</span><br></pre></td></tr></table></figure>
+<p>querySelector(‘#button’) // Get an object.<br>  ..text = ‘Confirm’   // Use its members.<br>  ..classes.add(‘important’)<br>  ..onClick.listen((e) =&gt; window.alert(‘Confirmed!’));</p>
+<p>等价于</p>
+<p>var button = querySelector(‘#button’);<br>button.text = ‘Confirm’;<br>button.classes.add(‘important’);<br>button.onClick.listen((e) =&gt; window.alert(‘Confirmed!’));<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">级联调用也可以嵌套。</span><br></pre></td></tr></table></figure></p>
+<p>final addressBook = (new AddressBookBuilder()<br>      ..name = ‘jenny’<br>      ..email = <a href="mailto:&#39;jenny@example.com" target="_blank" rel="noopener">&#39;jenny@example.com</a>‘<br>      ..phone = (new PhoneNumberBuilder()<br>            ..number = ‘415-555-0100’<br>            ..label = ‘home’)<br>          .build())<br>    .build();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#### 其他操作符</span><br><span class="line">&lt;table class=&quot;table table-bordered table-striped table-condensed&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;操作符&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;名称&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;解释&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;( )&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;使用方法&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;代表调用一个方法&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;[ ]&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;访问列表&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;访问列表中特定位置的元素&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;.&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;访问成员&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;访问元素，例如 foo.bar 代表访问 foo 的 bar 成员&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;?.&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;条件成员访问&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;和 . 类似，但是左边的操作对象不能为 null，例如 foo?.bar 如果 foo 为 null 则返回 null，否则返回 bar 成员&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">### 流程控制</span><br><span class="line">#### if-else</span><br><span class="line">#### for循环</span><br><span class="line">#### while循环</span><br><span class="line">#### switch语句</span><br><span class="line">有一种情况与C、Java等不一样，如下：</span><br></pre></td></tr></table></figure></p>
+<p>var command = ‘OPEN’;<br>switch (command) {<br>  case ‘OPEN’:<br>    executeOpen();<br>    // ERROR: Missing break causes an exception!!</p>
+<p>  case ‘CLOSED’:<br>    executeClosed();<br>    break;<br>}</p>
+<p>// 如果需要实现这种继续到下一个 case 语句中继续执行，则可以使用 continue 语句跳转到对应的标签（label）处继续执行：<br>var command = ‘CLOSED’;<br>switch (command) {<br>  case ‘CLOSED’:<br>    executeClosed();<br>    continue nowClosed;<br>    // Continues executing at the nowClosed label.</p>
+<p>nowClosed:<br>  case ‘NOW_CLOSED’:<br>    // Runs for both CLOSED and NOW_CLOSED.<br>    executeNowClosed();<br>    break;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 断言</span><br><span class="line"></span><br><span class="line">#### 异常</span><br><span class="line"></span><br><span class="line">### 类和对象</span><br><span class="line"></span><br><span class="line">#### 类的定义</span><br><span class="line"></span><br><span class="line">Dart 中没有&lt;font color=red face=&quot;宋体&quot; size=4&gt;private、public&lt;/font&gt;这些成员访问修饰符。如果是类私有的成员，不希望外面访问，只需要在成员变量之前加上一个下划线 &lt;font color=red face=&quot;宋体&quot; size=4&gt; _ &lt;/font&gt; 变为私有即可。</span><br></pre></td></tr></table></figure></p>
+<p>// Dart 中定义一个类<br>class  Person {<br>    String name;<br>    int _age;</p>
+<pre><code>// 有参无名的构造函数（普通构造函数）
+Person(String name, num age) {
+  this.name = name;
+  this.age = age;
+}
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;font color=red face=&quot;宋体&quot; size=4&gt;可简化等价于&lt;/font&gt;</span><br></pre></td></tr></table></figure></p>
+<p>// Dart 中定义一个类<br>class  Person {<br>    String name;<br>    int age;</p>
+<pre><code>// 有参无名的构造函数（普通构造函数）
+Person(this.name, this.age);
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 构造函数</span><br><span class="line"></span><br><span class="line">Dart 中声明一个和类名相同的函数，来作为类的构造函数（与有名构造函数相对，也可以叫&lt;font color=red face=&quot;宋体&quot; size=4&gt;作无名构造函数&lt;/font&gt;）。</span><br><span class="line"></span><br><span class="line">Dart 中子类&lt;font color=red face=&quot;宋体&quot; size=4&gt;不会继承&lt;/font&gt;父类的&lt;font color=red face=&quot;宋体&quot; size=4&gt;无名有参构造函数&lt;/font&gt;和&lt;font color=red face=&quot;宋体&quot; size=4&gt;命名构造函数&lt;/font&gt;（只能继承父类&lt;font color=red face=&quot;宋体&quot; size=4&gt;无参无名构造函数&lt;/font&gt;）。</span><br><span class="line"></span><br><span class="line">Dart 中&lt;font color=red face=&quot;宋体&quot; size=4&gt;没有&lt;/font&gt;构造方法的重载。</span><br></pre></td></tr></table></figure></p>
+<p>class  Person {<br>    String name;<br>    int age;</p>
+<pre><code>// 无参无名的构造函数
+Person() {
+    print(&apos;in Person&apos;);
+}
+
+// 有参无名构造函数（普通孤构造函数）
+Person(String name, num age) {
+  this.name = name;
+  this.age = age;
+}
+
+// 构造方法不能重载，否则会报错
+// Person(this.name, this.age, String address){
+//     print(address);
+// }
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 默认构造函数</span><br><span class="line"></span><br><span class="line">如果子类&lt;font color=red face=&quot;宋体&quot; size=4&gt;没有&lt;/font&gt;定义构造函数，则会有个&lt;font color=red face=&quot;宋体&quot; size=4&gt;默认构造函数&lt;/font&gt;，这个构造函数&lt;font color=red face=&quot;宋体&quot; size=4&gt;没有&lt;/font&gt;参数。</span><br><span class="line"></span><br><span class="line">如果子类有父类，那么默认构造函数会自动调用父类的&lt;font color=red face=&quot;宋体&quot; size=4&gt;无参&lt;/font&gt;构造函数。</span><br><span class="line"></span><br><span class="line">&lt;font color=red face=&quot;宋体&quot; size=4&gt;默认构造函数&lt;/font&gt; == &lt;font color=red face=&quot;宋体&quot; size=4&gt;无参无名构造函数&lt;/font&gt;</span><br></pre></td></tr></table></figure></p>
+<p>// Dart 默认构造函数表现形式类似与以下表示：<br>class  Person {<br>    String name;<br>    int _age;</p>
+<pre><code>//默认构造函数 == 无参无名构造函数
+// 无参无名构造函数
+Person() {
+    print(&apos;in Person&apos;);
+}
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 命名构造函数</span><br><span class="line"></span><br><span class="line">使用&lt;font color=red face=&quot;宋体&quot; size=4&gt;命名构造函数&lt;/font&gt;可以为一个类实现&lt;font color=red face=&quot;宋体&quot; size=4&gt;多个&lt;/font&gt;构造函数。</span><br><span class="line">使用&lt;font color=red face=&quot;宋体&quot; size=4&gt;命名构造函数&lt;/font&gt;可以&lt;font color=red face=&quot;宋体&quot; size=4&gt;更清晰&lt;/font&gt;的表明您的意图。</span><br></pre></td></tr></table></figure></p>
+<p>class Person {<br>    String name;<br>    int age;</p>
+<pre><code>// 有参无名构造函数（普通构造函数）
+Person(this.name, this.age);
+
+// 命名构造函数
+Person.fromJson(Map json) {
+name = json[&apos;name&apos;];
+age = json[&apos;age&apos;];
+</code></pre><p>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 常量构造函数</span><br><span class="line"></span><br><span class="line">如果要实现功能：&lt;font color=red face=&quot;宋体&quot; size=4&gt;类需要提供一个状态不变的对象&lt;/font&gt;。</span><br><span class="line">Dart 中可以把这些对象定义为编译时常量，&lt;font color=red face=&quot;宋体&quot; size=4&gt;定义一个 const 构造函数，并且声明所有类的变量为 final 变量&lt;/font&gt;。</span><br></pre></td></tr></table></figure></p>
+<p>class ImmutablePoint {<br>  final num x;<br>  final num y;<br>  const ImmutablePoint(this.x, this.y);<br>  static final ImmutablePoint origin =<br>      const ImmutablePoint(0, 0);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 工厂方法构造函数</span><br><span class="line"></span><br><span class="line">如果一个构造函数并不总是返回一个新的对象，则使用 factory 来定义这个构造函数。</span><br></pre></td></tr></table></figure></p>
+<p>class Logger {<br>  final String name;<br>  bool mute = false;</p>
+<p>  // _cache 为私有变量<br>  static final Map&lt;String, Logger&gt; _cache =<br>      &lt;String, Logger&gt;{};</p>
+<p>  //注意：工厂构造函数无法访问 this。<br>  factory Logger(String name) {<br>    if (_cache.containsKey(name)) {<br>      return _cache[name];<br>    } else {<br>      final logger = new Logger._internal(name);<br>      _cache[name] = logger;<br>      return logger;<br>    }<br>  }</p>
+<p>  Logger._internal(this.name);</p>
+<p>  void log(String msg) {<br>    if (!mute) {<br>      print(msg);<br>    }<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用&lt;font color=red face=&quot;宋体&quot; size=4&gt; new 关键字&lt;/font&gt;来调用工厂构造函数</span><br></pre></td></tr></table></figure></p>
+<p>var logger = new Logger(‘UI’);<br>logger.log(‘Button clicked’);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 初始化列表</span><br><span class="line"></span><br><span class="line">初始化列表核心作用就是&lt;font color=red face=&quot;宋体&quot; size=4&gt;可以在构造函数之前初始化成员变量&lt;/font&gt;。</span><br><span class="line"></span><br><span class="line">初始化列表的执行顺序是在整个构造函数的最前面，它除了可以调用父类的构造函数，还可以在子类的构造函数方法体之前初始化一些成员变量。</span><br><span class="line"></span><br><span class="line">初始化列表尤其对初始化那些 &lt;font color=red face=&quot;宋体&quot; size=4&gt;final&lt;/font&gt; 修饰的成员变量很有用，这是因为在方法体中不能给 final 修饰的成员变量赋值，因为在执行方法体的时候，final 修饰的成员变量已经不能变了。</span><br></pre></td></tr></table></figure></p>
+<p>class Person {<br>    String name;<br>    int age;</p>
+<pre><code>// 有参无名构造函数（普通构造函数）
+Person(this.name, this.age);
+
+// 初始化列表
+// 初始化列表可以在构造函数体之前设置变量
+// 初始化表达式等号右边的部分不能访问 this
+// 如果在构造函数的初始化列表中使用 super()，需要把它放到最后
+Person.fromJson(Map json) 
+    : name = json[&apos;name&apos;],
+      age = json[&apos;age&apos;] ,
+      super(style) {
+          print(&apos;In Person.fromJson(): ($name, $age)&apos;);
+      }
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 重定向构造函数</span><br><span class="line"></span><br><span class="line">定义构造函数的时候，除了一个普通构造函数，还可以有若干命名构造函数。有时候一个构造函数会调动类中的其他构造函数。</span><br></pre></td></tr></table></figure></p>
+<p>class Point {<br>  num x;<br>  num y;</p>
+<p>  // 有参无名构造函数（普通构造函数）<br>  Point(this.x, this.y);</p>
+<p>  // 重定向构造函数<br>  // 一个重定向构造函数是没有代码的，在构造函数声明后，使用:冒号调用其他构造函数。<br>  Point.alongXAxis(num x) : this(x, 0);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 子类构造函数调用父类构造函数</span><br><span class="line"></span><br><span class="line">###### 隐式调用父类的无参数构造函数</span><br><span class="line"></span><br><span class="line">如果存在以下情况：</span><br><span class="line">1.父类有一个&lt;font color=red face=&quot;宋体&quot; size=4&gt;无参数构造函数&lt;/font&gt;。</span><br><span class="line">2.子类&lt;font color=red face=&quot;宋体&quot; size=4&gt;没有显式调用&lt;/font&gt;父类的构造函数。</span><br><span class="line">Dart 就会在子类的构造函数方法体的最前面，自动调用父类的无参数构造函数。</span><br></pre></td></tr></table></figure></p>
+<p>class Person {<br>    String name;<br>    int _age;</p>
+<pre><code>// 无参数的，无名的构造函数
+Person() {
+    print(&apos;in Person&apos;);
+}
+</code></pre><p>}</p>
+<p>class Employee extends Person {<br>    // 因为父类有无参数的无名构造函数，所以可以不用手动调用父类的构造函数。<br>    Employee.fromDictionary(Map data) {<br>        print(‘in Son’);<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">构造函数分成好几部分来初始化成员变量，调用的顺序如下：</span><br></pre></td></tr></table></figure></p>
+<p>初始化列表<br>父类的无参数构造函数<br>子类的无参数构造函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">###### 显式调用父类构造函数</span><br><span class="line"></span><br><span class="line">父类&lt;font color=red face=&quot;宋体&quot; size=4&gt;没有显式提供&lt;/font&gt;无参构造函数。子类中必须手动显式调用父类的一个构造函数。</span><br><span class="line"></span><br><span class="line">调用父类的构造函数的参数&lt;font color=red face=&quot;宋体&quot; size=4&gt;无法访问&lt;/font&gt; &lt;font color=blue face=&quot;宋体&quot; size=4&gt;this&lt;/font&gt;，所以参数可以为&lt;font color=red face=&quot;宋体&quot; size=4&gt;静态函数&lt;/font&gt;但是不能是实例函数。</span><br></pre></td></tr></table></figure></p>
+<p>class Person {<br>    String firstName;</p>
+<pre><code>// 命名构造函数
+Person.fromDictionary(Map data) {
+    print(&apos;in Person&apos;);
+  }
+</code></pre><p>}</p>
+<p>class Employee extends Person {<br>    // 父类没有无参数的无名构造函数，必须手动调用一个父类的构造函数<br>    Employee.fromDictionary(Map data) : super.fromDictionary(data) {<br>        print(‘in Employee’);<br>    }</p>
+<pre><code>//所以这种写法会报错，因为父类没有无参数的无名构造函数
+// Employee.fromDictionary(Map data) {
+//     print(&apos;in Employee&apos;);
+// }
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 变量和函数</span><br><span class="line"></span><br><span class="line">##### 静态变量</span><br><span class="line">使用 &lt;font color=red face=&quot;宋体&quot; size=4&gt;static&lt;/font&gt; 关键字来实现类级别的变量。</span><br></pre></td></tr></table></figure></p>
+<p>class Color {<br>  static const red =<br>      const Color(‘red’); // A constant static variable.<br>  final String name;      // An instance variable.<br>  const Color(this.name); // A constant constructor.<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">##### 实例变量</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 静态函数</span><br><span class="line">使用 &lt;font color=red face=&quot;宋体&quot; size=4&gt;static&lt;/font&gt; 关键字来实现类级别的函数。</span><br></pre></td></tr></table></figure></p>
+<p>class Point {<br>  num x;<br>  num y;<br>  Point(this.x, this.y);</p>
+<p>  static num distanceBetween(Point a, Point b) {<br>    var dx = a.x - b.x;<br>    var dy = a.y - b.y;<br>    return sqrt(dx <em> dx + dy </em> dy);<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 实例函数</span><br><span class="line"></span><br><span class="line">对象的实例函数&lt;font color=red face=&quot;宋体&quot; size=4&gt;可以访问&lt;/font&gt; &lt;font color=blue face=&quot;宋体&quot; size=4&gt;this&lt;/font&gt;。</span><br></pre></td></tr></table></figure></p>
+<p>import ‘dart:math’;</p>
+<p>class Point {<br>  num x;<br>  num y;<br>  Point(this.x, this.y);</p>
+<p>  num distanceTo(Point other) {<br>    var dx = x - other.x;<br>    var dy = y - other.y;<br>    return sqrt(dx <em> dx + dy </em> dy);<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">##### Setter函数和Getter函数</span><br><span class="line"></span><br><span class="line">getter 和 setter 是用来&lt;font color=red face=&quot;宋体&quot; size=4&gt;设置和访问对象属性&lt;/font&gt;的特殊函数。</span><br><span class="line"></span><br><span class="line">每个实例变量都隐含的具有一个 getter 函数， 如果变量不是 final 的则还有一个 setter 函数。 </span><br><span class="line"></span><br><span class="line">可以通过实行 getter 和 setter 来创建新的属性，&lt;font color=red face=&quot;宋体&quot; size=4&gt;使用 get 和 set 关键字&lt;/font&gt;来定义 getter 和 setter：</span><br><span class="line"></span><br><span class="line">getter 和 setter 的优点：在开始使用实例变量的地方，可以将实例变量用函数包裹起来，而调用实例变量代码的地方不需要修改，做到很好的&lt;font color=red face=&quot;宋体&quot; size=4&gt;封装&lt;/font&gt;作用。</span><br></pre></td></tr></table></figure></p>
+<p>class Rectangle {<br>  num left;<br>  num top;<br>  num width;<br>  num height;</p>
+<p>  Rectangle(this.left, this.top, this.width, this.height);</p>
+<p>  // Define two calculated properties: right and bottom.<br>  num get right             =&gt; left + width;<br>      set right(num value)  =&gt; left = value - width;<br>  num get bottom            =&gt; top + height;<br>      set bottom(num value) =&gt; top = value - height;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 抽象函数</span><br><span class="line"></span><br><span class="line">抽象函数是只定义&lt;font color=red face=&quot;宋体&quot; size=4&gt;函数接口但是没有实现&lt;/font&gt;的函数，由&lt;font color=red face=&quot;宋体&quot; size=4&gt;子类&lt;/font&gt;来实现该函数。</span><br><span class="line"></span><br><span class="line">实例函数、getter函数和setter函数可以为抽象函数。</span><br></pre></td></tr></table></figure></p>
+<p>abstract class Doer {<br>    // 抽象函数<br>    void doSomething();<br>}</p>
+<p>class EffectiveDoer extends Doer {<br>    // 子类实现父类抽象函数<br>    void doSomething() {<br>        // todo：<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;font color=red face=&quot;宋体&quot; size=4&gt;非抽象类&lt;/font&gt;也可以定义抽象函数</span><br></pre></td></tr></table></figure></p>
+<p>class SpecializedContainer extends AbstractContainer {</p>
+<pre><code>// 实例函数
+void updateChildren() {
+}
+
+// 抽象函数
+void doSomething();
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 抽象类</span><br><span class="line"></span><br><span class="line">使用 &lt;font color=red face=&quot;宋体&quot; size=4&gt;abstract&lt;/font&gt; 修饰符定义一个抽象类。</span><br><span class="line"></span><br><span class="line">抽象类是一个不能被&lt;font color=red face=&quot;宋体&quot; size=4&gt;实例化&lt;/font&gt;的类。</span><br><span class="line"></span><br><span class="line">如果希望抽象类是可实例化的，可以通过定义一个&lt;font color=red face=&quot;宋体&quot; size=4&gt;工厂构造函数&lt;/font&gt;来实现。</span><br><span class="line"></span><br><span class="line">抽象类通常用来定义&lt;font color=red face=&quot;宋体&quot; size=4&gt;接口以及部分实现&lt;/font&gt;。</span><br><span class="line"></span><br><span class="line">抽象类通常具有&lt;font color=red face=&quot;宋体&quot; size=4&gt;抽象函数&lt;/font&gt;。 </span><br><span class="line"></span><br><span class="line">抽象类定义如下：</span><br></pre></td></tr></table></figure></p>
+<p>// 抽象类<br>abstract class AbstractContainer {<br>    // 抽象函数<br>    void updateChildren();<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 隐式接口</span><br><span class="line"></span><br><span class="line">Dart 支持一个类可以通过 &lt;font color=red face=&quot;宋体&quot; size=4&gt;implements 关键字&lt;/font&gt;来实现一个或者多个接口，并实现每个接口定义的 API。</span><br></pre></td></tr></table></figure></p>
+<p>class Person {<br>  final _name;</p>
+<p>  Person(this._name);</p>
+<p>  String greet(who) =&gt; ‘Hello, $who. I am $_name.’;<br>}</p>
+<p>class Imposter implements Person {<br>  final _name = “”;</p>
+<p>  String greet(who) =&gt; ‘Hi $who. Do you know who I am?’;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">下面是实现多个接口的示例：</span><br></pre></td></tr></table></figure></p>
+<p>class Point implements Comparable, Location {<br>  // …<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 继承</span><br><span class="line"></span><br><span class="line">使用 &lt;font color=red face=&quot;宋体&quot; size=4&gt;extends 关键字&lt;/font&gt;定义子类，&lt;font color=red face=&quot;宋体&quot; size=4&gt;supper 关键字&lt;/font&gt; 引用父类。</span><br></pre></td></tr></table></figure></p>
+<p>class Television {<br>  void turnOn() {<br>    _illuminateDisplay();<br>    _activateIrSensor();<br>  }<br>}</p>
+<p>class SmartTelevision extends Television {<br>  void turnOn() {<br>    super.turnOn();<br>    _bootNetworkInterface();<br>    _initializeMemory();<br>    _upgradeApps();<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">子类可以&lt;font color=red face=&quot;宋体&quot; size=4&gt;重写&lt;/font&gt;父类的实例函数、getter函数和setter函数。 </span><br><span class="line"></span><br><span class="line">使用 &lt;font color=red face=&quot;宋体&quot; size=4&gt;@override&lt;/font&gt; 注解来表明子类的函数是想重写父类的函数。</span><br><span class="line"></span><br><span class="line">使用 &lt;font color=red face=&quot;宋体&quot; size=4&gt;@proxy&lt;/font&gt; 注解来避免警告信息。</span><br><span class="line"></span><br><span class="line">下面是重写 Object 类的 noSuchMethod() 函数的例子，如果调用了对象上不存在的函数，则就会触发 noSuchMethod() 函数。</span><br></pre></td></tr></table></figure></p>
+<p>@proxy<br>class A {<br>  @override<br>  void noSuchMethod(Invocation mirror) {<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### mixins</span><br><span class="line"></span><br><span class="line">&lt;font color=red face=&quot;宋体&quot; size=4&gt;mixins&lt;/font&gt; 是面向对象程序设计语言中的类，提供了方法的实现。其他类可以访问 &lt;font color=red face=&quot;宋体&quot; size=4&gt;mixins&lt;/font&gt; 类的方法、变量而不必成为其子类。</span><br><span class="line"></span><br><span class="line">Dart 中 &lt;font color=red face=&quot;宋体&quot; size=4&gt;mixins&lt;/font&gt; 是一种在多类继承中重用 一个类代码的方法。</span><br><span class="line"></span><br><span class="line">使用 &lt;font color=red face=&quot;宋体&quot; size=4&gt;with 关键字&lt;/font&gt;后面为一个或者多个 mixin 名字来使用 mixin。</span><br></pre></td></tr></table></figure></p>
+<p>class Musician extends Performer with Musical {<br>  // …<br>}</p>
+<p>class Maestro extends Person<br>    with Musical, Aggressive, Demented {<br>  Maestro(String maestroName) {<br>    name = maestroName;<br>    canConduct = true;<br>  }<br>}<br><code>`</code></p>
+
         </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2019/10/25/code-migration-svn-2-gitlab/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./7EE9C120-77D2-4292-871F-58E2E1D82D01.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                代码仓库迁移
-            </h3>
+        <div class="post-reply">
             
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                代码仓库迁移—–svn迁移到gitlab—–
-
-1、背景随着Git服务的优越性，越来越多的公司将..
-            </p>
-            <p class="date text-shadow is-marginless">2019-10-25</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/09/ssh-key-copy-from-other-tips/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./0F134DB8-2AAB-4D41-8563-11AC0F049EFD.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>ssh-permissions-are-too-open-error</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            ssh-permissions-are-too-open-error
-
-将ssh-key从一台电脑拷贝到另一台电脑
-如果直接执行如下命令：
-ssh -T git@github.com
-则会报如下错误：
-Permissions 0644 for &apos;/Users/luohs/.ssh/163.github&apos; are too open.
-I..
-                                        </p>
-                                        <p>2019-11-09</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/25/code-migration-svn-2-gitlab/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./7EE9C120-77D2-4292-871F-58E2E1D82D01.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>代码仓库迁移</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            代码仓库迁移—–svn迁移到gitlab—–
-
-1、背景随着Git服务的优越性，越来越多的公司将代码仓库迁移至Git服务器。这篇文章将介绍如何将代码从svn服务器迁移至Git服务器并且保留原svn仓库的commit的历史记录。
-2、操作2.1 获取svn仓库提交者信息将项目代码check out到本地
-svn co --username &quot;账号..
-                                        </p>
-                                        <p>2019-10-25</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/25/code-repo-2-gitlab/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./4C90E4D9-BF63-4776-9724-744FB8B9D8D3.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>gitlab创建私有库</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            gitlab创建私有库
-
-流程简单介绍
-
-创建一个项目，留着后面的流程 3 制作私有库。
-
-
-
-在可以创建私有库的地方创建一个code repository(代码仓库)。
-
-
-
-在可以创建私有库的地方创建一个spec repository(配置仓库)。所有的配置按照包名、版本号分门别类的存放在这个仓库。(这个仓库只用来存放podspec文件不存放代码) ..
-                                        </p>
-                                        <p>2019-10-25</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/23/multi-ssh-key/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./80E13A4D-D912-4237-A95D-6161455B6885.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>ssh配置多个账号</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            ssh配置多个账号
-
-1 背景随着Git的火热，相信每个Coder都会有好几个Git服务器用来管理不同的资料、博客、代码等。如果在一台电脑上通过ssh key在一个Git服务器上提交代码很容易管理，但是如果有上面提到的情况需要在同一台电脑上分别向不同的Git服务器提交代码时我们就需要配置多个ssh key。
-2 操作2.1 清空默认全局的username..
-                                        </p>
-                                        <p>2019-10-23</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
             
         </div>
     </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>
