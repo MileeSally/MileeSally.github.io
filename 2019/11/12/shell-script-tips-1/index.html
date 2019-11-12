@@ -15,15 +15,26 @@
   </script>
 
   
-  <title>Archives: 2019/11 | Hexo</title>
+  <title>bash shell 脚本在开头 set -u 和 set -e 作用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/11/index.html">
+  <meta name="description" content="bash shell 脚本在开头 set -u 和 set -e 作用   set -e设置该选项后，当脚本中任何以一个命令执行返回的状态码不为0时就退出整个脚本（默认脚本运行中某行报错会继续往下执行），这样就不必设置很多的判断条件去判断每个命令是否执行成功，特别那些依赖很强的地方，脚本任何一处执行报错就不应继续执行其他语句的时候就特别有用。 简单的写个脚本测试下： 在不使用set -e 的时候执">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bash shell 脚本在开头 set -u 和 set -e 作用">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/shell-script-tips-1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="bash shell 脚本在开头 set -u 和 set -e 作用   set -e设置该选项后，当脚本中任何以一个命令执行返回的状态码不为0时就退出整个脚本（默认脚本运行中某行报错会继续往下执行），这样就不必设置很多的判断条件去判断每个命令是否执行成功，特别那些依赖很强的地方，脚本任何一处执行报错就不应继续执行其他语句的时候就特别有用。 简单的写个脚本测试下： 在不使用set -e 的时候执">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/11/12/shell-script-tips-1/shell-script.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/12/shell-script-tips-1/shell-script-exec-normal.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/12/shell-script-tips-1/shell-script-exec-with-e.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/12/shell-script-tips-1/shell-script-02.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/12/shell-script-tips-1/shell-script-exec-normal-02.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/12/shell-script-tips-1/shell-script-exec-with-u.jpg">
+<meta property="og:updated_time" content="2019-11-12T12:47:41.872Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="bash shell 脚本在开头 set -u 和 set -e 作用">
+<meta name="twitter:description" content="bash shell 脚本在开头 set -u 和 set -e 作用   set -e设置该选项后，当脚本中任何以一个命令执行返回的状态码不为0时就退出整个脚本（默认脚本运行中某行报错会继续往下执行），这样就不必设置很多的判断条件去判断每个命令是否执行成功，特别那些依赖很强的地方，脚本任何一处执行报错就不应继续执行其他语句的时候就特别有用。 简单的写个脚本测试下： 在不使用set -e 的时候执">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/12/shell-script-tips-1/shell-script.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -109,281 +120,115 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2019/11/12/shell-script-tips-1/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./shell-script.jpg');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            bash shell 脚本在开头 set -u 和 set -e 作用
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            bash shell 脚本在开头 set -u 和 set -e 作用
-
-
-set -e设置该选项后，当脚本中任何以一个命令执行返回的状态码不为0时就退出整个脚本（默认脚本运行中某行报错会继续往下执行），这样就不必设置很多的判断条件去判..
-                        </p>
-                        <p class="date text-shadow">2019-11-12</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>bash shell 脚本在开头 set -u 和 set -e 作用</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2019-11-12</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2019/11/10/git-clone-with-special-symbol/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                git clone 带用户名密码
-            </h3>
+                <div>
+                    
+                </div>
             
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                git clone 带用户名密码
-
-git clone 带用户名密码：git clone htt..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-10</p>
         </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2019/11/10/flutter-dart-syntax-tour/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-dart-syntax-tour.md.svg')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Dart 语言基础语法
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Dart 语言基础语法
+        <div class="content" style="overflow: auto">
+            <div style="color:red;font-size:20px;text-align:center">bash shell 脚本在开头 set -u 和 set -e 作用</div>
 
-首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。
-..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-10</p>
+
+<h4 id="set-e"><a href="#set-e" class="headerlink" title="set -e"></a>set -e</h4><p>设置该选项后，当脚本中任何以一个命令执行返回的状态码不为0时就退出整个脚本（默认脚本运行中某行报错会继续往下执行），这样就不必设置很多的判断条件去判断每个命令是否执行成功，特别那些依赖很强的地方，脚本任何一处执行报错就不应继续执行其他语句的时候就特别有用。</p>
+<p>简单的写个脚本测试下：<br><img src="./shell-script.jpg" alt=""></p>
+<p>在不使用set -e 的时候执行如下脚本后，查看执行结果，可以看到报错后继续运行，输出了 End 。<br><img src="./shell-script-exec-normal.jpg" alt=""></p>
+<p>使用set -e 后执行脚本后，执行结果如下：<br><img src="./shell-script-exec-with-e.jpg" alt=""></p>
+<h4 id="set-u"><a href="#set-u" class="headerlink" title="set -u"></a>set -u</h4><p>设置该选项后，当脚本在执行过程中尝试使用未定义过的变量时，报错并退出运行整个脚本（默认会把该变量的值当作空来处理），这个感觉也非常有用，有些时候可能在脚本中变量很多很长，疏忽了把某个变量的名字写错了，这时候运行脚本不会报任何错误，但结果却不是你想要的，排查起来很是头疼，使用这个选项就完美的解决了这个问题。</p>
+<p>简单的写个脚本测试下：<br><img src="./shell-script-02.jpg" alt=""></p>
+<p>在不使用set -u 的时候，执行不会有任何问题，会把$GOOD变量当作空值来处理：<br><img src="./shell-script-exec-normal-02.jpg" alt=""></p>
+<p>使用set -u 后执行脚本后，执行结果如下：<br><img src="./shell-script-exec-with-u.jpg" alt=""></p>
+
         </div>
-    </div>
-</a>
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
             
         </div>
     </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2019/11/10/git-clone-with-special-symbol/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                git clone 带用户名密码
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                git clone 带用户名密码
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
-git clone 带用户名密码：git clone htt..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-10</p>
-        </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2019/11/10/flutter-dart-syntax-tour/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-dart-syntax-tour.md.svg')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Dart 语言基础语法
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Dart 语言基础语法
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
 
-首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。
-..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-10</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/10/git-clone-with-special-symbol/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>git clone 带用户名密码</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            git clone 带用户名密码
-
-git clone 带用户名密码：git clone https://github.com/iissnan/hexo-theme-next themes/next
-用户名密码中含有特殊符号时需要转码，如“@”转码后变成了“%40”：git clone http://abc%40qq.com:test@git@xxx.c..
-                                        </p>
-                                        <p>2019-11-10</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/10/flutter-dart-syntax-tour/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-dart-syntax-tour.md.svg')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Dart 语言基础语法</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Dart 语言基础语法
-
-首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。
-接下来我将详细介绍 Dart 语言语法。
-变量与常量变量显式指定类型（内置数据类型）来定义变量String name = &quot;张三&quot;;num age = 18;
-使用关键字 var 来定义变量var name = &quot;张三&quot;..
-                                        </p>
-                                        <p>2019-11-10</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/09/ssh-key-copy-from-other-tips/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./0F134DB8-2AAB-4D41-8563-11AC0F049EFD.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>ssh-permissions-are-too-open-error</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            ssh-permissions-are-too-open-error
-
-将ssh-key从一台电脑拷贝到另一台电脑
-如果直接执行如下命令：
-ssh -T git@github.com
-则会报如下错误：
-Permissions 0644 for &apos;/Users/luohs/.ssh/163.github&apos; are too open.
-I..
-                                        </p>
-                                        <p>2019-11-09</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
-            
-        </div>
-    </div>
-</div>
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>
