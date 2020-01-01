@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/git-https-error.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/git-config.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/git-config-http.png">
-<meta property="og:updated_time" content="2020-01-01T06:23:16.231Z">
+<meta property="og:updated_time" content="2020-01-01T06:28:29.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh配置多个账号">
 <meta name="twitter:description" content="ssh配置多个账号  1 背景随着Git的火热，相信每个Coder都会有好几个Git服务器用来管理不同的资料、博客、代码等。如果在一台电脑上通过ssh key在一个Git服务器上提交代码很容易管理，但是如果有上面提到的情况需要在同一台电脑上分别向不同的Git服务器提交代码时我们就需要配置多个ssh key。 2 操作2.1 清空默认全局的username和email查看已配置的git列表 git">
@@ -244,7 +244,7 @@ git config --global --unset user.email
 </code></pre><p>如果配置了config文件</p>
 <pre><code>ssh -T git@{config里面的user}.xxx主机名
 </code></pre><p><img src="./0DF52DCD-4E4D-4643-AD18-5FDFDD1C2E11.png" alt="" title="生成ssh-key"></p>
-<h4 id="补充-（2020-01-01）"><a href="#补充-（2020-01-01）" class="headerlink" title="补充 ================（2020-01-01）============"></a>补充 ================（2020-01-01）============</h4><p>使用过程中需要注意的是通过 ssh 配置的多账号只适用于 git，而不是适用于 http。<br>当仓库远程地址为 http 则会报错，如下图所示：<br><img src="./git-https-error.png" alt=""></p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>=====================（2020-01-01）======================<br>使用过程中需要注意的是通过 ssh 配置的多账号只适用于 git，而不是适用于 http。<br>当仓库远程地址为 http 则会报错，如下图所示：<br><img src="./git-https-error.png" alt=""></p>
 <p>解决办法就是将仓库地址 http 改为 git，如下图所示更改：<br><img src="./git-config.png" alt=""><br><img src="./git-config-http.png" alt=""></p>
 <h2 id="3-参考"><a href="#3-参考" class="headerlink" title="3 参考"></a>3 参考</h2><p><a href="https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener">https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a></p>
 
