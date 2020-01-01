@@ -15,18 +15,33 @@
   </script>
 
   
-  <title>Archives | luohs&#39;s blogs</title>
+  <title>ssh配置多个账号 | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="ssh配置多个账号  1 背景随着Git的火热，相信每个Coder都会有好几个Git服务器用来管理不同的资料、博客、代码等。如果在一台电脑上通过ssh key在一个Git服务器上提交代码很容易管理，但是如果有上面提到的情况需要在同一台电脑上分别向不同的Git服务器提交代码时我们就需要配置多个ssh key。 2 操作2.1 清空默认全局的username和email查看已配置的git列表 git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ssh配置多个账号">
+<meta property="og:url" content="http://yoursite.com/2019/10/23/multi-ssh-key/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="ssh配置多个账号  1 背景随着Git的火热，相信每个Coder都会有好几个Git服务器用来管理不同的资料、博客、代码等。如果在一台电脑上通过ssh key在一个Git服务器上提交代码很容易管理，但是如果有上面提到的情况需要在同一台电脑上分别向不同的Git服务器提交代码时我们就需要配置多个ssh key。 2 操作2.1 清空默认全局的username和email查看已配置的git列表 git">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/80E13A4D-D912-4237-A95D-6161455B6885.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/77AB29E7-0E46-4AC4-82E7-DF052C405804.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/27CF05D6-3139-4DFE-9028-7852D1FCA8C9.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/6CE5B81C-6CF0-47EB-BCBB-0DFA39B37309.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/77AB29E7-0E46-4AC4-82E7-DF052C405804.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/73FED1B8-5F77-481E-A31C-532B8B90E631.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/2B364C18-2C64-4826-8AD1-BD769AEE4660.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/48B4A72B-0F42-48EA-846C-DB120CF27571.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/29BB4551-710F-4B43-BDF1-80A27BB490A4.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/0DF52DCD-4E4D-4643-AD18-5FDFDD1C2E11.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/git-https-error.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/git-config.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/git-config-http.png">
+<meta property="og:updated_time" content="2020-01-01T06:23:16.231Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="ssh配置多个账号">
+<meta name="twitter:description" content="ssh配置多个账号  1 背景随着Git的火热，相信每个Coder都会有好几个Git服务器用来管理不同的资料、博客、代码等。如果在一台电脑上通过ssh key在一个Git服务器上提交代码很容易管理，但是如果有上面提到的情况需要在同一台电脑上分别向不同的Git服务器提交代码时我们就需要配置多个ssh key。 2 操作2.1 清空默认全局的username和email查看已配置的git列表 git">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/23/multi-ssh-key/80E13A4D-D912-4237-A95D-6161455B6885.png">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,412 +127,169 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2019/11/12/shell-script-tips-1/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./shell-script.jpg');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            bash shell 脚本在开头 set -u 和 set -e 作用
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            bash shell 脚本在开头 set -u 和 set -e 作用
-
-
-set -e设置该选项后，当脚本中任何以一个命令执行返回的状态码不为0时就退出整个脚本（默认脚本运行中某行报错会继续往下执行），这样就不必设置很多的判断条件去判..
-                        </p>
-                        <p class="date text-shadow">2019-11-12</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>ssh配置多个账号</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2019-10-23</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2019/11/10/flutter-dart-syntax-mixin/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-dart-syntax-mixin.jpg')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Dart 之 implements, extends, mixin 详解
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Dart 之 implements, extends, mixin 详解
-
-本文大纲：
-Dart..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-10</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2019/11/10/git-clone-with-special-symbol/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                git clone 带用户名密码
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                git clone 带用户名密码
-
-git clone 带用户名密码：git clone htt..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-10</p>
-        </div>
-    </div>
-</a>
+                <div>
+                    
+                </div>
             
         </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2019/11/10/flutter-dart-syntax-mixin/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-dart-syntax-mixin.jpg')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Dart 之 implements, extends, mixin 详解
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Dart 之 implements, extends, mixin 详解
+        <div class="content" style="overflow: auto">
+            <font color="black" face="粗黑体" size="10"><center>ssh配置多个账号</center></font>
 
-本文大纲：
-Dart..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-10</p>
+<h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1 背景"></a>1 背景</h2><p>随着Git的火热，相信每个Coder都会有好几个Git服务器用来管理不同的资料、博客、代码等。如果在一台电脑上通过ssh key在一个Git服务器上提交代码很容易管理，但是如果有上面提到的情况需要在同一台电脑上分别向不同的Git服务器提交代码时我们就需要配置多个ssh key。</p>
+<h2 id="2-操作"><a href="#2-操作" class="headerlink" title="2 操作"></a>2 操作</h2><h3 id="2-1-清空默认全局的username和email"><a href="#2-1-清空默认全局的username和email" class="headerlink" title="2.1 清空默认全局的username和email"></a>2.1 清空默认全局的username和email</h3><p>查看已配置的git列表</p>
+<pre><code>git config --list
+</code></pre><p>清空默认的用户名和邮箱</p>
+<pre><code>git config --global --unset user.name
+git config --global --unset user.email
+</code></pre><h3 id="2-2-给不同的Git账号分别生成ssh-key（例如：公司账号、个人账号）"><a href="#2-2-给不同的Git账号分别生成ssh-key（例如：公司账号、个人账号）" class="headerlink" title="2.2 给不同的Git账号分别生成ssh-key（例如：公司账号、个人账号）"></a>2.2 给不同的Git账号分别生成ssh-key（例如：公司账号、个人账号）</h3><pre><code>ssh-keygen -t rsa -b 4096 -C &quot;Git账号&quot;
+</code></pre><p><img src="./80E13A4D-D912-4237-A95D-6161455B6885.png" alt="" title="生成ssh-key"><br><img src="./77AB29E7-0E46-4AC4-82E7-DF052C405804.png" alt="" title="生成ssh-key"></p>
+<h3 id="2-3-将ssh-key添加到ssh-agent信任列表"><a href="#2-3-将ssh-key添加到ssh-agent信任列表" class="headerlink" title="2.3 将ssh-key添加到ssh-agent信任列表"></a>2.3 将ssh-key添加到ssh-agent信任列表</h3><pre><code>ssh-add ~/.ssh/163.github
+</code></pre><p>通过如下命令检查是否添加成功</p>
+<pre><code>ssh -T git@Git服务器
+</code></pre><p><img src="./27CF05D6-3139-4DFE-9028-7852D1FCA8C9.png" alt="" title="生成ssh-key"><br>如果在添加过程中遇到如下错误:</p>
+<pre><code>Could not open a connection to your authentication agent.
+</code></pre><p>那么请先输入</p>
+<pre><code>ssh-agent bash
+</code></pre><p> 然后重复以下操作:</p>
+<pre><code>ssh-add ~/.ssh/163.github
+</code></pre><p>直到出现如下信息：</p>
+<pre><code>Identitiy added: ~/.ssh/163.github
+</code></pre><p>如下图:<br><img src="./6CE5B81C-6CF0-47EB-BCBB-0DFA39B37309.png" alt="" title="生成ssh-key"></p>
+<h3 id="2-4-将ssh-key公钥配置到Git服务器"><a href="#2-4-将ssh-key公钥配置到Git服务器" class="headerlink" title="2.4 将ssh-key公钥配置到Git服务器"></a>2.4 将ssh-key公钥配置到Git服务器</h3><p>找到ssh-key公钥<br><img src="./77AB29E7-0E46-4AC4-82E7-DF052C405804.png" alt="" title="生成ssh-key"><br>打开并复制<br><img src="./73FED1B8-5F77-481E-A31C-532B8B90E631.png" alt="" title="生成ssh-key"><br>配置到Git服务器（gitlab.tf56.lo）<br><img src="./2B364C18-2C64-4826-8AD1-BD769AEE4660.png" alt="" title="生成ssh-key"></p>
+<h3 id="2-5-在config文件中配置多个ssh-key"><a href="#2-5-在config文件中配置多个ssh-key" class="headerlink" title="2.5 在config文件中配置多个ssh-key"></a>2.5 在config文件中配置多个ssh-key</h3><p>5.1、打开.ssh文件夹，看看有没有config文件，没有就新建一个取名为config<br><img src="./48B4A72B-0F42-48EA-846C-DB120CF27571.png" alt="" title="生成ssh-key"></p>
+<p>配置多个ssh-key</p>
+<!--
+表格剧中写法
+:-: | :-: | :-:
+-->
+<table>
+<thead>
+<tr>
+<th>键值</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host</td>
+<td>主机随意写，有点关联就行了</td>
+</tr>
+<tr>
+<td>Hostname</td>
+<td>主机名，Git服务器地址</td>
+</tr>
+<tr>
+<td>IdentityFile</td>
+<td>身份文件，你的rsa具体路径地址</td>
+</tr>
+<tr>
+<td>User</td>
+<td>用户   可随意写，建议使用Host的前面部分，后面具体clone操作都会用到这个user</td>
+</tr>
+</tbody>
+</table>
+<p>如下图：</p>
+<p><img src="./29BB4551-710F-4B43-BDF1-80A27BB490A4.png" alt="" title="生成ssh-key"></p>
+<h3 id="2-6-测试连接"><a href="#2-6-测试连接" class="headerlink" title="2.6 测试连接"></a>2.6 测试连接</h3><p>如果单个账户情况一般就是</p>
+<pre><code>ssh -T git@xxx
+</code></pre><p>如果配置了config文件</p>
+<pre><code>ssh -T git@{config里面的user}.xxx主机名
+</code></pre><p><img src="./0DF52DCD-4E4D-4643-AD18-5FDFDD1C2E11.png" alt="" title="生成ssh-key"></p>
+<h4 id="补充-（2020-01-01）"><a href="#补充-（2020-01-01）" class="headerlink" title="补充 ================（2020-01-01）============"></a>补充 ================（2020-01-01）============</h4><p>使用过程中需要注意的是通过 ssh 配置的多账号只适用于 git，而不是适用于 http。<br>当仓库远程地址为 http 则会报错，如下图所示：<br><img src="./git-https-error.png" alt=""></p>
+<p>解决办法就是将仓库地址 http 改为 git，如下图所示更改：<br><img src="./git-config.png" alt=""><br><img src="./git-config-http.png" alt=""></p>
+<h2 id="3-参考"><a href="#3-参考" class="headerlink" title="3 参考"></a>3 参考</h2><p><a href="https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener">https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a></p>
+
         </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2019/11/10/git-clone-with-special-symbol/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                git clone 带用户名密码
-            </h3>
+        <div class="post-reply">
             
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                git clone 带用户名密码
-
-git clone 带用户名密码：git clone htt..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-10</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/10/flutter-dart-syntax-mixin/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-dart-syntax-mixin.jpg')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Dart 之 implements, extends, mixin 详解</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Dart 之 implements, extends, mixin 详解
-
-本文大纲：
-Dart 与 JavaJava:组成单元：普通类、abstract抽象类，interface接口。关系连接：implements实现，extends继承。
-Dart:组成单元：普通类，abstract抽象类、mixin。关系连接：implements实现、extend..
-                                        </p>
-                                        <p>2019-11-10</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/10/git-clone-with-special-symbol/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>git clone 带用户名密码</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            git clone 带用户名密码
-
-git clone 带用户名密码：git clone https://github.com/iissnan/hexo-theme-next themes/next
-用户名密码中含有特殊符号时需要转码，如“@”转码后变成了“%40”：git clone http://abc%40qq.com:test@git@xxx.c..
-                                        </p>
-                                        <p>2019-11-10</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/10/flutter-dart-syntax-tour/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-dart-syntax-tour.md.svg')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Dart 语言基础语法</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Dart 语言基础语法
-
-首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。
-接下来我将详细介绍 Dart 语言语法。
-变量与常量变量显式指定类型（内置数据类型）来定义变量String name = &quot;张三&quot;;num age = 18;
-使用关键字 var 来定义变量var name = &quot;张三&quot;..
-                                        </p>
-                                        <p>2019-11-10</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/09/ssh-key-copy-from-other-tips/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./0F134DB8-2AAB-4D41-8563-11AC0F049EFD.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>ssh-permissions-are-too-open-error</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            ssh-permissions-are-too-open-error
-
-将ssh-key从一台电脑拷贝到另一台电脑
-如果直接执行如下命令：
-ssh -T git@github.com
-则会报如下错误：
-Permissions 0644 for &apos;/Users/luohs/.ssh/163.github&apos; are too open.
-I..
-                                        </p>
-                                        <p>2019-11-09</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/25/code-migration-svn-2-gitlab/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./7EE9C120-77D2-4292-871F-58E2E1D82D01.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>代码仓库迁移</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            代码仓库迁移—–svn迁移到gitlab—–
-
-1、背景随着Git服务的优越性，越来越多的公司将代码仓库迁移至Git服务器。这篇文章将介绍如何将代码从svn服务器迁移至Git服务器并且保留原svn仓库的commit的历史记录。
-2、操作2.1 获取svn仓库提交者信息将项目代码check out到本地
-svn co --username &quot;账号..
-                                        </p>
-                                        <p>2019-10-25</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/25/code-repo-2-gitlab/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./4C90E4D9-BF63-4776-9724-744FB8B9D8D3.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>gitlab创建私有库</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            gitlab创建私有库
-
-流程简单介绍
-
-创建一个项目，留着后面的流程 3 制作私有库。
-
-
-
-在可以创建私有库的地方创建一个code repository(代码仓库)。
-
-
-
-在可以创建私有库的地方创建一个spec repository(配置仓库)。所有的配置按照包名、版本号分门别类的存放在这个仓库。(这个仓库只用来存放podspec文件不存放代码) ..
-                                        </p>
-                                        <p>2019-10-25</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/23/multi-ssh-key/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./80E13A4D-D912-4237-A95D-6161455B6885.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>ssh配置多个账号</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            ssh配置多个账号
-
-1 背景随着Git的火热，相信每个Coder都会有好几个Git服务器用来管理不同的资料、博客、代码等。如果在一台电脑上通过ssh key在一个Git服务器上提交代码很容易管理，但是如果有上面提到的情况需要在同一台电脑上分别向不同的Git服务器提交代码时我们就需要配置多个ssh key。
-2 操作2.1 清空默认全局的username..
-                                        </p>
-                                        <p>2019-10-23</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
             
         </div>
     </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>
