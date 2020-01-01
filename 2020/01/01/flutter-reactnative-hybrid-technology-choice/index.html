@@ -15,18 +15,31 @@
   </script>
 
   
-  <title>luohs&#39;s blogs</title>
+  <title>移动跨平台技术选型 | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="移动跨平台技术选型  移动跨平台历史 移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过调用skia等方式完成自渲染，而不依赖于原生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动跨平台技术选型">
+<meta property="og:url" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="移动跨平台技术选型  移动跨平台历史 移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过调用skia等方式完成自渲染，而不依赖于原生">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/mobile-cross-platform-history.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/mobile-cross-platform-type.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/hybrid-1.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/hybrid-2.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/react-native-2.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/react-native-1.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/flutter-1.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/react-native-3.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/flutter-2.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/react-native-4.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/flutter-3.png">
+<meta property="og:updated_time" content="2020-01-01T07:19:11.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="移动跨平台技术选型">
+<meta name="twitter:description" content="移动跨平台技术选型  移动跨平台历史 移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过调用skia等方式完成自渲染，而不依赖于原生">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/01/flutter-reactnative-hybrid-technology-choice/mobile-cross-platform-history.png">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,606 +125,211 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
-    }
-
-    .primary-container .post-hover {
-        background: black;
-    }
-
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
-    }
-
-</style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/01/01/flutter-reactnative-hybrid-technology-choice/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./mobile-cross-platform-history.png');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            移动跨平台技术选型
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            移动跨平台技术选型
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过..
-                        </p>
-                        <p class="date text-shadow">2020-01-01</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
-            </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
-            
-                
-<a class="post-hover" href="/2020/01/01/flutter-revolutions/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./mobile-cross-platform-history.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 的革命性
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebV..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2019/11/12/shell-script-tips-1/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./shell-script.jpg')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                bash shell 脚本在开头 set -u 和 set -e 作用
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                bash shell 脚本在开头 set -u 和 set -e 作用
-
-
-set -e设置该选..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-12</p>
-        </div>
-    </div>
-</a>
-            
-        </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-revolutions/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./mobile-cross-platform-history.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 的革命性
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebV..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2019/11/12/shell-script-tips-1/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./shell-script.jpg')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                bash shell 脚本在开头 set -u 和 set -e 作用
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                bash shell 脚本在开头 set -u 和 set -e 作用
-
-
-set -e设置该选..
-            </p>
-            <p class="date text-shadow is-marginless">2019-11-12</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-revolutions/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 的革命性</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/12/shell-script-tips-1/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./shell-script.jpg')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>bash shell 脚本在开头 set -u 和 set -e 作用</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            bash shell 脚本在开头 set -u 和 set -e 作用
-
-
-set -e设置该选项后，当脚本中任何以一个命令执行返回的状态码不为0时就退出整个脚本（默认脚本运行中某行报错会继续往下执行），这样就不必设置很多的判断条件去判断每个命令是否执行成功，特别那些依赖很强的地方，脚本任何一处执行报错就不应继续执行其他语句的时候就特别有用。
-简单的写个..
-                                        </p>
-                                        <p>2019-11-12</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/10/flutter-dart-syntax-mixin/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-dart-syntax-mixin.jpg')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Dart 之 implements, extends, mixin 详解</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Dart 之 implements, extends, mixin 详解
-
-本文大纲：
-Dart 与 JavaJava:组成单元：普通类、abstract抽象类，interface接口。关系连接：implements实现，extends继承。
-Dart:组成单元：普通类，abstract抽象类、mixin。关系连接：implements实现、extend..
-                                        </p>
-                                        <p>2019-11-10</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/10/git-clone-with-special-symbol/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>git clone 带用户名密码</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            git clone 带用户名密码
-
-git clone 带用户名密码：git clone https://github.com/iissnan/hexo-theme-next themes/next
-用户名密码中含有特殊符号时需要转码，如“@”转码后变成了“%40”：git clone http://abc%40qq.com:test@git@xxx.c..
-                                        </p>
-                                        <p>2019-11-10</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/10/flutter-dart-syntax-tour/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-dart-syntax-tour.md.svg')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Dart 语言基础语法</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Dart 语言基础语法
-
-首先我们看下 Dart 语言基础语法思维导图，让我们有个大概的脉络。
-接下来我将详细介绍 Dart 语言语法。
-变量与常量变量显式指定类型（内置数据类型）来定义变量String name = &quot;张三&quot;;num age = 18;
-使用关键字 var 来定义变量var name = &quot;张三&quot;..
-                                        </p>
-                                        <p>2019-11-10</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/11/09/ssh-key-copy-from-other-tips/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./0F134DB8-2AAB-4D41-8563-11AC0F049EFD.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>ssh-permissions-are-too-open-error</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            ssh-permissions-are-too-open-error
-
-将ssh-key从一台电脑拷贝到另一台电脑
-如果直接执行如下命令：
-ssh -T git@github.com
-则会报如下错误：
-Permissions 0644 for &apos;/Users/luohs/.ssh/163.github&apos; are too open.
-I..
-                                        </p>
-                                        <p>2019-11-09</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/25/code-migration-svn-2-gitlab/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./7EE9C120-77D2-4292-871F-58E2E1D82D01.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>代码仓库迁移</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            代码仓库迁移—–svn迁移到gitlab—–
-
-1、背景随着Git服务的优越性，越来越多的公司将代码仓库迁移至Git服务器。这篇文章将介绍如何将代码从svn服务器迁移至Git服务器并且保留原svn仓库的commit的历史记录。
-2、操作2.1 获取svn仓库提交者信息将项目代码check out到本地
-svn co --username &quot;账号..
-                                        </p>
-                                        <p>2019-10-25</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/25/code-repo-2-gitlab/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./4C90E4D9-BF63-4776-9724-744FB8B9D8D3.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>gitlab创建私有库</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            gitlab创建私有库
-
-流程简单介绍
-
-创建一个项目，留着后面的流程 3 制作私有库。
-
-
-
-在可以创建私有库的地方创建一个code repository(代码仓库)。
-
-
-
-在可以创建私有库的地方创建一个spec repository(配置仓库)。所有的配置按照包名、版本号分门别类的存放在这个仓库。(这个仓库只用来存放podspec文件不存放代码) ..
-                                        </p>
-                                        <p>2019-10-25</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/10/23/multi-ssh-key/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./80E13A4D-D912-4237-A95D-6161455B6885.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>ssh配置多个账号</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            ssh配置多个账号
-
-1 背景随着Git的火热，相信每个Coder都会有好几个Git服务器用来管理不同的资料、博客、代码等。如果在一台电脑上通过ssh key在一个Git服务器上提交代码很容易管理，但是如果有上面提到的情况需要在同一台电脑上分别向不同的Git服务器提交代码时我们就需要配置多个ssh key。
-2 操作2.1 清空默认全局的username..
-                                        </p>
-                                        <p>2019-10-23</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                        
-                        
-                    
-                </nav>
-            </section>
-            
-                <style>
-    /*user info start*/
-    .user-info {
-        padding: 15px 0 0;
-    }
-
-    .user-info .avatar {
-        width: 155px;
-        height: 155px;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
         border-radius: 50%;
     }
 
-    .sns-container {
-        flex-wrap: wrap;
-    }
-
-    .sns-container a{
-        color: black;
-    }
-    /*user info end*/
-
-    /*Tag start*/
-    #tag_cloud .tags-item{
-        display: inline-block;
-        color: #000;
-        border: 1px solid gray;
-
-        margin: 4px 2px;
-        padding: 0 4px;
-        border-radius: 6px;
-    }
-    /*Tag end*/
-
-    /*Site box start*/
-    .site-box {
-        height: 60px;
-    }
-    /*Site box end*/
-
-    .category-list-item,
-    .archive-list-item {
-        display: flex;
-        margin-bottom: 4px;
-        justify-content: space-between;
-    }
-    .category-list-link,
-    .archive-list-link {
-        color: black;
-    }
-
-    .category-list-count,
-    .archive-list-count {
-        width: 32px;
+    .flow-chart {
         text-align: center;
-        border-radius: 4px;
-        color: #fff;
-        background-color: gray;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
     }
 </style>
-<aside class="column is-hidden-touch is-3" style="max-width: 280px; min-width: 230px">
-    <div class="content-box user-info">
-        <div class="has-padding">
-            <header class="has-text-centered">
-                <img class="avatar" src="/images/avatar.JPG">
-            </header>
-            <section class="has-text-centered">
-                <h3><strong>luohs</strong></h3>
-                <p class="sub-title">在上生活⋯⋯</p>
-                
-            </section>
-        </div>
-        <div class="top-line">
-            <ul class="sns-container justify-center is-flex has-padding">
-                
-
-                
-
-                
-
-                
-
-                
-
-                
-
-                
-            </ul>
-        </div>
-    </div>
-    <div class="content-box">
-        <!--post数量和tag category 数量-->
-        <div class="site-box is-flex">
-            <div class="flex-1 is-flex flex-column center full-height right-line">
-                <strong>10</strong>
-                <p>Posts</p>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>移动跨平台技术选型</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2020-01-01</span>
             </div>
-            <div class="flex-1 is-flex flex-column center full-height">
-                <strong></strong>
-                <p>Tags</p>
-            </div>
+            
+                <div>
+                    
+                </div>
+            
         </div>
-    </div>
-    <div id="tag_cloud" class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Tags</strong>
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="10"><center>移动跨平台技术选型</center></font>
+
+<h3 id="移动跨平台历史"><a href="#移动跨平台历史" class="headerlink" title="移动跨平台历史"></a>移动跨平台历史</h3><p><img src="./mobile-cross-platform-history.png" alt="" title="移动跨平台历史"></p>
+<h3 id="移动跨平台技术类型"><a href="#移动跨平台技术类型" class="headerlink" title="移动跨平台技术类型"></a>移动跨平台技术类型</h3><p><img src="./mobile-cross-platform-type.png" alt="" title="移动跨平台技术类型"><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。</span><br><span class="line">2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。</span><br><span class="line">3、自渲染技术：自行实现一套渲染框架，可通过调用skia等方式完成自渲染，而不依赖于原生控件，代表有Flutter。</span><br></pre></td></tr></table></figure></p>
+<h3 id="移动跨平台目标"><a href="#移动跨平台目标" class="headerlink" title="移动跨平台目标"></a>移动跨平台目标</h3><p>我们跨平台开发的目标：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、产品快速落地。</span><br><span class="line">2、提升开发效率、缩短开发周期。</span><br><span class="line">3、增加代码复用，减少平台特异性差别。</span><br><span class="line">4、获得与原生相似的体验。</span><br></pre></td></tr></table></figure>
+<h3 id="原理与特性"><a href="#原理与特性" class="headerlink" title="原理与特性"></a>原理与特性</h3><h4 id="一、Hybird"><a href="#一、Hybird" class="headerlink" title="一、Hybird"></a>一、Hybird</h4><p>Hybrid 方案的本质还是基于原生的 App 中使用 WebView 作为容器直接承载 Web 页面。最核心的就是 Native 端 与 H5端之间的双向通信层，即完成 Native 与 JavaScript 的通讯。这个方案就是我们所说的 JSBridge，而实现的关键便是作为容器的 WebView，一切的原理都是基于 WebView 的机制。</p>
+<p>技术架构如图所示：<br><img src="./hybrid-1.jpg" alt="" title="hybird-1"><br><img src="./hybrid-2.jpg" alt="" title="hybird-2"></p>
+<h4 id="二、ReactNative"><a href="#二、ReactNative" class="headerlink" title="二、ReactNative"></a>二、ReactNative</h4><p>ReactNative 方案本质上是通过中间层转化，使用原生控件来渲染页面。最核心的是提供了一套基于C++的动态链接库作为中间桥接层，实现 JS 与 Native 双向通信。</p>
+<p>技术架构如图所示：<br><img src="./react-native-2.png" alt="" title="react-native-2"><br><img src="./react-native-1.png" alt="" title="react-native-1"></p>
+<h4 id="三、Flutter"><a href="#三、Flutter" class="headerlink" title="三、Flutter"></a>三、Flutter</h4><p>Flutter 方案采用的自引擎渲染技术，不依赖与原生控件。Flutter 主要分为 Framework  和 Engine，我们基于Framework 开发 App，运行在 Engine 上。Engine 是 Flutter 的独立虚拟机，由它适配和提供跨平台支持，得益于 Engine 层，Flutter 甚至不使用移动平台的原生控件，而是使用自己 Engine 来渲染，而 Dart 可以通过 AOT 编译为平台的原生代码，所以 Flutter 可以 直接与平台通信，不需要JS 引擎的桥接。</p>
+<p>技术架构如图所示：<br><img src="./flutter-1.jpg" alt="" title="flutter-1"></p>
+<h3 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>Flutter</th>
+<th>ReactNative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语言</td>
+<td>Dart</td>
+<td>JavaScript</td>
+</tr>
+<tr>
+<td>环境</td>
+<td>Flutter Engine</td>
+<td>JSCore</td>
+</tr>
+<tr>
+<td>性能</td>
+<td>高</td>
+<td>一般</td>
+</tr>
+<tr>
+<td>发布时间</td>
+<td>2018</td>
+<td>2015</td>
+</tr>
+<tr>
+<td>star</td>
+<td>81k+</td>
+<td>83k+</td>
+</tr>
+<tr>
+<td>社区</td>
+<td>Google维护、活跃</td>
+<td>FaceBook维护、活跃</td>
+</tr>
+<tr>
+<td>最新版本</td>
+<td>1.12.15</td>
+<td>0.61.5</td>
+</tr>
+<tr>
+<td>框架体积</td>
+<td>Android 5.2M / IOS 10.1M</td>
+<td>Android 20M / IOS 1.6M</td>
+</tr>
+<tr>
+<td>框架程度</td>
+<td>重</td>
+<td>重</td>
+</tr>
+<tr>
+<td>学习成本</td>
+<td>前端同学Dart部分难、平台部分难，客户端同学Dart部分易、平台部分易</td>
+<td>前端同学JSX部分易、平台部分难，客户端同学JSX部分难、平台部分易</td>
+</tr>
+<tr>
+<td>跨平台</td>
+<td>Android、iOS、Web、PC、iot</td>
+<td>Android、iOS</td>
+</tr>
+<tr>
+<td>使用代表</td>
+<td>闲鱼、美团B端、QQ、迅雷、饿了么</td>
+<td>京东、携程、腾讯课堂、阿里巴巴</td>
+</tr>
+</tbody>
+</table>
+<h4 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h4><h5 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h5><p>无论是 React Native 还是 Flutter ，都需要 Android 和 IOS 的开发环境，都需要 JDK 、Android SDK、Xcode 等环境配置。</p>
+<h5 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h5><p>React Native 需要 npm 、node 、react-native-cli 等配置 。<br>Flutter 需要 flutter sdk 和 Android Studio / VSCode 上的 Dart 与 Flutter 插件。</p>
+<h5 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h5><p>Flutter 的环境搭配相对简单，而 React Native 的环境配置相对复杂。</p>
+<h4 id="二、编程语言"><a href="#二、编程语言" class="headerlink" title="二、编程语言"></a>二、编程语言</h4><h5 id="相同点：-1"><a href="#相同点：-1" class="headerlink" title="相同点："></a>相同点：</h5><p>Dart 语言诞生于 2011 年，2018 年发布了 2.0，原本就是为了 Web 领域，Dart 和 JS 在一定程度上有很大的通识性。</p>
+<h5 id="不同点：-1"><a href="#不同点：-1" class="headerlink" title="不同点："></a>不同点：</h5><p>作为动态语言的代表 JS 开发便捷度明显会高于 Dart ，而非动态语言的 Dart 在类型安全和重构代码等方面又会比 JS 更稳健。</p>
+<h5 id="学习成本："><a href="#学习成本：" class="headerlink" title="学习成本："></a>学习成本：</h5><p>由于 Dart 和 JS 在一定程度上有大的通识性，所以相对于前端开发的同学来说比较容易上手。<br>由于 Dart 具有强类型概念，所以相对客户端开发的同学来说也比较容易上手，因为客户端开发的同学一直都在跟强类型语言打交道。</p>
+<h5 id="结论：-1"><a href="#结论：-1" class="headerlink" title="结论："></a>结论：</h5><p>Flutter 的开发语言 Dart 学习难度相对前端开发的同学和客户端开发的同学都比较容易上手。</p>
+<h4 id="二、界面开发"><a href="#二、界面开发" class="headerlink" title="二、界面开发"></a>二、界面开发</h4><p>React Native 在界面开发上支持 scss/sass 、样式代码分离，函数式编程等让整个代码结构更为简洁。<br><img src="./react-native-3.png" alt="" title="react-native-3"></p>
+<p>Flutter 是一套平台无关的 UI 框架，在界面开发中一般是通过继承无状态 StatelessWidget 控件或者有状态 StatefulWidget 控件来实现页面，然后在对应的 Widget build(BuildContext context) 方法内实现布局，利用不同 Widget 的 child / children 去做嵌套，对布局里的每个控件设置样式等也使得这个代码看上去也比较整洁。<br><img src="./flutter-2.png" alt="" title="flutter-2"></p>
+<h5 id="结论：-2"><a href="#结论：-2" class="headerlink" title="结论："></a>结论：</h5><p>React Native 和 Flutter 都有着非常好的界面开发风格和简洁代码结构。</p>
+<h4 id="三、原生控件"><a href="#三、原生控件" class="headerlink" title="三、原生控件"></a>三、原生控件</h4><p>React Native 原本就是利用原生控件进行渲染，所以 React Native 整个渲染过程都在原生层中完成，所以接入原有平台控件非常方便。</p>
+<p>Flutter 的整体渲染脱离了原生层面，直接和 GPU 交互，导致了原生的控件无法直接插入其中，但是 Flutter 提供 plugin 方式调用原生平台控件。</p>
+<h5 id="结论：-3"><a href="#结论：-3" class="headerlink" title="结论："></a>结论：</h5><p>相比较 React Native 原生控件渲染，Flutter 明显趋于弱势，但是 Flutter 的 plugin 模式稍微弥补了这方便的不足。</p>
+<p>换个角度看 React Native 正式因为基于原生控件渲染，所以具有平台相关性，无法做到真正的风格统一。而 Flutter 则是平台无关，则能够做到风格统一。</p>
+<h4 id="四、性能"><a href="#四、性能" class="headerlink" title="四、性能"></a>四、性能</h4><h5 id="框架设计："><a href="#框架设计：" class="headerlink" title="框架设计："></a>框架设计：</h5><p>从下面 React Native 和 Flutter 框架设计可以看到 Flutter 在少了 Bridge 和 OEM Widget ，直接与 CPU / GPU 交互的特性，决定了它先天性能的优势。</p>
+<p>React Native 框架设计如下：<br><img src="./react-native-4.png" alt="" title="react-native-4"></p>
+<p>Flutter 框架设计如下：<br><img src="./flutter-3.png" alt="" title="flutter-3"></p>
+<h5 id="多线程支持："><a href="#多线程支持：" class="headerlink" title="多线程支持："></a>多线程支持：</h5><p>React Native 由于 JS 的单线程特性注定了 React Native 本身只具备单线程操作能力，React Native 是通过桥接方式利用 Native 端的多线程能力来处理多线程任务。</p>
+<p>isolate 是 Dart 平台对线程的实现方案，所以 Flutter 框架本身就支持多线程，而无需依赖 Native 端提供多线程能力。</p>
+<h5 id="结论：-4"><a href="#结论：-4" class="headerlink" title="结论："></a>结论：</h5><p>React Native 虽然在自身支持多线程方面存在劣势，但是通过框架桥接很好的利用了 Native 端的多线程能力，同样很好的支持开发者调用多线程处理事务。<br>Flutter 由于本身框架就支持多线程，在线程性能、渲染性能、事务处理方面存在优势。</p>
+<h3 id="最终结论"><a href="#最终结论" class="headerlink" title="最终结论"></a>最终结论</h3><p>通过比较分析 React Native 和 Flutter 量大最受欢迎的移动端跨平台方案，Flutter 都略胜于 React Native，但是两者都非常受欢迎，大厂商基本上对这两者技术的技术栈都运用了。</p>
+<p>首先，由于移动端跨平台技术栈既有夸平台技术栈，也有平台特异性技术栈，所有目前要想推进移动端跨平台技术栈在我们公司发展优先落在客户端开发的小伙伴肩上。</p>
+<p>此次，在前面分析也提到，在语言学习成本方面，Dart 语言虽然比较陌生，但是由于 Dart 语言兼有动态性和非动态性语言的特性，所以无论对于前端小伙伴还是客户端小伙伴来说在学习成本上都是最优的。</p>
+<p>最后，从未来发展来看，Flutter UI 平台的无关能力，让 Flutter 在跨平台的拓展上更为迅速，Flutter 不仅对 Android、iOS、Web 支持，甚至拓展到 PC 和嵌入式设备当中。</p>
+
         </div>
-        <div class="content-inner is-flex flex-wrap justify-space-between">
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
             
         </div>
     </div>
-    <div class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Categories</strong>
-        </div>
-        <div class="content-inner">
-            
-        </div>
-    </div>
-    <div class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Archives</strong>
-        </div>
-        <div class="content-inner">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">3</span></li></ul>
-        </div>
-    </div>
-</aside>
-            
-        </div>
-    </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>
