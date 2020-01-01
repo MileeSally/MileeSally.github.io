@@ -15,18 +15,30 @@
   </script>
 
   
-  <title>Archives: 2020/1 | luohs&#39;s blogs</title>
+  <title>Flutter 问题集景 | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/archives/2020/01/index.html">
+  <meta name="description" content="Flutter 问题集景  1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 image 库需要升级到最低 2.1.9 版本。在项目目录下的 pubspec.yaml  中 增加 ‘image: ^2.1.10’ 又报如下错误：这是因为项目引用了 f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 问题集景">
+<meta property="og:url" content="http://yoursite.com/2020/01/01/flutter-problem-collections/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="Flutter 问题集景  1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 image 库需要升级到最低 2.1.9 版本。在项目目录下的 pubspec.yaml  中 增加 ‘image: ^2.1.10’ 又报如下错误：这是因为项目引用了 f">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/package-get-dependencies-problem-01.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/package-get-dependencies-problem-02.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/package-get-dependencies-problem-04.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/package-get-dependencies-problem-03.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/package-get-dependencies-problem-05.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/flutter-image-picker-error-01.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/flutter-image-picker-error-02.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/flutter-image-picker-error-03.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/Waiting-for-another-flutter-command-to-release-the-startup-lock-01.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/Waiting-for-another-flutter-command-to-release-the-startup-lock-02.png">
+<meta property="og:updated_time" content="2020-01-01T07:27:17.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="Flutter 问题集景">
+<meta name="twitter:description" content="Flutter 问题集景  1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 image 库需要升级到最低 2.1.9 版本。在项目目录下的 pubspec.yaml  中 增加 ‘image: ^2.1.10’ 又报如下错误：这是因为项目引用了 f">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/01/flutter-problem-collections/package-get-dependencies-problem-01.png">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,409 +124,113 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/01/01/xcode-problem-collections/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./xcode-error-unable-to-spawn-process.png');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            Xcode Error 集景
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            Xcode Error 集景
-
-花生-sniper
-
-1、unable to spawn process (Argument list too long)
-解决：跟项目存放的位置太深有关，把项目放到根路径就好了。
-
-                        </p>
-                        <p class="date text-shadow">2020-01-01</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>Flutter 问题集景</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2020-01-01</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2020/01/01/flutter-problem-collections/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./package-get-dependencies-problem-01.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 问题集景
-            </h3>
+                <div>
+                    
+                </div>
             
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
         </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="6"><center>Flutter 问题集景</center></font>
 
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
+<h5 id="1、解决升级-Flutter-第三方库版本的问题-2019-12-10"><a href="#1、解决升级-Flutter-第三方库版本的问题-2019-12-10" class="headerlink" title="1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)"></a>1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)</h5><p>在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 image 库需要升级到最低 2.1.9 版本。<br><img src="./package-get-dependencies-problem-01.png" alt=""><br>在项目目录下的 pubspec.yaml  中 增加 ‘image: ^2.1.10’ 又报如下错误：<br><img src="./package-get-dependencies-problem-02.png" alt=""><br>这是因为项目引用了 flutter_test，而flutter_test 中引用了 image 2.1.4 版本，所以需要修改 flutter_test 项目，但是 flutter_test 在哪里？<br>看到提示 “flutter_test from sdk” ,应该猜到跟flutter sdk 目录相关。<br>如果忘记 Flutter SDK 安装路径，敲命令’flutter doctor’<br><img src="./package-get-dependencies-problem-04.png" alt=""></p>
+<p>在 Flutter SDK 中找到 flutter_test 项目，修改它的 pubspec.yaml 文件。<br><img src="./package-get-dependencies-problem-03.png" alt=""><br><img src="./package-get-dependencies-problem-05.png" alt=""></p>
+<h5 id="2、image-picker-v0-6-2-版本报错问题解决-2019-12-25"><a href="#2、image-picker-v0-6-2-版本报错问题解决-2019-12-25" class="headerlink" title="2、image_picker v0.6.2 版本报错问题解决 (2019-12-25)"></a>2、image_picker v0.6.2 版本报错问题解决 (2019-12-25)</h5><p><img src="./flutter-image-picker-error-01.png" alt=""><br>原本按照 Flutter 官方文档集成后，在demo中使用 image_picker 插件可以正常调起原生的照片应用，今天移植到正经项目中却报如上图错误。百思不解为什么 demo 中是好的，移植到项目中却出现问题。<br>赶紧去 image_picker 官方找有没有相同或则相似的 issue，果然找到了相似的问题 <a href="https://github.com/flutter/flutter/issues/22476" target="_blank" rel="noopener">#22476</a>并且已经 close 了，心中大喜！<br>虽然该 issue 已经在 0.4.1 版本解决了，但是还是顺着大佬给出的解决方案去解决，结果可想而知，我的问题依然存在。<br>随着进一步查看 image_picker 源码，出现问题的原因如下图所示：<br><img src="./flutter-image-picker-error-02.png" alt=""><br>随着问题原因的找到，顺藤摸瓜查找问题的根本原因，其实根本原因注册plugin的顺序导致。<br><img src="./flutter-image-picker-error-03.png" alt=""><br>因为在 demo 中，engine 和 plugin 都是放在 finishLaunching 最后，这样的情况下，APP 所有的参数和 widow、rootController 都已经初始化完成，image_picker 源码中使用到的 rootController 实例也就存在了。<br>至于为什么项目中集成时将 engine 和 plugin 移到了 finishLaunching 开始部分，原因是因为初始化 rootController 的时候调用了 FlutterController，而 FlutterController 初始化用到了 engine ，这样没多想就参照官方文档，一起将其移到了 finishLaunching 开始部分。</p>
+<font color="red" face="黑体" size="3">综合以上问题原因，所以我们在实际开发集成 Flutter 时，对于 engine 和 plugin 的注册时机需要综合考虑自己 APP 执行逻辑。</font>
+
+<h5 id="3、”Waiting-for-another-flutter-command-to-release-the-startup-lock-…”-问题解决-2019-12-29"><a href="#3、”Waiting-for-another-flutter-command-to-release-the-startup-lock-…”-问题解决-2019-12-29" class="headerlink" title="3、”Waiting for another flutter command to release the startup lock …” 问题解决 (2019-12-29)"></a>3、”Waiting for another flutter command to release the startup lock …” 问题解决 (2019-12-29)</h5><p>执行 Flutter 某些操作时偶尔会出现如下错误：<br><img src="./Waiting-for-another-flutter-command-to-release-the-startup-lock-01.png" alt=""><br><img src="./Waiting-for-another-flutter-command-to-release-the-startup-lock-02.png" alt=""><br>通常网上给出的方案如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、删除 flutter SDK 下的 /bin/cache/lockfile 文件</span><br><span class="line">2、重启 Android Studio</span><br></pre></td></tr></table></figure></p>
+<p>然而我操作的时候然而并没有什么卵用，可通过以下解决方法解决：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">macOS 系统下终端内输入以下命令：</span><br><span class="line">killall -9 dart</span><br></pre></td></tr></table></figure></p>
+
         </div>
-    </div>
-</a>
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
             
         </div>
     </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-problem-collections/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./package-get-dependencies-problem-01.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 问题集景
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 问题集景
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
 
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-problem-collections/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./package-get-dependencies-problem-01.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 问题集景</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 image 库需要升级到最低 2.1.9 版本。在项目目录下的 pubspec.yaml  中 增加 ‘image: ^2.1...
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-build-compline-link/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-platforms-support.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 编译原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flutter 针对不同平台编译后的产物。
-理解 Flutter Hot Reload 机制。
-理解 Flutter 跨平台原理。
-Flutter 底层优化提供支持。
-Flutter 二进制文件集成提供支持。
-Flutter 工程化提供支持。
-
-Flutter 支持..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./dowload_sdk.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>已有原生项目集成 flutter 源码混合开发指南</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutter 安装一、直接下载安装包Flutter 官网Flutter Github解压安装包到你想安装的目录，如：
-二、直接通过 git 命令下载安装包
-1.2 Flutter 环境设置一、环境变量设置
-二、设置镜像（可选）
-注意: 此镜像为临时镜像，并不能保证一直..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-reactnative-hybrid-technology-choice/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>移动跨平台技术选型</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            移动跨平台技术选型
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-revolutions/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 的革命性</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/git-modify-gitignore-effective-immediately/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>修改 .gitignore 文件如何立即生效</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            修改 .gitignore 文件如何立即生效
-
-# 有时候需要突然修改 .gitignore 文件，随后要立即生效# 注意后面的 &quot;.&quot;，它代表当前目录的根目录。git rm -r --cached .  #清除缓存， git add . #重新trace file  git commit -m &quot;update .gitig..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-module-project-can-not-open-with-android-studio/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter module 项目无法打开的一种情况以及解决办法</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter module 项目无法打开的一种情况以及解决办法
-
-配置 Git 的 .gitignore 文件时将 .iml 文件忽略后，导致本地使用 Flutter module 方式创建的项目提交文件时未将项目内的 .iml 提交到 Git 服务器上。
-Flutter module 项目内没有如下两个文件 “项目名称_android.iml，项目名..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
-            
-        </div>
-    </div>
-</div>
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>

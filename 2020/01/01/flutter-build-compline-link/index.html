@@ -15,18 +15,24 @@
   </script>
 
   
-  <title>Archives: 2020/1 | luohs&#39;s blogs</title>
+  <title>Flutter 编译原理 | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/archives/2020/01/index.html">
+  <meta name="description" content="Flutter 编译原理花生-sniper  学习 Flutter 编译原理的目的 区分 Flutter 针对不同平台编译后的产物。 理解 Flutter Hot Reload 机制。 理解 Flutter 跨平台原理。 Flutter 底层优化提供支持。 Flutter 二进制文件集成提供支持。 Flutter 工程化提供支持。  Flutter 支持的平台简介 1、桌面程序Flutter 目前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 编译原理">
+<meta property="og:url" content="http://yoursite.com/2020/01/01/flutter-build-compline-link/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="Flutter 编译原理花生-sniper  学习 Flutter 编译原理的目的 区分 Flutter 针对不同平台编译后的产物。 理解 Flutter Hot Reload 机制。 理解 Flutter 跨平台原理。 Flutter 底层优化提供支持。 Flutter 二进制文件集成提供支持。 Flutter 工程化提供支持。  Flutter 支持的平台简介 1、桌面程序Flutter 目前">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-build-compline-link/flutter-platforms-support.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-build-compline-link/dart-run-with-jit-and-aot.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-build-compline-link/flutter-build-to-products-mode-aar.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/01/flutter-build-compline-link/flutter-build-to-products.png">
+<meta property="og:updated_time" content="2020-01-01T07:27:17.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="Flutter 编译原理">
+<meta name="twitter:description" content="Flutter 编译原理花生-sniper  学习 Flutter 编译原理的目的 区分 Flutter 针对不同平台编译后的产物。 理解 Flutter Hot Reload 机制。 理解 Flutter 跨平台原理。 Flutter 底层优化提供支持。 Flutter 二进制文件集成提供支持。 Flutter 工程化提供支持。  Flutter 支持的平台简介 1、桌面程序Flutter 目前">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/01/flutter-build-compline-link/flutter-platforms-support.png">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,409 +118,333 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/01/01/xcode-problem-collections/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./xcode-error-unable-to-spawn-process.png');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            Xcode Error 集景
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            Xcode Error 集景
-
-花生-sniper
-
-1、unable to spawn process (Argument list too long)
-解决：跟项目存放的位置太深有关，把项目放到根路径就好了。
-
-                        </p>
-                        <p class="date text-shadow">2020-01-01</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>Flutter 编译原理</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2020-01-01</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2020/01/01/flutter-problem-collections/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./package-get-dependencies-problem-01.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 问题集景
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
+                <div>
+                    
+                </div>
             
         </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-problem-collections/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./package-get-dependencies-problem-01.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 问题集景
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 问题集景
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="6"><center>Flutter 编译原理</center></font><br><font color="red" size="2"><center>花生-sniper</center></font>
 
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
+<h3 id="学习-Flutter-编译原理的目的"><a href="#学习-Flutter-编译原理的目的" class="headerlink" title="学习 Flutter 编译原理的目的"></a>学习 Flutter 编译原理的目的</h3><ul>
+<li>区分 Flutter 针对不同平台编译后的产物。</li>
+<li>理解 Flutter Hot Reload 机制。</li>
+<li>理解 Flutter 跨平台原理。</li>
+<li>Flutter 底层优化提供支持。</li>
+<li>Flutter 二进制文件集成提供支持。</li>
+<li>Flutter 工程化提供支持。</li>
+</ul>
+<h3 id="Flutter-支持的平台简介"><a href="#Flutter-支持的平台简介" class="headerlink" title="Flutter 支持的平台简介"></a>Flutter 支持的平台简介</h3><p><img src="./flutter-platforms-support.png" alt=""></p>
+<h4 id="1、桌面程序"><a href="#1、桌面程序" class="headerlink" title="1、桌面程序"></a>1、桌面程序</h4><p>Flutter 目前桌面程序支持平台涵盖 Linux、Windows、macOS。但是根据官方介绍 Flutter 桌面程序支持最好的平台是 macOS。</p>
+<ul>
+<li><p>Windows 平台，目前阶段 Flutter 还只是支持32位，未来可能计划基于 Windows10 推出的 UWP 的 API 进行开发 Flutter 桌面程序。</p>
+</li>
+<li><p>Linux 平台，目前阶段 Flutter 仅支持 基于 GTK+ 版本，未来可能计划推出基于各种版本的 Linux，例如：GLFW、GTK+、Qt、wxWidgets、Motif 等。</p>
+</li>
+<li><p>macOS 平台，目前 Flutter 支持最好的平台，得益于 macOS 与 iOS 系统非常接近，并且 Flutter v1.12 已更好的支持 macOS 桌面程序。</p>
+</li>
+</ul>
+<p><a href="https://github.com/flutter/flutter/wiki/Desktop-shells#flutter-application-requirements" target="_blank" rel="noopener"></a></p>
+<h4 id="2、Web"><a href="#2、Web" class="headerlink" title="2、Web"></a>2、Web</h4><p>Flutter v1.5.4 之后才支持 Web，在 v1.12 之前 Flutter 需要额外安装 flutter_web 工具来支持 Flutter 将 Dart 编译成 js。v1.12 之后 Flutter 对 Web 的支持全部迁移至 Flutter SDK，也就是说以后可以直接基于标准的 Flutter SDK 将 Dart 编译成 Web 程序。</p>
+<p><a href="https://github.com/flutter/flutter_web" target="_blank" rel="noopener"></a></p>
+<p><a href="https://flutter.dev/docs/get-started/web" target="_blank" rel="noopener"></a></p>
+<h4 id="3、Android-和-iOS"><a href="#3、Android-和-iOS" class="headerlink" title="3、Android 和 iOS"></a>3、Android 和 iOS</h4><p>Flutter 默认支持 Android 和 iOS 平台，所以不需要通过预先设置 flutter config 启用平台参数。</p>
+<p><a href="https://github.com/flutter/flutter/wiki" target="_blank" rel="noopener"></a></p>
+<h3 id="编译模式"><a href="#编译模式" class="headerlink" title="编译模式"></a>编译模式</h3><h4 id="JIT（Just-In-Time）即时编译运行时编译"><a href="#JIT（Just-In-Time）即时编译运行时编译" class="headerlink" title="JIT（Just In Time）即时编译运行时编译"></a>JIT（Just In Time）即时编译运行时编译</h4><p>指在程序运行中，将热点代码编译成机器码，提高运行效率。常见例子有 V8 引擎和 JVM，JIT 可以充分利用解释型语言的优点，动态执行源码，而不用考虑平台差异性。（这里需要注意的是，对于 JVM 来说，源码指字节码，而不是 Java 源码）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这里需要将 JIT 与 解释型语言加以区别，并不是说编译型语言就不能使用 JIT 模式编译，典型的例子如 Java 是编译型语言，但是它可以支持 JIT 编译模式。</span><br></pre></td></tr></table></figure>
+<h4 id="AOT（Ahead-Of-Time）运行前编译"><a href="#AOT（Ahead-Of-Time）运行前编译" class="headerlink" title="AOT（Ahead Of Time）运行前编译"></a>AOT（Ahead Of Time）运行前编译</h4><p>指在程序运行之前，已经编译成对应平台的机器码，不需要在运行中解释编译，就可以直接运行。常见例子有 C 和 C++。</p>
+<h3 id="Dart-编译模式"><a href="#Dart-编译模式" class="headerlink" title="Dart 编译模式"></a>Dart 编译模式</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>编译模式</th>
+<th>平台相关</th>
+<th>包大小</th>
+<th>动态性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Script</td>
+<td>JIT</td>
+<td>NO</td>
+<td>Small</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Kernel Snapshots</td>
+<td>JIT</td>
+<td>NO</td>
+<td>Smallest</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>JIT Application Snapshots</td>
+<td>JIT</td>
+<td>YES</td>
+<td>Lager</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>AOT Application Snapshots</td>
+<td>AOT</td>
+<td>YES</td>
+<td>Lagest</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Script： 最常见的 JIT 模式，可以直接在 DartVM 中运行 Dart 源码。</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ dart hello.dart</span><br><span class="line">Hello, world!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Kernel Snapshot：JIT 模式，不同于 Script 模式，这种模式执行的是一种叫做 Kernel AST 抽象语法树的二进制数据，这里不包含解析后的类、函数和编译后的代码以便这种模式可以在不同的平台之间移植。但是这也就意味着 DartVM 每次运行都必须重新编译函数并且将 AST 转换成平台内部可识别的指令，这就导致执行效率大大降低。</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ dart --snapshot-kind=kernel --snapshot=hello.dart.snapshot hello.dart</span><br><span class="line">$ dart hello.dart.snapshot arguments-for-use</span><br><span class="line">Hello, world!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JIT Application Snapshot (app-jit)：JIT 模式，Dart v1.21 引入该编译模式。这种模式执行的是已经解析过的类和函数。在这种模式下 DartVM 不需要编译和解析类和函数，所以它会运行起来会更快。但是这不是平台无关，它只能针对 x64 架构运行。</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ dart --snapshot=hello.dart.snapshot --snapshot-kind=app-jit hello.dart arguments-for-training</span><br><span class="line">Hello, world!</span><br><span class="line">$ dart hello.dart.snapshot arguments-for-use</span><br><span class="line">Hello, world!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>AOT Application Snapshot (app-aot)：AOT 模式，Dart v2.4 引入该编译模式。在这种模式下，Dart 源码会被提前编译成特定平台的二进制文件。这种模式需要使用 dart2aot 命令编译，使用 dartaotruntime 命令执行。</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ dart2aot hello.dart hello.dart.snapshot</span><br><span class="line">$ dartaotruntime hello.dart.snapshot</span><br><span class="line">Hello, world!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Dart JIT 模式需要配合 DartVM(虚拟机) ，AOT 则会使用 runtime 来执行，如下图所示：<br><img src="./dart-run-with-jit-and-aot.png" alt=""></p>
+<p><a href="https://github.com/dart-lang/sdk/wiki/Snapshots" target="_blank" rel="noopener"></a></p>
+<h3 id="Flutter-编译模式"><a href="#Flutter-编译模式" class="headerlink" title="Flutter 编译模式"></a>Flutter 编译模式</h3><p>Flutter 的构建完全基于 Dart，所以 Flutter 完全继承于 Dart 编译模式，但是由于 Flutter 需要运行在 Android 和 iOS 等不同平台之上，因此 Flutter 也有自己特有的编译模式。</p>
+<ul>
+<li><p>Script： 与 Dart 的 Script 编译模式一样，Flutter 支持但使用。</p>
+</li>
+<li><p>Script Snapshot：与 Dart 的 Kernel Snapshots 编译模式一样，Flutter 支持但未使用。Flutter 有大量的视图渲染逻辑，纯 JIT 模式影响执行速度。</p>
+</li>
+<li><p>Kernel Snapshot： Dart 的 bytecode 模式，与 Application Snapshot 不同，bytecode 模式是不区分架构的，bytecode 模式可以归类为 AOT 编译。</p>
+</li>
+<li><p>Core JIT：Dart 的一种二进制模式，将指令代码和 heap 数据打包成文件，然后在 VM 和 isolate 启动时载入，直接标记内存可执行，可以说这是一种 AOT 模式。</p>
+</li>
+<li><p>AOT Assembly: 即 Dart 的 AOT 模式。直接生成汇编源代码文件，由各平台自行汇编。</p>
+</li>
+</ul>
+<h3 id="Flutter-构建模式"><a href="#Flutter-构建模式" class="headerlink" title="Flutter 构建模式"></a>Flutter 构建模式</h3><p><img src="./flutter-build-to-products-mode-aar.png" alt=""></p>
+<ul>
+<li><p>Debug 模式：对应了 Dart 的 JIT 模式，又称检查模式或者慢速模式。支持设备，模拟器(iOS/Android)，此模式下打开了断言，包括所有的调试信息，服务扩展和 Observatory 等调试辅助。此模式为快速开发和运行做了优化，但并未对执行速度，包大小和部署做优化。Debug模式下，编译使用JIT技术，支持 hot reload。</p>
+</li>
+<li><p>Release 模式：对应了 Dart的 AOT 模式，此模式目标即为部署到终端用户。只支持真机，不包括模拟器。关闭了所有断言，尽可能多地去掉了调试信息，关闭了所有调试工具。为快速启动，快速执行，包大小做了优化。禁止了所有调试辅助手段，服务扩展。</p>
+</li>
+<li><p>Profile 模式：类似 Release 模式，只是多了对于 Profile 模式的服务扩展的支持，支持跟踪，以及最小化使用跟踪信息需要的依赖，例如，observatory 可以连接上进程。Profile 并不支持模拟器的原因在于，模拟器上的诊断并不代表真实的性能。</p>
+</li>
+<li><p>Flavor 模式：基于 Android Gradle scripts 和 Xcode schemes 配置构建不同的编译产物。可用于构建渠道包、非硬编码构建生产、开发环境的包、SaaS 等。</p>
+</li>
+</ul>
+<h3 id="Flutter-开发模式（Debug）下的编译模式"><a href="#Flutter-开发模式（Debug）下的编译模式" class="headerlink" title="Flutter 开发模式（Debug）下的编译模式"></a>Flutter 开发模式（Debug）下的编译模式</h3><p>在 Debug 构建模式下为了能够支持热更新（hot reload），同时又要获得视图渲染时的高性能。因此在这种模式下 Flutter 选择 Kernel Snapshot 模式编译。</p>
+<table>
+<thead>
+<tr>
+<th>项目/平台</th>
+<th>Android</th>
+<th>iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构建模式</td>
+<td>Debug</td>
+<td>Debug</td>
+</tr>
+<tr>
+<td>编译模式</td>
+<td>Kernel Snapshot</td>
+<td>Kernel Snapshot</td>
+</tr>
+<tr>
+<td>打包工具</td>
+<td>DartVM</td>
+<td>DartVM</td>
+</tr>
+<tr>
+<td>打包产物</td>
+<td>flutter_assets/*</td>
+<td>App.framework </td>
+</tr>
+</tbody>
+</table>
+<p>打包产物：</p>
+<ul>
+<li>isolate_snapshot_data：用于加速 isolate 启动。业务代码无关。</li>
+<li>platform.dill：Dart runtime 相关的核心代码，仅与 Flutter Engine 有关。</li>
+<li>vm_snapshot_data: 用于加速 Dart VM 启动，业务代码无关。</li>
+<li>kernel_blob.bin：业务代码产物。</li>
+</ul>
+<h3 id="Flutter-生产模式（Release）下的编译模式"><a href="#Flutter-生产模式（Release）下的编译模式" class="headerlink" title="Flutter 生产模式（Release）下的编译模式"></a>Flutter 生产模式（Release）下的编译模式</h3><p>在 Release 构建模式下，APP 需要更快速的运行，因此 Flutter 选择 AOT 模式编译。不过由于平台特性不同，打包模式也会有不同，具体差异如下：</p>
+<table>
+<thead>
+<tr>
+<th>项目/平台</th>
+<th>Android</th>
+<th>iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构建模式</td>
+<td>Release</td>
+<td>Release</td>
+</tr>
+<tr>
+<td>编译模式</td>
+<td>Core JIT</td>
+<td>AOT Assembly</td>
+</tr>
+<tr>
+<td>打包工具</td>
+<td>gen_snapshot</td>
+<td>gen_snapshot</td>
+</tr>
+<tr>
+<td>打包产物</td>
+<td>flutter_assets/*</td>
+<td>App.framework</td>
+</tr>
+</tbody>
+</table>
+<p>打包产物：</p>
+<ul>
+<li>isolate_snapshot_data：用于加速 isolate 启动。业务代码无关。</li>
+<li>vm_snapshot_data: 用于加速 Dart VM 启动，业务代码无关。</li>
+<li>isolate_snapshot_instr：isolate 启动后所承载的指令等数据，载入后可直接在内存中执行。</li>
+<li>vm_snapshot_instr：DartVM 启动后所承载的指令等数据，载入后可直接在内存中执行。</li>
+</ul>
+<p>在 iOS 上，由于 App Store 审核条例不允许动态下发可执行二进制代码，因此除了 JavaScript，其他语言运行时的实现都选择了 AOT（比如 OpenJDK 在 iOS 实现就是 AOT）。</p>
+<p>在 Android 上，Flutter 支持了两种不同的编译模式。<br>AOT Assembly 打包方式需要支持多平台架构，这无疑增大了代码包，并且该处代码需要从 JNI API 调用，远不如 Core JIT 的基于 Java API 调用方便。所以 Android 上默认使用 Core JIT 打包，而不是 AOT Assembly。</p>
+<h3 id="Flutter-engine-对编译模式的支持"><a href="#Flutter-engine-对编译模式的支持" class="headerlink" title="Flutter engine 对编译模式的支持"></a>Flutter engine 对编译模式的支持</h3><p>Flutter engine 承载了对 Dart runtime 的支持，所以编译出来的 Flutter 程序必须与 Flutter engine 支持的模式相匹配。</p>
+<table>
+<thead>
+<tr>
+<th>项目/平台</th>
+<th>Android</th>
+<th>iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Script</td>
+<td>Not Support</td>
+<td>Not Support </td>
+</tr>
+<tr>
+<td>Script Snapshot</td>
+<td>Support</td>
+<td>Support </td>
+</tr>
+<tr>
+<td>Kernel Snapshot</td>
+<td>Support</td>
+<td>Support </td>
+</tr>
+<tr>
+<td>Core JIT</td>
+<td>Support</td>
+<td>Not Support </td>
+</tr>
+<tr>
+<td>AOT Assembly</td>
+<td>Support</td>
+<td>Support </td>
+</tr>
+</tbody>
+</table>
+<h3 id="Flutter-构建产物"><a href="#Flutter-构建产物" class="headerlink" title="Flutter 构建产物"></a>Flutter 构建产物</h3><p><img src="./flutter-build-to-products.png" alt=""></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://proandroiddev.com/flutters-compilation-patterns-24e139d14177" target="_blank" rel="noopener">Flutter’s Compilation Patterns</a><br><a href="https://levelup.gitconnected.com/just-in-time-jit-and-ahead-of-time-aot-compilation-in-angular-8529f1d6fa9d" target="_blank" rel="noopener">Just-in-Time (JIT) and Ahead-of-Time (AOT) Compilation in Angular</a><br><a href="https://github.com/dart-lang/sdk/wiki/Snapshots" target="_blank" rel="noopener">Dart Snapshots</a><br><a href="https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b" target="_blank" rel="noopener">Build flavors in Flutter</a><br><a href="https://medium.com/@salvatoregiordanoo/flavoring-flutter-392aaa875f36" target="_blank" rel="noopener">Flavoring Flutter</a><br><a href="https://github.com/flutter/flutter/wiki/The-flutter-tool" target="_blank" rel="noopener">flutter tools</a></p>
+
         </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
+        <div class="post-reply">
             
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-problem-collections/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./package-get-dependencies-problem-01.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 问题集景</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 image 库需要升级到最低 2.1.9 版本。在项目目录下的 pubspec.yaml  中 增加 ‘image: ^2.1...
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-build-compline-link/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-platforms-support.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 编译原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flutter 针对不同平台编译后的产物。
-理解 Flutter Hot Reload 机制。
-理解 Flutter 跨平台原理。
-Flutter 底层优化提供支持。
-Flutter 二进制文件集成提供支持。
-Flutter 工程化提供支持。
-
-Flutter 支持..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./dowload_sdk.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>已有原生项目集成 flutter 源码混合开发指南</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutter 安装一、直接下载安装包Flutter 官网Flutter Github解压安装包到你想安装的目录，如：
-二、直接通过 git 命令下载安装包
-1.2 Flutter 环境设置一、环境变量设置
-二、设置镜像（可选）
-注意: 此镜像为临时镜像，并不能保证一直..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-reactnative-hybrid-technology-choice/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>移动跨平台技术选型</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            移动跨平台技术选型
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-revolutions/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 的革命性</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/git-modify-gitignore-effective-immediately/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>修改 .gitignore 文件如何立即生效</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            修改 .gitignore 文件如何立即生效
-
-# 有时候需要突然修改 .gitignore 文件，随后要立即生效# 注意后面的 &quot;.&quot;，它代表当前目录的根目录。git rm -r --cached .  #清除缓存， git add . #重新trace file  git commit -m &quot;update .gitig..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-module-project-can-not-open-with-android-studio/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter module 项目无法打开的一种情况以及解决办法</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter module 项目无法打开的一种情况以及解决办法
-
-配置 Git 的 .gitignore 文件时将 .iml 文件忽略后，导致本地使用 Flutter module 方式创建的项目提交文件时未将项目内的 .iml 提交到 Git 服务器上。
-Flutter module 项目内没有如下两个文件 “项目名称_android.iml，项目名..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
             
         </div>
     </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>
