@@ -15,18 +15,19 @@
   </script>
 
   
-  <title>Archives: 2020/1 | luohs&#39;s blogs</title>
+  <title>dart 导包介绍 | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/archives/2020/01/index.html">
+  <meta name="description" content="dart 导包介绍花生-sniper   1.导入 dart 库里面的包import &amp;apos;dart:html&amp;apos;; 2.导入 pubspec.yaml 的 dependencies 依赖的包import &amp;apos;package:test/test.dart&amp;apos;; 3.导入路径包 base 为 flutter 根目录import &amp;apos;package:base/co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dart 导包介绍">
+<meta property="og:url" content="http://yoursite.com/2020/01/11/flutter-dart-import-package-tour/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="dart 导包介绍花生-sniper   1.导入 dart 库里面的包import &amp;apos;dart:html&amp;apos;; 2.导入 pubspec.yaml 的 dependencies 依赖的包import &amp;apos;package:test/test.dart&amp;apos;; 3.导入路径包 base 为 flutter 根目录import &amp;apos;package:base/co">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-01-11T01:34:30.305Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="dart 导包介绍">
+<meta name="twitter:description" content="dart 导包介绍花生-sniper   1.导入 dart 库里面的包import &amp;apos;dart:html&amp;apos;; 2.导入 pubspec.yaml 的 dependencies 依赖的包import &amp;apos;package:test/test.dart&amp;apos;; 3.导入路径包 base 为 flutter 根目录import &amp;apos;package:base/co">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,478 +113,120 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/01/11/flutter-dart-import-package-tour/">
-            <div class="full-height post-hover" style="
-                         background-image: url('');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            dart 导包介绍
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            dart 导包介绍花生-sniper
-
-
-1.导入 dart 库里面的包import &apos;dart:html&apos;;
-2.导入 pubspec.yaml 的 dependencies 依赖的包import &apos;pa..
-                        </p>
-                        <p class="date text-shadow">2020-01-11</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>dart 导包介绍</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2020-01-11</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2020/01/11/gradle-brief-tour/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./gradle.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                gradle 介绍
-            </h3>
+                <div>
+                    
+                </div>
             
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                gradle 介绍花生-sniper
-
-背景Flutter 编译源码 flutter_tools..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-11</p>
         </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2020/01/11/flutter-dart-annotation/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./source-gen-class.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                dart 注解实现以及代码生成原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                dart 注解实现以及代码生成原理花生-sniper
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="6"><center>dart 导包介绍</center></font><br><font color="red" size="2"><center>花生-sniper</center></font>
 
-注解处理以及代码生成
-1.创建注解
-2...
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-11</p>
+
+<h5 id="1-导入-dart-库里面的包"><a href="#1-导入-dart-库里面的包" class="headerlink" title="1.导入 dart 库里面的包"></a>1.导入 dart 库里面的包</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;dart:html&apos;;</span><br></pre></td></tr></table></figure>
+<h5 id="2-导入-pubspec-yaml-的-dependencies-依赖的包"><a href="#2-导入-pubspec-yaml-的-dependencies-依赖的包" class="headerlink" title="2.导入 pubspec.yaml 的 dependencies 依赖的包"></a>2.导入 pubspec.yaml 的 dependencies 依赖的包</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;package:test/test.dart&apos;;</span><br></pre></td></tr></table></figure>
+<h5 id="3-导入路径包-base-为-flutter-根目录"><a href="#3-导入路径包-base-为-flutter-根目录" class="headerlink" title="3.导入路径包 base 为 flutter 根目录"></a>3.导入路径包 base 为 flutter 根目录</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;package:base/components/swiper.dart&apos;;</span><br></pre></td></tr></table></figure>
+<h5 id="4-部分导包"><a href="#4-部分导包" class="headerlink" title="4.部分导包"></a>4.部分导包</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;package:lib1/lib1.dart&apos; show foo, bar; //只导入 lib1 中的 foo 和 bar 这两个函数。</span><br><span class="line">import &apos;package:lib2/lib2.dart&apos; hide foo; //导入 lib2 中除了 foo 之外的所有函数。</span><br></pre></td></tr></table></figure>
+<h5 id="5-别名导包（包里面存在标识符冲突）"><a href="#5-别名导包（包里面存在标识符冲突）" class="headerlink" title="5.别名导包（包里面存在标识符冲突）"></a>5.别名导包（包里面存在标识符冲突）</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;package:lib1/lib1.dart&apos;;</span><br><span class="line">import &apos;package:lib2/lib2.dart&apos; as lib2;</span><br></pre></td></tr></table></figure>
+<h5 id="6-延迟加载（也称为延迟加载）允许应用程序在需要时加载库。"><a href="#6-延迟加载（也称为延迟加载）允许应用程序在需要时加载库。" class="headerlink" title="6.延迟加载（也称为延迟加载）允许应用程序在需要时加载库。"></a>6.延迟加载（也称为延迟加载）允许应用程序在需要时加载库。</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;package:greetings/hello.dart&apos; deferred as hello;</span><br></pre></td></tr></table></figure>
+<h5 id="7-条件导包"><a href="#7-条件导包" class="headerlink" title="7.条件导包"></a>7.条件导包</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// ignore: uri_does_not_exist</span><br><span class="line">import &apos;client_stub.dart&apos;</span><br><span class="line">    // ignore: uri_does_not_exist</span><br><span class="line">    if (dart.library.html) &apos;browser_client.dart&apos;</span><br><span class="line">    // ignore: uri_does_not_exist</span><br><span class="line">    if (dart.library.io) &apos;io_client.dart&apos;;</span><br></pre></td></tr></table></figure>
+<h5 id="8-export-包导出"><a href="#8-export-包导出" class="headerlink" title="8. export 包导出"></a>8. export 包导出</h5><p>可以用于将多个小库导出成一个大库。<br>如果使用 show 参数，则代表只导出show所表明的函数；<br>如果使用 hide 参数，则代表导出除了hide 所表明的函数外的所有函数。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export &apos;french.dart&apos; show hello; //只导出 hello。</span><br><span class="line">export &apos;french.dart&apos; hide goodbye; //导出除goodbye之外的所有函数。</span><br></pre></td></tr></table></figure></p>
+<h5 id="9-library-和-part"><a href="#9-library-和-part" class="headerlink" title="9. library 和 part"></a>9. library 和 part</h5><p>使用 library 加上一个标示符定义当前库的名字:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">library box2d;</span><br></pre></td></tr></table></figure></p>
+<p>库允许把代码写在多个文件中，只写在一个文件不利于维护。一般库都是写在多个文件中。<br>如果库的代码写在多个文件中，库的主文件就只用来包含其他文件，仅仅充当一个文件管理者，不包含任何方法。通过 part 语句指定子文件的路径，子文件通过 part of 语句表明属于哪个库。import 也只能写在主库文件中。<br>注意：所有的 import 和 part 都只能写在主库文件中。子库文件使用 part of 关键字，表明属于哪个库。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import /**...*/					// 所有的导包只能写在主库文件中</span><br><span class="line"></span><br><span class="line">/**meth.dart库文件*/</span><br><span class="line">library math;		</span><br><span class="line"></span><br><span class="line">// 所有的 part 碎片要在主库中声明，并指定路径</span><br><span class="line">part &apos;base.dart&apos;;			// base.dart文件名</span><br><span class="line">part &apos;random.dart&apos;;			// random.dart文件名</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**base.dart 子文件*/</span><br><span class="line">part of math;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**random.dart 子文件*/</span><br><span class="line">part of math;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>库文件仅用于管理 import 和 part 子文件，子文件通过 part of 指定属于哪个主库文件，并包含具体的实现方法。</p>
+
         </div>
-    </div>
-</a>
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
             
         </div>
     </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/01/11/gradle-brief-tour/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./gradle.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                gradle 介绍
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                gradle 介绍花生-sniper
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
-背景Flutter 编译源码 flutter_tools..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-11</p>
-        </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2020/01/11/flutter-dart-annotation/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./source-gen-class.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                dart 注解实现以及代码生成原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                dart 注解实现以及代码生成原理花生-sniper
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
 
-注解处理以及代码生成
-1.创建注解
-2...
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-11</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/11/gradle-brief-tour/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./gradle.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>gradle 介绍</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            gradle 介绍花生-sniper
-
-背景Flutter 编译源码 flutter_tools 中关于 android 端编译产物的生成时用到了 gradle 相关命令，相对于小白稍微介绍下 gradle 目录下的文件以及这些文件在编译时的作用。
-Gradle 介绍Gradle 是个构建系统，能够简化安装、编译、打包、测试过程。当把一个项目放入到远程版..
-                                        </p>
-                                        <p>2020-01-11</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/11/flutter-dart-annotation/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./source-gen-class.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>dart 注解实现以及代码生成原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            dart 注解实现以及代码生成原理花生-sniper
-
-注解处理以及代码生成
-1.创建注解
-2.创建生成器
-3.创建构建器
-4.编写 build.yaml 配置文件
-5.生成代码
-
-创建注解dart 中自定义注解很简单，其实现就是一个带有 const 构造函数的类。// 申明一个没有参数的注解class ARouteRoot &#123;  const ..
-                                        </p>
-                                        <p>2020-01-11</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/xcode-problem-collections/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./xcode-error-unable-to-spawn-process.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Xcode Error 集景</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Xcode Error 集景
-
-花生-sniper
-
-1、unable to spawn process (Argument list too long)
-解决：跟项目存放的位置太深有关，把项目放到根路径就好了。
-
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-problem-collections/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./package-get-dependencies-problem-01.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 问题集景</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 image 库需要升级到最低 2.1.9 版本。在项目目录下的 pubspec.yaml  中 增加 ‘image: ^2.1...
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-build-compline-link/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-platforms-support.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 编译原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flutter 针对不同平台编译后的产物。
-理解 Flutter Hot Reload 机制。
-理解 Flutter 跨平台原理。
-Flutter 底层优化提供支持。
-Flutter 二进制文件集成提供支持。
-Flutter 工程化提供支持。
-
-Flutter 支持..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./dowload_sdk.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>已有原生项目集成 flutter 源码混合开发指南</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutter 安装一、直接下载安装包Flutter 官网Flutter Github解压安装包到你想安装的目录，如：
-二、直接通过 git 命令下载安装包
-1.2 Flutter 环境设置一、环境变量设置
-二、设置镜像（可选）
-注意: 此镜像为临时镜像，并不能保证一直..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-reactnative-hybrid-technology-choice/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>移动跨平台技术选型</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            移动跨平台技术选型
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-revolutions/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 的革命性</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/git-modify-gitignore-effective-immediately/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>修改 .gitignore 文件如何立即生效</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            修改 .gitignore 文件如何立即生效
-
-# 有时候需要突然修改 .gitignore 文件，随后要立即生效# 注意后面的 &quot;.&quot;，它代表当前目录的根目录。git rm -r --cached .  #清除缓存， git add . #重新trace file  git commit -m &quot;update .gitig..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
-            
-        </div>
-    </div>
-</div>
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>

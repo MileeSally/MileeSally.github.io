@@ -15,18 +15,21 @@
   </script>
 
   
-  <title>Archives: 2020/1 | luohs&#39;s blogs</title>
+  <title>dart 注解实现以及代码生成原理 | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/archives/2020/01/index.html">
+  <meta name="description" content="dart 注解实现以及代码生成原理花生-sniper  注解处理以及代码生成 1.创建注解 2.创建生成器 3.创建构建器 4.编写 build.yaml 配置文件 5.生成代码  创建注解dart 中自定义注解很简单，其实现就是一个带有 const 构造函数的类。// 申明一个没有参数的注解class ARouteRoot &amp;#123;  const ARouteRoot();&amp;#125;//">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dart 注解实现以及代码生成原理">
+<meta property="og:url" content="http://yoursite.com/2020/01/11/flutter-dart-annotation/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="dart 注解实现以及代码生成原理花生-sniper  注解处理以及代码生成 1.创建注解 2.创建生成器 3.创建构建器 4.编写 build.yaml 配置文件 5.生成代码  创建注解dart 中自定义注解很简单，其实现就是一个带有 const 构造函数的类。// 申明一个没有参数的注解class ARouteRoot &amp;#123;  const ARouteRoot();&amp;#125;//">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/01/11/flutter-dart-annotation/source-gen-class.png">
+<meta property="og:updated_time" content="2020-01-11T01:34:30.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="dart 注解实现以及代码生成原理">
+<meta name="twitter:description" content="dart 注解实现以及代码生成原理花生-sniper  注解处理以及代码生成 1.创建注解 2.创建生成器 3.创建构建器 4.编写 build.yaml 配置文件 5.生成代码  创建注解dart 中自定义注解很简单，其实现就是一个带有 const 构造函数的类。// 申明一个没有参数的注解class ARouteRoot &amp;#123;  const ARouteRoot();&amp;#125;//">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/11/flutter-dart-annotation/source-gen-class.png">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,478 +115,154 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/01/11/flutter-dart-import-package-tour/">
-            <div class="full-height post-hover" style="
-                         background-image: url('');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            dart 导包介绍
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            dart 导包介绍花生-sniper
-
-
-1.导入 dart 库里面的包import &apos;dart:html&apos;;
-2.导入 pubspec.yaml 的 dependencies 依赖的包import &apos;pa..
-                        </p>
-                        <p class="date text-shadow">2020-01-11</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>dart 注解实现以及代码生成原理</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2020-01-11</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2020/01/11/gradle-brief-tour/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./gradle.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                gradle 介绍
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                gradle 介绍花生-sniper
-
-背景Flutter 编译源码 flutter_tools..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-11</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2020/01/11/flutter-dart-annotation/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./source-gen-class.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                dart 注解实现以及代码生成原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                dart 注解实现以及代码生成原理花生-sniper
-
-注解处理以及代码生成
-1.创建注解
-2...
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-11</p>
-        </div>
-    </div>
-</a>
+                <div>
+                    
+                </div>
             
         </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/01/11/gradle-brief-tour/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./gradle.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                gradle 介绍
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                gradle 介绍花生-sniper
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="6"><center>dart 注解实现以及代码生成原理</center></font><br><font color="red" size="2"><center>花生-sniper</center></font>
 
-背景Flutter 编译源码 flutter_tools..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-11</p>
+<h3 id="注解处理以及代码生成"><a href="#注解处理以及代码生成" class="headerlink" title="注解处理以及代码生成"></a>注解处理以及代码生成</h3><ul>
+<li>1.创建注解</li>
+<li>2.创建生成器</li>
+<li>3.创建构建器</li>
+<li>4.编写 build.yaml 配置文件</li>
+<li>5.生成代码</li>
+</ul>
+<h5 id="创建注解"><a href="#创建注解" class="headerlink" title="创建注解"></a>创建注解</h5><p>dart 中自定义注解很简单，其实现就是一个带有 const 构造函数的类。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 申明一个没有参数的注解</span><br><span class="line">class ARouteRoot &#123;</span><br><span class="line">  const ARouteRoot();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 申明一个有参数的注解</span><br><span class="line">class ARoute &#123;</span><br><span class="line">  final String desc;</span><br><span class="line">  final String url;</span><br><span class="line">  final Map&lt;String, dynamic&gt; params;</span><br><span class="line">  final List&lt;ARouteAlias&gt; alias;</span><br><span class="line">  const ARoute(&#123;this.desc, this.url, this.params, this.alias&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="创建生成器"><a href="#创建生成器" class="headerlink" title="创建生成器"></a>创建生成器</h5><p>创建一个 Generator，继承于 GeneratorForAnnotation, 并实现：generateForAnnotatedElement 方法。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class RouteWriterGenerator extends GeneratorForAnnotation&lt;ARouteRoot&gt; &#123;</span><br><span class="line">  Collector collector() &#123;</span><br><span class="line">    return RouteGenerator.collector;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  dynamic generateForAnnotatedElement(</span><br><span class="line">      Element element, ConstantReader annotation, BuildStep buildStep) &#123;</span><br><span class="line">    return Writer(collector()).write();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class RouteGenerator extends GeneratorForAnnotation&lt;ARoute&gt; &#123;</span><br><span class="line">  static Collector collector = Collector();</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  dynamic generateForAnnotatedElement(</span><br><span class="line">      Element element, ConstantReader annotation, BuildStep buildStep) &#123;</span><br><span class="line">    collector.collect(element, annotation, buildStep);</span><br><span class="line">    return null;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="创建构建器"><a href="#创建构建器" class="headerlink" title="创建构建器"></a>创建构建器</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Builder routeBuilder(BuilderOptions options) =&gt; LibraryBuilder(RouteGenerator(),</span><br><span class="line">    generatedExtension: &apos;.internal_invalid.dart&apos;);</span><br><span class="line"></span><br><span class="line">Builder routeWriteBuilder(BuilderOptions options) =&gt;</span><br><span class="line">    LibraryBuilder(RouteWriterGenerator(),</span><br><span class="line">        generatedExtension: &apos;.internal.dart&apos;);</span><br></pre></td></tr></table></figure>
+<h5 id="编写-build-yaml-配置文件"><a href="#编写-build-yaml-配置文件" class="headerlink" title="编写 build.yaml 配置文件"></a>编写 build.yaml 配置文件</h5><p>在项目根目录创建 build.yaml 文件，其意义在于配置构建器的各项参数。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Read about `build.yaml` at https://pub.dartlang.org/packages/build_config</span><br><span class="line">targets:</span><br><span class="line">  $default:</span><br><span class="line">    builders:</span><br><span class="line">      annotation_route|route_builder:</span><br><span class="line">        enabled: true</span><br><span class="line">        generate_for:</span><br><span class="line">          exclude: [&apos;**.internal.dart&apos;]</span><br><span class="line">      annotation_route|route_write_builder:</span><br><span class="line">        enabled: true</span><br><span class="line">        options: &#123; &apos;write&apos;: true &#125;</span><br><span class="line">        generate_for:</span><br><span class="line">          exclude: [&apos;**.internal.dart&apos;]</span><br><span class="line"></span><br><span class="line">builders:</span><br><span class="line">  route_write_builder:</span><br><span class="line">    import: &apos;package:annotation_route/builder.dart&apos;</span><br><span class="line">    builder_factories: [&apos;routeWriteBuilder&apos;]</span><br><span class="line">    build_extensions: &#123; &apos;.route.dart&apos;: [&apos;.internal.dart&apos;] &#125;</span><br><span class="line">    auto_apply: root_package</span><br><span class="line">    build_to: source</span><br><span class="line"></span><br><span class="line">  route_builder:</span><br><span class="line">    import: &apos;package:annotation_route/builder.dart&apos;</span><br><span class="line">    builder_factories: [&apos;routeBuilder&apos;]</span><br><span class="line">    build_extensions: &#123; &apos;.dart&apos;: [&apos;.internal_invalid.dart&apos;] &#125;</span><br><span class="line">    auto_apply: root_package</span><br><span class="line">    runs_before: [&apos;annotation_route|route_write_builder&apos;]</span><br><span class="line">    build_to: source</span><br></pre></td></tr></table></figure></p>
+<h5 id="生成代码"><a href="#生成代码" class="headerlink" title="生成代码"></a>生成代码</h5><p>命令行中执行如下命令生成代码。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flutter packages pub run build_runner build --delete-conflicting-outputs</span><br></pre></td></tr></table></figure></p>
+<p>删除已生成的代码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flutter packages pub run build_runner clean</span><br></pre></td></tr></table></figure></p>
+<h3 id="source-gen-源码解析"><a href="#source-gen-源码解析" class="headerlink" title="source_gen 源码解析"></a>source_gen 源码解析</h3><p>source_gen 是封装自 build 和 analyzer，并在此基础上提供封装。source_gen 将其整合便可以实现一套基于注解的代码生成工具。<br>source_gen 通过拦截注解获取并解析上下文信息就可以动态的生成代码。<br>以下就是 source_gen 的类图：<br><img src="./source-gen-class.png" alt=""></p>
+<h5 id="GeneratorForAnnotation-与-annotation-的对应关系"><a href="#GeneratorForAnnotation-与-annotation-的对应关系" class="headerlink" title="GeneratorForAnnotation 与 annotation 的对应关系"></a>GeneratorForAnnotation 与 annotation 的对应关系</h5><p>GeneratorForAnnotation 是单注解处理器，有且只有一个 annotation 作为其泛型参数，也就是说每一个继承自 GeneratorForAnnotation 的生成器只能处理一种注解。</p>
+<h5 id="协议接口-generateForAnnotatedElement-参数含义和返回值含义"><a href="#协议接口-generateForAnnotatedElement-参数含义和返回值含义" class="headerlink" title="协议接口 generateForAnnotatedElement 参数含义和返回值含义"></a>协议接口 generateForAnnotatedElement 参数含义和返回值含义</h5><ul>
+<li>Element element：被 annotation 所修饰的元素，通过它可以获取到元素的name、可见性等等。</li>
+<li>ConstantReader annotation：表示注解对象，通过它可以获取到注解相关信息以及参数值。</li>
+<li>BuildStep buildStep：这一次构建的信息，通过它可以获取到一些输入输出信息，例如输入文件名等</li>
+<li>返回值是一个 String 类型的字符串，即生成的代码，return null 意味着不需要生成文件。</li>
+</ul>
+<h6 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h6><p>下面代码使用了 @ARoute 这个注解<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class ARoute &#123;</span><br><span class="line">  final String desc;</span><br><span class="line">  final String url;</span><br><span class="line">  final Map&lt;String, dynamic&gt; params;</span><br><span class="line">  final List&lt;ARouteAlias&gt; alias;</span><br><span class="line">  const ARoute(&#123;this.desc, this.url, this.params, this.alias&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@ARoute(url: &apos;myapp://pagea&apos;)</span><br><span class="line">class A &#123;</span><br><span class="line">  int a;</span><br><span class="line">  String b;</span><br><span class="line">  A(ARouteOption option) : super();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 Element 参数获取 annotation 的一些信息：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.toString: class A</span><br><span class="line">element.name: A</span><br><span class="line">element.metadata: [@ARoute(url: &apos;myapp://pagea&apos;)] </span><br><span class="line">element.kind: CLASS</span><br><span class="line">element.displayName: A</span><br><span class="line">element.documentationComment: null</span><br><span class="line">element.enclosingElement: flutter_annotation|lib/demo_class.dart</span><br><span class="line">element.hasAlwaysThrows: false</span><br><span class="line">element.hasDeprecated: false</span><br><span class="line">element.hasFactory: false</span><br><span class="line">element.hasIsTest: false</span><br><span class="line">element.hasLiteral: false</span><br><span class="line">element.hasOverride: false</span><br><span class="line">element.hasProtected: false</span><br><span class="line">element.hasRequired: false</span><br><span class="line">element.isPrivate: false</span><br><span class="line">element.isPublic: true</span><br><span class="line">element.isSynthetic: false</span><br><span class="line">element.nameLength: 1</span><br><span class="line">element.runtimeType: ClassElementImpl</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>由于 GeneratorForAnnotation 的域仅限于 class, 通过 element 只能拿到 A 的类信息，那类内部的 Field 和 method 信息如何获取呢？<br>注意 “element.kind: CLASS”，kind 标识 Element 的类型，可以是 CLASS、FIELD、FUNCTION 等等。<br>对应这些类型，还有相应的 Element 子类：ClassElement、FieldElement、FunctionElement等等，可以这样：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(element.kind == ElementKind.CLASS)&#123;</span><br><span class="line">  for (var e in ((element as ClassElement).fields)) &#123;</span><br><span class="line">    print(&quot;$e \n&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  for (var e in ((element as ClassElement).methods)) &#123;</span><br><span class="line">	print(&quot;$e \n&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">int a </span><br><span class="line">String b </span><br><span class="line">A(ARouteOption option) → void</span><br></pre></td></tr></table></figure></p>
+<h6 id="ConstantReader"><a href="#ConstantReader" class="headerlink" title="ConstantReader"></a>ConstantReader</h6><p>注解携带的参数，可以通过 annotation 获取：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">annotation.runtimeType: _DartObjectConstant</span><br><span class="line">annotation.read(&quot;url&quot;): &apos;myapp://pagea&apos;</span><br><span class="line">annotation.peek(&quot;url&quot;): &apos;myapp://pagea&apos;</span><br><span class="line">annotation.objectValue: ARoute (url = String (&apos;myapp://pagea&apos;))</span><br></pre></td></tr></table></figure></p>
+<p>annotation 的类型是 ConstantReader，read 方法与 peek方法，不同之处在于，如果read方法读取了不存在的参数名，会抛出异常，peek 则不会，而是返回null。</p>
+<h6 id="BuildStep"><a href="#BuildStep" class="headerlink" title="BuildStep"></a>BuildStep</h6><p>buildStep 提供的是该次构建的输入输出信息:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">buildStep.runtimeType: BuildStepImpl</span><br><span class="line">buildStep.inputId.path: lib/demo_class.dart</span><br><span class="line">buildStep.inputId.extension: .dart</span><br><span class="line">buildStep.inputId.package: flutter_annotation</span><br><span class="line">buildStep.inputId.uri: package:flutter_annotation/demo_class.dart</span><br><span class="line">buildStep.inputId.pathSegments: [lib, demo_class.dart]</span><br><span class="line">buildStep.expectedOutputs.path: lib/demo_class.g.dart</span><br><span class="line">buildStep.expectedOutputs.extension: .dart</span><br><span class="line">buildStep.expectedOutputs.package: flutter_annotation</span><br></pre></td></tr></table></figure></p>
+<h5 id="build-yaml-配置文件字段含义"><a href="#build-yaml-配置文件字段含义" class="headerlink" title="build.yaml 配置文件字段含义"></a>build.yaml 配置文件字段含义</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Read about `build.yaml` at https://pub.dartlang.org/packages/build_config</span><br><span class="line">targets:</span><br><span class="line">  $default:</span><br><span class="line">    builders:</span><br><span class="line">      annotation_route|route_builder:</span><br><span class="line">        enabled: true</span><br><span class="line">        generate_for:</span><br><span class="line">          exclude: [&apos;**.internal.dart&apos;]</span><br><span class="line">      annotation_route|route_write_builder:</span><br><span class="line">        enabled: true</span><br><span class="line">        options: &#123; &apos;write&apos;: true &#125;</span><br><span class="line">        generate_for:</span><br><span class="line">          exclude: [&apos;**.internal.dart&apos;]</span><br><span class="line"></span><br><span class="line">builders:</span><br><span class="line">  route_write_builder:</span><br><span class="line">    import: &apos;package:annotation_route/builder.dart&apos;</span><br><span class="line">    builder_factories: [&apos;routeWriteBuilder&apos;]</span><br><span class="line">    build_extensions: &#123; &apos;.route.dart&apos;: [&apos;.internal.dart&apos;] &#125;</span><br><span class="line">    auto_apply: root_package</span><br><span class="line">    build_to: source</span><br><span class="line"></span><br><span class="line">  route_builder:</span><br><span class="line">    import: &apos;package:annotation_route/builder.dart&apos;</span><br><span class="line">    builder_factories: [&apos;routeBuilder&apos;]</span><br><span class="line">    build_extensions: &#123; &apos;.dart&apos;: [&apos;.internal_invalid.dart&apos;] &#125;</span><br><span class="line">    auto_apply: root_package</span><br><span class="line">    runs_before: [&apos;annotation_route|route_write_builder&apos;]</span><br><span class="line">    build_to: source</span><br></pre></td></tr></table></figure>
+<ul>
+<li>import 关键字用于导入 return Builder 的方法所在包 （必须）</li>
+<li>builder_factories 填写的是我们 return Builder 的方法名（必须）</li>
+<li>build_extensions  指定输入扩展名到输出扩展名的映射，比如接受 <em>.dart文件的输入，最终输出 </em>.g.dart 文件（必须）</li>
+<li>auto_apply 指定builder作用于，可选值（可选，默认为 none）<ul>
+<li>“none”：除非手动配置，否则不要应用此Builder</li>
+<li>“dependents”：将此Builder应用于包，直接依赖于公开构建器的包。</li>
+<li>“all_packages”：将此Builder应用于传递依赖关系图中的所有包。</li>
+<li>“root_package”：仅将此Builder应用于顶级包。</li>
+</ul>
+</li>
+<li>build_to 指定输出位置,可选值（可选，默认为 cache）<ul>
+<li>“source”: 输出到其主要输入的源码树上</li>
+<li>“cache”: 输出到隐藏的构建缓存上</li>
+</ul>
+</li>
+<li>required_inputs 指定一个或一系列文件扩展名，表示在任何可能产生该类型输出的Builder之后运行（可选）</li>
+<li>runs_before 保证在指定的 Builder 之前运行</li>
+</ul>
+
         </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2020/01/11/flutter-dart-annotation/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./source-gen-class.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                dart 注解实现以及代码生成原理
-            </h3>
+        <div class="post-reply">
             
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                dart 注解实现以及代码生成原理花生-sniper
-
-注解处理以及代码生成
-1.创建注解
-2...
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-11</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/11/gradle-brief-tour/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./gradle.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>gradle 介绍</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            gradle 介绍花生-sniper
-
-背景Flutter 编译源码 flutter_tools 中关于 android 端编译产物的生成时用到了 gradle 相关命令，相对于小白稍微介绍下 gradle 目录下的文件以及这些文件在编译时的作用。
-Gradle 介绍Gradle 是个构建系统，能够简化安装、编译、打包、测试过程。当把一个项目放入到远程版..
-                                        </p>
-                                        <p>2020-01-11</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/11/flutter-dart-annotation/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./source-gen-class.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>dart 注解实现以及代码生成原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            dart 注解实现以及代码生成原理花生-sniper
-
-注解处理以及代码生成
-1.创建注解
-2.创建生成器
-3.创建构建器
-4.编写 build.yaml 配置文件
-5.生成代码
-
-创建注解dart 中自定义注解很简单，其实现就是一个带有 const 构造函数的类。// 申明一个没有参数的注解class ARouteRoot &#123;  const ..
-                                        </p>
-                                        <p>2020-01-11</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/xcode-problem-collections/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./xcode-error-unable-to-spawn-process.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Xcode Error 集景</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Xcode Error 集景
-
-花生-sniper
-
-1、unable to spawn process (Argument list too long)
-解决：跟项目存放的位置太深有关，把项目放到根路径就好了。
-
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-problem-collections/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./package-get-dependencies-problem-01.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 问题集景</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 image 库需要升级到最低 2.1.9 版本。在项目目录下的 pubspec.yaml  中 增加 ‘image: ^2.1...
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-build-compline-link/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-platforms-support.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 编译原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flutter 针对不同平台编译后的产物。
-理解 Flutter Hot Reload 机制。
-理解 Flutter 跨平台原理。
-Flutter 底层优化提供支持。
-Flutter 二进制文件集成提供支持。
-Flutter 工程化提供支持。
-
-Flutter 支持..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./dowload_sdk.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>已有原生项目集成 flutter 源码混合开发指南</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutter 安装一、直接下载安装包Flutter 官网Flutter Github解压安装包到你想安装的目录，如：
-二、直接通过 git 命令下载安装包
-1.2 Flutter 环境设置一、环境变量设置
-二、设置镜像（可选）
-注意: 此镜像为临时镜像，并不能保证一直..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-reactnative-hybrid-technology-choice/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>移动跨平台技术选型</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            移动跨平台技术选型
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-revolutions/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 的革命性</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/git-modify-gitignore-effective-immediately/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>修改 .gitignore 文件如何立即生效</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            修改 .gitignore 文件如何立即生效
-
-# 有时候需要突然修改 .gitignore 文件，随后要立即生效# 注意后面的 &quot;.&quot;，它代表当前目录的根目录。git rm -r --cached .  #清除缓存， git add . #重新trace file  git commit -m &quot;update .gitig..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
             
         </div>
     </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>
