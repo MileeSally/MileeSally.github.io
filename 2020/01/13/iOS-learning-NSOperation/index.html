@@ -15,18 +15,19 @@
   </script>
 
   
-  <title>Archives: 2020 | luohs&#39;s blogs</title>
+  <title>iOS 多线程 - NSOperation | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="iOS 多线程 - NSOperation花生-sniper  1. NSOperationNSOperation 是个抽象类，不能用来封装操作。我们只有使用它的子类来封装操作。我们有三种方式来封装操作。  NSInvocationOperation NSBlockOperation 自定义继承自 NSOperation 的子类，通过实现内部相应的方法来封装操作。  1.1 NSInvocatio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 多线程 - NSOperation">
+<meta property="og:url" content="http://yoursite.com/2020/01/13/iOS-learning-NSOperation/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="iOS 多线程 - NSOperation花生-sniper  1. NSOperationNSOperation 是个抽象类，不能用来封装操作。我们只有使用它的子类来封装操作。我们有三种方式来封装操作。  NSInvocationOperation NSBlockOperation 自定义继承自 NSOperation 的子类，通过实现内部相应的方法来封装操作。  1.1 NSInvocatio">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-01-13T12:15:08.101Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="iOS 多线程 - NSOperation">
+<meta name="twitter:description" content="iOS 多线程 - NSOperation花生-sniper  1. NSOperationNSOperation 是个抽象类，不能用来封装操作。我们只有使用它的子类来封装操作。我们有三种方式来封装操作。  NSInvocationOperation NSBlockOperation 自定义继承自 NSOperation 的子类，通过实现内部相应的方法来封装操作。  1.1 NSInvocatio">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,376 +113,197 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/01/01/flutter-problem-collections/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./package-get-dependencies-problem-01.png');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            Flutter 问题集景
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 imag..
-                        </p>
-                        <p class="date text-shadow">2020-01-01</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>iOS 多线程 - NSOperation</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2020-01-13</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./dowload_sdk.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                已有原生项目集成 flutter 源码混合开发指南
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutt..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
+                <div>
+                    
+                </div>
             
         </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="6"><center>iOS 多线程 - NSOperation</center></font><br><font color="red" size="2"><center>花生-sniper</center></font>
 
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
+<h4 id="1-NSOperation"><a href="#1-NSOperation" class="headerlink" title="1. NSOperation"></a>1. NSOperation</h4><p>NSOperation 是个抽象类，不能用来封装操作。我们只有使用它的子类来封装操作。我们有三种方式来封装操作。</p>
+<ul>
+<li>NSInvocationOperation</li>
+<li>NSBlockOperation</li>
+<li>自定义继承自 NSOperation 的子类，通过实现内部相应的方法来封装操作。</li>
+</ul>
+<h5 id="1-1-NSInvocationOperation"><a href="#1-1-NSInvocationOperation" class="headerlink" title="1.1 NSInvocationOperation"></a>1.1 NSInvocationOperation</h5><ul>
+<li>在主线程中单独使用使用子类 NSInvocationOperation 执行一个操作的情况下，操作是在当前线程执行的，并没有开启新线程。</li>
+<li>在其他线程中单独使用子类 NSInvocationOperation，操作是在当前调用的其他线程执行的，并没有开启新线程。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 使用子类 NSInvocationOperation</span><br><span class="line"> */</span><br><span class="line">- (void)useInvocationOperation &#123;</span><br><span class="line"></span><br><span class="line">    // 1.创建 NSInvocationOperation 对象</span><br><span class="line">    NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task1) object:nil];</span><br><span class="line"></span><br><span class="line">    // 2.调用 start 方法开始执行操作</span><br><span class="line">    [op start];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 任务1</span><br><span class="line"> */</span><br><span class="line">- (void)task1 &#123;</span><br><span class="line">    for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">        [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;1---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="1-2-NSBlockOperation"><a href="#1-2-NSBlockOperation" class="headerlink" title="1.2 NSBlockOperation"></a>1.2 NSBlockOperation</h5><ul>
+<li>在主线程中单独使用 NSBlockOperation 执行一个操作的情况下，操作是在当前线程执行的，并没有开启新线程。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 使用子类 NSBlockOperation</span><br><span class="line"> */</span><br><span class="line">- (void)useBlockOperation &#123;</span><br><span class="line"></span><br><span class="line">    // 1.创建 NSBlockOperation 对象</span><br><span class="line">    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;1---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    // 2.调用 start 方法开始执行操作</span><br><span class="line">    [op start];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>如果添加的操作多的话，blockOperationWithBlock: 中的操作也可能会在其他线程（非当前线程）中执行，这是由系统决定的，并不是说添加到 blockOperationWithBlock: 中的操作一定会在当前线程中执行。（可以使用 addExecutionBlock: 多添加几个操作试试）。</p>
+</li>
+<li><p>NSBlockOperation 还提供了一个方法 addExecutionBlock:，通过 addExecutionBlock: 就可以为 NSBlockOperation 添加额外的操作。这些操作（包括 blockOperationWithBlock 中的操作）可以在不同的线程中同时（并发）执行。只有当所有相关的操作已经完成执行时，才视为完成。</p>
+</li>
+<li><p>使用子类 NSBlockOperation，并调用方法 AddExecutionBlock: 的情况下，blockOperationWithBlock: 方法中的操作和 addExecutionBlock: 中的操作是在不同的线程中异步执行的。而且，这次执行结果中 blockOperationWithBlock: 方法中的操作也不是在当前线程（主线程）中执行的。从而印证了 blockOperationWithBlock: 中的操作也可能会在其他线程（非当前线程）中执行。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 使用子类 NSBlockOperation</span><br><span class="line"> * 调用方法 AddExecutionBlock:</span><br><span class="line"> */</span><br><span class="line">- (void)useBlockOperationAddExecutionBlock &#123;</span><br><span class="line"></span><br><span class="line">    // 1.创建 NSBlockOperation 对象</span><br><span class="line">    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;1---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    // 2.添加额外的操作</span><br><span class="line">    [op addExecutionBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;2---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [op addExecutionBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;3---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [op addExecutionBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;4---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [op addExecutionBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;5---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [op addExecutionBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;6---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [op addExecutionBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;7---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [op addExecutionBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;8---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    // 3.调用 start 方法开始执行操作</span><br><span class="line">    [op start];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>一般情况下，如果一个 NSBlockOperation 对象封装了多个操作。NSBlockOperation 是否开启新线程，取决于操作的个数。如果添加的操作的个数多，就会自动开启新线程。当然开启的线程数是由系统来决定的。</p>
+</blockquote>
+<h5 id="1-3-自定义-NSOperation-的子类"><a href="#1-3-自定义-NSOperation-的子类" class="headerlink" title="1.3 自定义 NSOperation 的子类"></a>1.3 自定义 NSOperation 的子类</h5><p>可以使用自定义继承自 NSOperation 的子类。可以通过重写 main 或者 start 方法来定义自己的 NSOperation 对象。重写main方法比较简单，我们不需要管理操作的状态属性 isExecuting 和 isFinished。当 main 执行完返回的时候，这个操作就结束了。</p>
+<ul>
+<li>在主线程单独使用自定义继承自 NSOperation 的子类的情况下，是在主线程执行操作，并没有开启新线程。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// YSCOperation.h 文件</span><br><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line"></span><br><span class="line">@interface YSCOperation : NSOperation</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">// YSCOperation.m 文件</span><br><span class="line">#import &quot;YSCOperation.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation YSCOperation</span><br><span class="line"></span><br><span class="line">- (void)main &#123;</span><br><span class="line">    if (!self.isCancelled) &#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2];</span><br><span class="line">            NSLog(@&quot;1---%@&quot;, [NSThread currentThread]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 使用自定义继承自 NSOperation 的子类</span><br><span class="line"> */</span><br><span class="line">- (void)useCustomOperation &#123;</span><br><span class="line">    // 1.创建 YSCOperation 对象</span><br><span class="line">    YSCOperation *op = [[YSCOperation alloc] init];</span><br><span class="line">    // 2.调用 start 方法开始执行操作</span><br><span class="line">    [op start];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-NSOperationQueue"><a href="#2-NSOperationQueue" class="headerlink" title="2. NSOperationQueue"></a>2. NSOperationQueue</h4><ul>
+<li><p>主队列</p>
+<ul>
+<li>凡是添加到主队列中的操作，都会放到主线程中执行。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 主队列获取方法</span><br><span class="line">NSOperationQueue *queue = [NSOperationQueue mainQueue];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>自定义队列（非主队列）</p>
+<ul>
+<li>添加到这种队列中的操作，就会自动放到子线程中执行。</li>
+<li>同时包含了：串行、并发功能。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 自定义队列创建方法</span><br><span class="line">NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-多线程"><a href="#3-多线程" class="headerlink" title="3. 多线程"></a>3. 多线程</h4><p>NSOperation 需要配合 NSOperationQueue 来实现多线程。</p>
+<ul>
+<li>3.1 - (void)addOperation:(NSOperation *)op;<ul>
+<li>使用 NSOperation 子类创建操作，并使用 addOperation: 将操作加入到操作队列后能够开启新线程，进行并发执行。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 使用 addOperation: 将操作加入到操作队列中</span><br><span class="line"> */</span><br><span class="line">- (void)addOperationToQueue &#123;</span><br><span class="line">    // 1.创建队列</span><br><span class="line">    NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br><span class="line"></span><br><span class="line">    // 2.创建操作</span><br><span class="line">    // 使用 NSInvocationOperation 创建操作1</span><br><span class="line">    NSInvocationOperation *op1 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task1) object:nil];</span><br><span class="line"></span><br><span class="line">    // 使用 NSInvocationOperation 创建操作2</span><br><span class="line">    NSInvocationOperation *op2 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task2) object:nil];</span><br><span class="line"></span><br><span class="line">    // 使用 NSBlockOperation 创建操作3</span><br><span class="line">    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;3---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [op3 addExecutionBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;4---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    // 3.使用 addOperation: 添加所有操作到队列中</span><br><span class="line">    [queue addOperation:op1]; // [op1 start]</span><br><span class="line">    [queue addOperation:op2]; // [op2 start]</span><br><span class="line">    [queue addOperation:op3]; // [op3 start]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.2 - (void)addOperationWithBlock:(void (^)(void))block;<ul>
+<li>使用 addOperationWithBlock: 将操作加入到操作队列后能够开启新线程，进行并发执行。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 使用 addOperationWithBlock: 将操作加入到操作队列中</span><br><span class="line"> */</span><br><span class="line">- (void)addOperationWithBlockToQueue &#123;</span><br><span class="line">    // 1.创建队列</span><br><span class="line">    NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br><span class="line"></span><br><span class="line">    // 2.使用 addOperationWithBlock: 添加操作到队列中</span><br><span class="line">    [queue addOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;1---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [queue addOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;2---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [queue addOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;3---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-NSOperationQueue-串行、并行控制"><a href="#4-NSOperationQueue-串行、并行控制" class="headerlink" title="4. NSOperationQueue 串行、并行控制"></a>4. NSOperationQueue 串行、并行控制</h4><ul>
+<li>maxConcurrentOperationCount 默认情况下为-1，表示不进行限制，可进行并发执行。</li>
+<li>maxConcurrentOperationCount 为1时，队列为串行队列。只能串行执行。</li>
+<li>maxConcurrentOperationCount 大于1时，队列为并发队列。操作并发执行，当然这个值不应超过系统限制，即使自己设置一个很大的值，系统也会自动调整为 min{自己设定的值，系统设定的默认最大值}。</li>
+</ul>
+<blockquote>
+<p>注意：这里 maxConcurrentOperationCount 控制的不是并发线程的数量，而是一个队列中同时能并发执行的最大操作数。而且一个操作也并非只能在一个线程中运行。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 设置 MaxConcurrentOperationCount（最大并发操作数）</span><br><span class="line"> */</span><br><span class="line">- (void)setMaxConcurrentOperationCount &#123;</span><br><span class="line">    // 1.创建队列</span><br><span class="line">    NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br><span class="line"></span><br><span class="line">    // 2.设置最大并发操作数</span><br><span class="line">    queue.maxConcurrentOperationCount = 1; // 串行队列</span><br><span class="line">    // queue.maxConcurrentOperationCount = 2; // 并发队列</span><br><span class="line">    // queue.maxConcurrentOperationCount = 8; // 并发队列</span><br><span class="line"></span><br><span class="line">    // 3.添加操作</span><br><span class="line">    [queue addOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;1---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [queue addOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;2---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [queue addOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;3---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    [queue addOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;4---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-NSOperation-操作依赖"><a href="#5-NSOperation-操作依赖" class="headerlink" title="5. NSOperation 操作依赖"></a>5. NSOperation 操作依赖</h4><p>NSOperation、NSOperationQueue 最吸引人的地方是它能添加操作之间的依赖关系。通过操作依赖，我们可以很方便的控制操作之间的执行先后顺序。NSOperation 提供了3个接口供我们管理和查看依赖。</p>
+<ul>
+<li>-(void)addDependency:(NSOperation *)op; 添加依赖，使当前操作依赖于操作 op 的完成。</li>
+<li>-(void)removeDependency:(NSOperation *)op; 移除依赖，取消当前操作对操作 op 的依赖。</li>
+<li>@property (readonly, copy) NSArray<nsoperation *=""> *dependencies; 在当前操作开始执行之前完成执行的所有操作对象数组。</nsoperation></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 操作依赖</span><br><span class="line"> * 使用方法：addDependency:</span><br><span class="line"> */</span><br><span class="line">- (void)addDependency &#123;</span><br><span class="line">    // 1.创建队列</span><br><span class="line">    NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br><span class="line"></span><br><span class="line">    // 2.创建操作</span><br><span class="line">    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;1---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;2---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    // 3.添加依赖</span><br><span class="line">    [op2 addDependency:op1]; // 让op2 依赖于 op1，则先执行op1，在执行op2</span><br><span class="line"></span><br><span class="line">    // 4.添加操作到队列中</span><br><span class="line">    [queue addOperation:op1];</span><br><span class="line">    [queue addOperation:op2];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-NSOperation-优先级"><a href="#6-NSOperation-优先级" class="headerlink" title="6. NSOperation 优先级"></a>6. NSOperation 优先级</h4><p>NSOperation 提供了 queuePriority（优先级）属性，queuePriority 属性适用于同一操作队列中的操作，不适用于不同操作队列中的操作。默认情况下，所有新创建的操作对象优先级都是 NSOperationQueuePriorityNormal。但是我们可以通过 setQueuePriority: 方法来改变当前操作在同一队列中的执行优先级。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 优先级的取值</span><br><span class="line">typedef NS_ENUM(NSInteger, NSOperationQueuePriority) &#123;</span><br><span class="line">    NSOperationQueuePriorityVeryLow = -8L,</span><br><span class="line">    NSOperationQueuePriorityLow = -4L,</span><br><span class="line">    NSOperationQueuePriorityNormal = 0,</span><br><span class="line">    NSOperationQueuePriorityHigh = 4,</span><br><span class="line">    NSOperationQueuePriorityVeryHigh = 8</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>就绪状态</strong>：当一个操作的所有依赖都已经完成时，操作对象通常会进入准备就绪状态，等待执行。</p>
+<ul>
+<li>queuePriority 属性决定了进入准备就绪状态下的操作之间的开始执行顺序。并且，优先级不能取代依赖关系。</li>
+<li>如果一个队列中既包含高优先级操作，又包含低优先级操作，并且两个操作都已经准备就绪，那么队列先执行高优先级操作。</li>
+<li>如果一个队列中既包含了准备就绪状态的操作，又包含了未准备就绪的操作，未准备就绪的操作优先级比准备就绪的操作优先级高。那么，虽然准备就绪的操作优先级低，也会优先执行。优先级不能取代依赖关系。如果要控制操作间的启动顺序，则必须使用依赖关系。</li>
+</ul>
+<h4 id="7-NSOperation、NSOperationQueue-线程间的通信"><a href="#7-NSOperation、NSOperationQueue-线程间的通信" class="headerlink" title="7. NSOperation、NSOperationQueue 线程间的通信"></a>7. NSOperation、NSOperationQueue 线程间的通信</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 线程间通信</span><br><span class="line"> */</span><br><span class="line">- (void)communication &#123;</span><br><span class="line">    // 1.创建队列</span><br><span class="line">    NSOperationQueue *queue = [[NSOperationQueue alloc]init];</span><br><span class="line"></span><br><span class="line">    // 2.添加操作</span><br><span class="line">    [queue addOperationWithBlock:^&#123;</span><br><span class="line">        // 异步进行耗时操作</span><br><span class="line">        for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;1---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 回到主线程</span><br><span class="line">        [[NSOperationQueue mainQueue] addOperationWithBlock:^&#123;</span><br><span class="line">            // 进行一些 UI 刷新等操作</span><br><span class="line">            for (int i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作</span><br><span class="line">                NSLog(@&quot;2---%@&quot;, [NSThread currentThread]); // 打印当前线程</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-NSOperation、NSOperationQueue-线程同步和线程安全"><a href="#8-NSOperation、NSOperationQueue-线程同步和线程安全" class="headerlink" title="8. NSOperation、NSOperationQueue 线程同步和线程安全"></a>8. NSOperation、NSOperationQueue 线程同步和线程安全</h4><ul>
+<li>在考虑了线程安全，使用 NSLock 加锁、解锁机制解决了多个线程同步的问题。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 线程安全：使用 NSLock 加锁</span><br><span class="line"> * 初始化火车票数量、卖票窗口(线程安全)、并开始卖票</span><br><span class="line"> */</span><br><span class="line">- (void)initTicketStatusSave &#123;</span><br><span class="line">    NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]); // 打印当前线程</span><br><span class="line"></span><br><span class="line">    self.ticketSurplusCount = 50;</span><br><span class="line"></span><br><span class="line">    self.lock = [[NSLock alloc] init];  // 初始化 NSLock 对象</span><br><span class="line"></span><br><span class="line">    // 1.创建 queue1,queue1 代表北京火车票售卖窗口</span><br><span class="line">    NSOperationQueue *queue1 = [[NSOperationQueue alloc] init];</span><br><span class="line">    queue1.maxConcurrentOperationCount = 1;</span><br><span class="line"></span><br><span class="line">    // 2.创建 queue2,queue2 代表上海火车票售卖窗口</span><br><span class="line">    NSOperationQueue *queue2 = [[NSOperationQueue alloc] init];</span><br><span class="line">    queue2.maxConcurrentOperationCount = 1;</span><br><span class="line"></span><br><span class="line">    // 3.创建卖票操作 op1</span><br><span class="line">    __weak typeof(self) weakSelf = self;</span><br><span class="line">    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">        [weakSelf saleTicketSafe];</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    // 4.创建卖票操作 op2</span><br><span class="line">    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">        [weakSelf saleTicketSafe];</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    // 5.添加操作，开始卖票</span><br><span class="line">    [queue1 addOperation:op1];</span><br><span class="line">    [queue2 addOperation:op2];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 售卖火车票(线程安全)</span><br><span class="line"> */</span><br><span class="line">- (void)saleTicketSafe &#123;</span><br><span class="line">    while (1) &#123;</span><br><span class="line">        // 加锁</span><br><span class="line">        [self.lock lock];</span><br><span class="line"></span><br><span class="line">        if (self.ticketSurplusCount &gt; 0) &#123;</span><br><span class="line">            //如果还有票，继续售卖</span><br><span class="line">            self.ticketSurplusCount--;</span><br><span class="line">            NSLog(@&quot;%@&quot;, [NSString stringWithFormat:@&quot;剩余票数:%d 窗口:%@&quot;, self.ticketSurplusCount, [NSThread currentThread]]);</span><br><span class="line">            [NSThread sleepForTimeInterval:0.2];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 解锁</span><br><span class="line">        [self.lock unlock];</span><br><span class="line"></span><br><span class="line">        if (self.ticketSurplusCount &lt;= 0) &#123;</span><br><span class="line">            NSLog(@&quot;所有火车票均已售完&quot;);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./dowload_sdk.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                已有原生项目集成 flutter 源码混合开发指南
-            </h3>
+        <div class="post-reply">
             
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutt..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-build-compline-link/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-platforms-support.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 编译原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flutter 针对不同平台编译后的产物。
-理解 Flutter Hot Reload 机制。
-理解 Flutter 跨平台原理。
-Flutter 底层优化提供支持。
-Flutter 二进制文件集成提供支持。
-Flutter 工程化提供支持。
-
-Flutter 支持..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./dowload_sdk.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>已有原生项目集成 flutter 源码混合开发指南</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutter 安装一、直接下载安装包Flutter 官网Flutter Github解压安装包到你想安装的目录，如：
-二、直接通过 git 命令下载安装包
-1.2 Flutter 环境设置一、环境变量设置
-二、设置镜像（可选）
-注意: 此镜像为临时镜像，并不能保证一直..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-reactnative-hybrid-technology-choice/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>移动跨平台技术选型</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            移动跨平台技术选型
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-revolutions/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 的革命性</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/git-modify-gitignore-effective-immediately/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>修改 .gitignore 文件如何立即生效</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            修改 .gitignore 文件如何立即生效
-
-# 有时候需要突然修改 .gitignore 文件，随后要立即生效# 注意后面的 &quot;.&quot;，它代表当前目录的根目录。git rm -r --cached .  #清除缓存， git add . #重新trace file  git commit -m &quot;update .gitig..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-module-project-can-not-open-with-android-studio/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter module 项目无法打开的一种情况以及解决办法</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter module 项目无法打开的一种情况以及解决办法
-
-配置 Git 的 .gitignore 文件时将 .iml 文件忽略后，导致本地使用 Flutter module 方式创建的项目提交文件时未将项目内的 .iml 提交到 Git 服务器上。
-Flutter module 项目内没有如下两个文件 “项目名称_android.iml，项目名..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
             
         </div>
     </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>

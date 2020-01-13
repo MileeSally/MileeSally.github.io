@@ -15,18 +15,21 @@
   </script>
 
   
-  <title>Archives: 2020 | luohs&#39;s blogs</title>
+  <title>dart 注解实现以及代码生成原理 | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="dart 注解实现以及代码生成原理花生-sniper  启动 先创建线程，再启动线程 // 1. 创建线程NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];// 2. 启动线程[thread start];    // 线程一启动，就会在线程thread中执行se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dart 注解实现以及代码生成原理">
+<meta property="og:url" content="http://yoursite.com/2020/01/13/iOS-learning-NSThread/iOS-learning-NSThread/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="dart 注解实现以及代码生成原理花生-sniper  启动 先创建线程，再启动线程 // 1. 创建线程NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];// 2. 启动线程[thread start];    // 线程一启动，就会在线程thread中执行se">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/01/13/iOS-learning-NSThread/iOS-learning-NSThread/thread-state-transfer.png">
+<meta property="og:updated_time" content="2020-01-13T12:15:08.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="dart 注解实现以及代码生成原理">
+<meta name="twitter:description" content="dart 注解实现以及代码生成原理花生-sniper  启动 先创建线程，再启动线程 // 1. 创建线程NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];// 2. 启动线程[thread start];    // 线程一启动，就会在线程thread中执行se">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/13/iOS-learning-NSThread/iOS-learning-NSThread/thread-state-transfer.png">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,376 +115,146 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/01/01/flutter-problem-collections/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./package-get-dependencies-problem-01.png');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            Flutter 问题集景
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 imag..
-                        </p>
-                        <p class="date text-shadow">2020-01-01</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>dart 注解实现以及代码生成原理</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2020-01-13</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./dowload_sdk.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                已有原生项目集成 flutter 源码混合开发指南
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutt..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
+                <div>
+                    
+                </div>
             
         </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="6"><center>dart 注解实现以及代码生成原理</center></font><br><font color="red" size="2"><center>花生-sniper</center></font>
 
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><ul>
+<li><p>先创建线程，再启动线程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 1. 创建线程</span><br><span class="line">NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];</span><br><span class="line">// 2. 启动线程</span><br><span class="line">[thread start];    // 线程一启动，就会在线程thread中执行self的run方法</span><br><span class="line">// 新线程调用方法，里边为需要执行的任务</span><br><span class="line">- (void)run &#123;</span><br><span class="line">     NSLog(@&quot;%@&quot;, [NSThread currentThread]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建线程后自动启动线程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 1. 创建线程后自动启动线程</span><br><span class="line">[NSThread detachNewThreadSelector:@selector(run) toTarget:self withObject:nil];</span><br><span class="line"></span><br><span class="line">// 新线程调用方法，里边为需要执行的任务</span><br><span class="line">- (void)run &#123;</span><br><span class="line">     NSLog(@&quot;%@&quot;, [NSThread currentThread]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隐式创建并启动线程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 1. 隐式创建并启动线程</span><br><span class="line">[self performSelectorInBackground:@selector(run) withObject:nil];</span><br><span class="line"></span><br><span class="line">// 新线程调用方法，里边为需要执行的任务</span><br><span class="line">- (void)run &#123;</span><br><span class="line">     NSLog(@&quot;%@&quot;, [NSThread currentThread]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="状态控制"><a href="#状态控制" class="headerlink" title="状态控制"></a>状态控制</h4><ul>
+<li><p>启动线程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)start; </span><br><span class="line">// 线程进入就绪状态 -&gt; 运行状态。当线程任务执行完毕，自动进入死亡状态</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>阻塞线程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+ (void)sleepUntilDate:(NSDate *)date;</span><br><span class="line">+ (void)sleepForTimeInterval:(NSTimeInterval)ti;</span><br><span class="line">// 线程进入阻塞状态</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>终止线程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+ (void)exit;</span><br><span class="line">// 线程进入死亡状态</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h4><p>在开发中，我们经常会在子线程进行耗时操作，操作结束后再回到主线程去刷新 UI。这就涉及到了子线程和主线程之间的通信。我们先来了解一下官方关于 NSThread 的线程间通信的方法。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 在主线程上执行操作</span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait modes:(NSArray&lt;NSString *&gt; *)array;</span><br><span class="line">  // equivalent to the first method with kCFRunLoopCommonModes</span><br><span class="line"></span><br><span class="line">// 在指定线程上执行操作</span><br><span class="line">- (void)performSelector:(SEL)aSelector onThread:(NSThread *)thr withObject:(id)arg waitUntilDone:(BOOL)wait modes:(NSArray *)array NS_AVAILABLE(10_5, 2_0);</span><br><span class="line">- (void)performSelector:(SEL)aSelector onThread:(NSThread *)thr withObject:(id)arg waitUntilDone:(BOOL)wait NS_AVAILABLE(10_5, 2_0);</span><br><span class="line"></span><br><span class="line">// 在当前线程上执行操作，调用 NSObject 的 performSelector:相关方法</span><br><span class="line">- (id)performSelector:(SEL)aSelector;</span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object;</span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;</span><br></pre></td></tr></table></figure></p>
+<h4 id="线程安全和线程同步"><a href="#线程安全和线程同步" class="headerlink" title="线程安全和线程同步"></a>线程安全和线程同步</h4><p>线程安全解决方案：可以给线程加锁，在一个线程执行该操作的时候，不允许其他线程进行操作。iOS 实现线程加锁有很多种方式。</p>
+<ul>
+<li>@synchronized</li>
+<li>NSLock</li>
+<li>NSRecursiveLock</li>
+<li>NSCondition</li>
+<li>NSConditionLock</li>
+<li>pthread_mutex</li>
+<li>dispatch_semaphore</li>
+<li>OSSpinLock</li>
+<li>atomic(property) set/get</li>
+</ul>
+<h4 id="线程的状态转换"><a href="#线程的状态转换" class="headerlink" title="线程的状态转换"></a>线程的状态转换</h4><ul>
+<li>如果CPU现在调度当前线程对象，则当前线程对象进入运行状态，如果CPU调度其他线程对象，则当前线程对象回到就绪状态。</li>
+<li>如果CPU在运行当前线程对象的时候调用了sleep方法\等待同步锁，则当前线程对象就进入了阻塞状态，等到sleep到时\得到同步锁，则回到就绪状态。</li>
+<li>如果CPU在运行当前线程对象的时候线程任务执行完毕\异常强制退出，则当前线程对象进入死亡状态。<br>图示如下：<br><img src="./thread-state-transfer.png" alt=""></li>
+</ul>
+
         </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./dowload_sdk.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                已有原生项目集成 flutter 源码混合开发指南
-            </h3>
+        <div class="post-reply">
             
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutt..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-build-compline-link/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-platforms-support.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 编译原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flutter 针对不同平台编译后的产物。
-理解 Flutter Hot Reload 机制。
-理解 Flutter 跨平台原理。
-Flutter 底层优化提供支持。
-Flutter 二进制文件集成提供支持。
-Flutter 工程化提供支持。
-
-Flutter 支持..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./dowload_sdk.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>已有原生项目集成 flutter 源码混合开发指南</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutter 安装一、直接下载安装包Flutter 官网Flutter Github解压安装包到你想安装的目录，如：
-二、直接通过 git 命令下载安装包
-1.2 Flutter 环境设置一、环境变量设置
-二、设置镜像（可选）
-注意: 此镜像为临时镜像，并不能保证一直..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-reactnative-hybrid-technology-choice/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>移动跨平台技术选型</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            移动跨平台技术选型
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-revolutions/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 的革命性</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/git-modify-gitignore-effective-immediately/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>修改 .gitignore 文件如何立即生效</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            修改 .gitignore 文件如何立即生效
-
-# 有时候需要突然修改 .gitignore 文件，随后要立即生效# 注意后面的 &quot;.&quot;，它代表当前目录的根目录。git rm -r --cached .  #清除缓存， git add . #重新trace file  git commit -m &quot;update .gitig..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-module-project-can-not-open-with-android-studio/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter module 项目无法打开的一种情况以及解决办法</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter module 项目无法打开的一种情况以及解决办法
-
-配置 Git 的 .gitignore 文件时将 .iml 文件忽略后，导致本地使用 Flutter module 方式创建的项目提交文件时未将项目内的 .iml 提交到 Git 服务器上。
-Flutter module 项目内没有如下两个文件 “项目名称_android.iml，项目名..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
             
         </div>
     </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>

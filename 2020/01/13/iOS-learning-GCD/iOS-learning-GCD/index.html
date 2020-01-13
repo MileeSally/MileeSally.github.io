@@ -15,18 +15,21 @@
   </script>
 
   
-  <title>Archives: 2020 | luohs&#39;s blogs</title>
+  <title>iOS 多线程 - GCD | luohs&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小米粒是小公举">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luohs&#39;s blogs">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="iOS 多线程 - GCD花生-sniper  1. 任务和队列GCD 中两个核心概念：『任务』 和 『队列』。任务：就是执行操作的意思，换句话说就是你在线程中执行的那段代码。在 GCD 中是放在 block 中的那段代码。执行任务有两种方式：『同步执行』 和 『异步执行』。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力。  同步执行（sync）：  同步添加任务到指定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 多线程 - GCD">
+<meta property="og:url" content="http://yoursite.com/2020/01/13/iOS-learning-GCD/iOS-learning-GCD/index.html">
 <meta property="og:site_name" content="luohs&#39;s blogs">
-<meta property="og:description" content="小米粒是小公举">
+<meta property="og:description" content="iOS 多线程 - GCD花生-sniper  1. 任务和队列GCD 中两个核心概念：『任务』 和 『队列』。任务：就是执行操作的意思，换句话说就是你在线程中执行的那段代码。在 GCD 中是放在 block 中的那段代码。执行任务有两种方式：『同步执行』 和 『异步执行』。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力。  同步执行（sync）：  同步添加任务到指定">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/01/13/iOS-learning-GCD/iOS-learning-GCD/iOS-learning-GCD-tread-queue.png">
+<meta property="og:updated_time" content="2020-01-13T12:15:08.101Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luohs&#39;s blogs">
-<meta name="twitter:description" content="小米粒是小公举">
+<meta name="twitter:title" content="iOS 多线程 - GCD">
+<meta name="twitter:description" content="iOS 多线程 - GCD花生-sniper  1. 任务和队列GCD 中两个核心概念：『任务』 和 『队列』。任务：就是执行操作的意思，换句话说就是你在线程中执行的那段代码。在 GCD 中是放在 block 中的那段代码。执行任务有两种方式：『同步执行』 和 『异步执行』。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力。  同步执行（sync）：  同步添加任务到指定">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/13/iOS-learning-GCD/iOS-learning-GCD/iOS-learning-GCD-tread-queue.png">
   
     <link rel="alternate" href="/atom.xml" title="luohs&#39;s blogs" type="application/atom+xml">
   
@@ -112,376 +115,228 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/01/01/flutter-problem-collections/">
-            <div class="full-height post-hover" style="
-                         background-image: url('./package-get-dependencies-problem-01.png');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            Flutter 问题集景
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            Flutter 问题集景
-
-1、解决升级 Flutter 第三方库版本的问题 (2019-12-10)在项目目录下的 pubspec.yaml 增加对 ‘flutter_luban: ^0.1.9’ 库的引用时报错提示其依赖的 imag..
-                        </p>
-                        <p class="date text-shadow">2020-01-01</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>iOS 多线程 - GCD</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.JPG">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> luohs</span>
+                <span class="post-date sub-title">at: 2020-01-13</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./dowload_sdk.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                已有原生项目集成 flutter 源码混合开发指南
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutt..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
+                <div>
+                    
+                </div>
             
         </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-build-compline-link/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./flutter-platforms-support.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Flutter 编译原理
-            </h3>
-            
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Flutter 编译原理花生-sniper
+        <div class="content" style="overflow: auto">
+            <font color="black" face="黑体" size="6"><center>iOS 多线程 - GCD</center></font><br><font color="red" size="2"><center>花生-sniper</center></font>
 
-学习 Flutter 编译原理的目的
-区分 Flu..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
+<h4 id="1-任务和队列"><a href="#1-任务和队列" class="headerlink" title="1. 任务和队列"></a>1. 任务和队列</h4><p><strong>GCD</strong> 中两个核心概念：『<strong>任务</strong>』 和 『<strong>队列</strong>』。<br><strong>任务</strong>：就是执行操作的意思，换句话说就是你在线程中执行的那段代码。在 GCD 中是放在 block 中的那段代码。执行任务有两种方式：『<strong>同步执行</strong>』 和 『<strong>异步执行</strong>』。两者的主要区别是：<strong>是否等待队列的任务执行结束，以及是否具备开启新线程的能力</strong>。</p>
+<ul>
+<li><p><strong>同步执行（sync）</strong>：</p>
+<ul>
+<li>同步添加任务到指定的队列中，在添加的任务执行结束之前，会一直等待，直到队列里面的任务完成之后再继续执行。</li>
+<li>只能在当前线程中执行任务，不具备开启新线程的能力。</li>
+</ul>
+</li>
+<li><p><strong>异步执行（async）</strong>：</p>
+<ul>
+<li>异步添加任务到指定的队列中，它不会做任何等待，可以继续执行任务。</li>
+<li>可以在新的线程中执行任务，具备开启新线程的能力。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意：<strong>异步执行（async）</strong> 虽然具有开启新线程的能力，但是并不一定开启新线程。这跟任务所指定的队列类型有关。</p>
+</blockquote>
+<p><strong>队列（Dispatch Queue）</strong>：这里的队列指执行任务的等待队列，即用来存放任务的队列。队列是一种特殊的线性表，采用 FIFO（先进先出）的原则，即新任务总是被插入到队列的末尾，而读取任务的时候总是从队列的头部开始读取。每读取一个任务，则从队列中释放一个任务。</p>
+<p>在 GCD 中有两种队列：『<strong>串行队列</strong>』 和 『<strong>并发队列</strong>』。两者的主要区别是：<strong>执行顺序不同，以及开启线程数不同</strong>。</p>
+<ul>
+<li><p><strong>串行队列（Serial Dispatch Queue）</strong>：</p>
+<ul>
+<li>每次只有一个任务被执行。让任务一个接着一个地执行。（只开启一个线程，一个任务执行完毕后，再执行下一个任务）</li>
+</ul>
+</li>
+<li><p><strong>并发队列（Concurrent Dispatch Queue）</strong>：</p>
+<ul>
+<li>可以让多个任务并发（同时）执行。（可以开启多个线程，并且同时执行任务）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意：<strong>并发队列</strong> 的并发功能只有在异步方法下才有效。</p>
+</blockquote>
+<h4 id="2-队列和线程"><a href="#2-队列和线程" class="headerlink" title="2. 队列和线程"></a>2. 队列和线程</h4><p>一个线程内可能有多个队列，这些队列可能是串行的或者是并行的，按照同步或者异步的方式工作。<br><img src="./iOS-learning-GCD-tread-queue.png" alt=""></p>
+<p>『<strong>主队列和主线程</strong>』：这两个术语我们可以经常听到，但是不能把这两个概念等同化。『<strong>主队列</strong>』和『<strong>主线程</strong>』是有关联，但是它们是两个不同的概念。简单地说，主队列是主线程上的一个串行队列，是系统自动为我们创建的。换言之，主线程是可以执行除主队列之外其他队列的任务。</p>
+<h4 id="3-GCD-创建和使用"><a href="#3-GCD-创建和使用" class="headerlink" title="3. GCD 创建和使用"></a>3. GCD 创建和使用</h4><h5 id="3-1-队列的创建和获取"><a href="#3-1-队列的创建和获取" class="headerlink" title="3.1 队列的创建和获取"></a>3.1 队列的创建和获取</h5><p>通过 dispatch_queue_create 方法来创建队列，该方法需要传入两个参数：</p>
+<ul>
+<li>第一个参数表示队列的唯一标识符，用于 DEBUG，可为空。队列的名称推荐使用应用程序 ID 这种逆序全程域名。</li>
+<li>第二个参数用来识别是串行队列还是并发队列。DISPATCH_QUEUE_SERIAL 表示串行队列，DISPATCH_QUEUE_CONCURRENT 表示并发队列。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 串行队列的创建方法</span><br><span class="line">dispatch_queue_t queue = dispatch_queue_create(&quot;com.luohs.serial.queue&quot;, DISPATCH_QUEUE_SERIAL);</span><br><span class="line">// 并发队列的创建方法</span><br><span class="line">dispatch_queue_t queue = dispatch_queue_create(&quot;com.luohs.concurrent.queue&quot;, DISPATCH_QUEUE_CONCURRENT);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对于『<strong>串行队列</strong>』，GCD 提供了的一种特殊的串行队列：『<strong>主队列（Main Dispatch Queue）</strong>』。</p>
+<ul>
+<li>所有放在主队列中的任务，都会放到主线程中执行。</li>
+<li>可使用 dispatch_get_main_queue() 方法获得主队列。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 主队列的获取方法</span><br><span class="line">dispatch_queue_t queue = dispatch_get_main_queue();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对于『<strong>并发队列</strong>』，GCD 默认提供了 『<strong>全局并发队列（Global Dispatch Queue）</strong>』。</p>
+<ul>
+<li>可以使用 dispatch_get_global_queue 方法来获取全局并发队列。<ul>
+<li>第一个参数表示队列优先级，一般用DISPATCH_QUEUE_PRIORITY_DEFAULT。</li>
+<li>第二个参数暂时没用，用 0 即可。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 全局并发队列的获取方法</span><br><span class="line">dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-2-任务的创建"><a href="#3-2-任务的创建" class="headerlink" title="3.2 任务的创建"></a>3.2 任务的创建</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 同步执行任务创建方法</span><br><span class="line">dispatch_sync(queue, ^&#123;</span><br><span class="line">    // 这里放同步执行任务代码</span><br><span class="line">&#125;);</span><br><span class="line">// 异步执行任务创建方法</span><br><span class="line">dispatch_async(queue, ^&#123;</span><br><span class="line">    // 这里放异步执行任务代码</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="3-3-任务和队列不同组合方式的区别"><a href="#3-3-任务和队列不同组合方式的区别" class="headerlink" title="3.3 任务和队列不同组合方式的区别"></a>3.3 任务和队列不同组合方式的区别</h5><p>在『<strong>主线程</strong>』环境下，『<strong>不同队列</strong>』+『<strong>不同任务</strong>』简单组合的区别：<br>区别 | 并发队列 | 串行队列 | 主队列</p>
+<ul>
+<li>| - | - | -<br>同步任务 | 没有开启新线程，串行执行任务    | 没有开启新线程，串行执行任务 | 死锁卡住不执行<br>异步任务 | 有开启新线程，并发执行任务 | 有开启新线程（1条），串行执行任务 | 没有开启新线程，串行执行任务</li>
+</ul>
+<blockquote>
+<p>注意：从上边可看出：『<strong>主线程</strong>』中调用『<strong>主队列</strong>』+『<strong>同步执行</strong>』会导致死锁问题。<br>这是因为 <strong>主队列中追加的同步任务</strong> 和 <strong>主线程本身的任务</strong> 两者之间相互等待，阻塞了 『<strong>主队列</strong>』，最终造成了主队列所在的线程（主线程）死锁问题。<br>而如果在『<strong>其他线程</strong>』调用『<strong>主队列</strong>』+『<strong>同步执行</strong>』，则不会阻塞『<strong>主队列</strong>』，自然也不会造成死锁问题。最终的结果是：不会开启新线程，串行执行任务。</p>
+</blockquote>
+<h5 id="3-4-队列嵌套情况下不同组合方式的区别"><a href="#3-4-队列嵌套情况下不同组合方式的区别" class="headerlink" title="3.4 队列嵌套情况下不同组合方式的区别"></a>3.4 队列嵌套情况下不同组合方式的区别</h5><p>除了在『<strong>主线程</strong>』中调用『<strong>主队列</strong>』+『<strong>同步执行</strong>』会导致死锁问题。实际在使用『<strong>串行队列</strong>』的时候，也可能出现阻塞『<strong>串行队列</strong>』所在线程的情况发生，从而造成死锁问题。这种情况多见于同一个串行队列的嵌套使用。例如：在『<strong>异步执行</strong>』+『<strong>串行队列</strong>』的任务中，又嵌套了『<strong>当前的串行队列</strong>』，然后进行『<strong>同步执行</strong>』。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dispatch_queue_t queue = dispatch_queue_create(&quot;com.luohs.serial.queue&quot;, DISPATCH_QUEUE_SERIAL);</span><br><span class="line">dispatch_async(queue, ^&#123;    // 异步执行 + 串行队列</span><br><span class="line">    dispatch_sync(queue, ^&#123;  // 同步执行 + 当前串行队列</span><br><span class="line">        // 追加任务 1</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>执行上面的代码会导致 <strong>串行队列中追加的任务</strong> 和 <strong>串行队列中原有的任务</strong> 两者之间相互等待，阻塞了『<strong>串行队列</strong>』，最终造成了串行队列所在的线程（子线程）死锁问题。</p>
+</blockquote>
+<p>『<strong>不同队列</strong>』+『<strong>不同任务</strong>』 组合，以及 『<strong>队列中嵌套队列</strong>』 使用的区别：<br>区别 |『异步执行+并发队列』嵌套『同一个并发队列』|『同步执行+并发队列』嵌套『同一个并发队列』|『异步执行+串行队列』嵌套『同一个串行队列』|『同步执行+串行队列』嵌套『同一个串行队列』</p>
+<ul>
+<li>| - | - | - | -<br>同步任务 | 没有开启新的线程，串行执行任务 | 没有开启新线程，串行执行任务 | 死锁卡住不执行 | 死锁卡住不执行<br>异步任务 | 有开启新线程，并发执行任务 | 有开启新线程，并发执行任务 | 有开启新线程（1 条），串行执行任务 | 有开启新线程（1 条），串行执行任务</li>
+</ul>
+<h4 id="4-GCD-线程间的通信"><a href="#4-GCD-线程间的通信" class="headerlink" title="4. GCD 线程间的通信"></a>4. GCD 线程间的通信</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)communication &#123;</span><br><span class="line">    // 获取全局并发队列</span><br><span class="line">    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</span><br><span class="line">    // 获取主队列</span><br><span class="line">    dispatch_queue_t mainQueue = dispatch_get_main_queue();</span><br><span class="line">    </span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 异步追加任务 1</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">        </span><br><span class="line">        // 回到主线程</span><br><span class="line">        dispatch_async(mainQueue, ^&#123;</span><br><span class="line">            // 追加在主线程中执行的任务</span><br><span class="line">            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">            NSLog(@&quot;2---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-GCD-其他方法"><a href="#5-GCD-其他方法" class="headerlink" title="5. GCD 其他方法"></a>5. GCD 其他方法</h4><h5 id="5-1-栅栏方法：dispatch-barrier-async"><a href="#5-1-栅栏方法：dispatch-barrier-async" class="headerlink" title="5.1 栅栏方法：dispatch_barrier_async"></a>5.1 栅栏方法：dispatch_barrier_async</h5><ul>
+<li>我们有时需要异步执行两组操作，而且第一组操作执行完之后，才能开始执行第二组操作。这样我们就需要一个相当于 <strong>栅栏</strong> 一样的一个方法将两组异步执行的操作组给分割起来，当然这里的操作组里可以包含一个或多个任务。这就需要用到 dispatch_barrier_async 方法在两个操作组间形成栅栏。</li>
+<li>在执行完栅栏前面的操作之后，才执行栅栏操作，最后再执行栅栏后边的操作。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 栅栏方法 dispatch_barrier_async</span><br><span class="line"> */</span><br><span class="line">- (void)barrier &#123;</span><br><span class="line">    dispatch_queue_t queue = dispatch_queue_create(&quot;com.luohs.concurrent.queue&quot;, DISPATCH_QUEUE_CONCURRENT);</span><br><span class="line">    </span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务 1</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务 2</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;2---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_barrier_async(queue, ^&#123;</span><br><span class="line">        // 追加任务 barrier</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;barrier---%@&quot;,[NSThread currentThread]);// 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务 3</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;3---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务 4</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;4---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="5-2-延时执行方法：dispatch-after"><a href="#5-2-延时执行方法：dispatch-after" class="headerlink" title="5.2 延时执行方法：dispatch_after"></a>5.2 延时执行方法：dispatch_after</h5><ul>
+<li>在指定时间（例如 3 秒）之后执行某个任务。可以用 GCD 的dispatch_after 方法来实现。<blockquote>
+<p>注意：dispatch_after 方法并不是在指定时间之后才开始执行处理，而是在指定时间之后将任务追加到主队列中。严格来说，这个时间并不是绝对准确的。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 延时执行方法 dispatch_after</span><br><span class="line"> */</span><br><span class="line">- (void)after &#123;</span><br><span class="line">    NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]);  // 打印当前线程</span><br><span class="line">    NSLog(@&quot;asyncMain---begin&quot;);</span><br><span class="line">    </span><br><span class="line">    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        // 2.0 秒后异步追加任务代码到主队列，并开始执行</span><br><span class="line">        NSLog(@&quot;after---%@&quot;,[NSThread currentThread]);  // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="5-3-只执行一次：dispatch-once"><a href="#5-3-只执行一次：dispatch-once" class="headerlink" title="5.3 只执行一次：dispatch_once"></a>5.3 只执行一次：dispatch_once</h5><ul>
+<li>在创建单例、或者有整个程序运行过程中只执行一次的代码时，可以用 GCD 的 dispatch_once 方法。使用 dispatch_once 方法能保证某段代码在程序运行过程中只被执行 1 次，并且即使在多线程的环境下，dispatch_once 也可以保证线程安全。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 一次性代码（只执行一次）dispatch_once</span><br><span class="line"> */</span><br><span class="line">- (void)once &#123;</span><br><span class="line">    static dispatch_once_t onceToken;</span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">        // 只执行 1 次的代码（这里面默认是线程安全的）</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="5-4-快速迭代方法：dispatch-apply"><a href="#5-4-快速迭代方法：dispatch-apply" class="headerlink" title="5.4 快速迭代方法：dispatch_apply"></a>5.4 快速迭代方法：dispatch_apply</h5><ul>
+<li>串行队列中使用 dispatch_apply，那么就和 for 循环一样，按顺序同步执行。</li>
+<li>并发队列中使用 dispatch_apply 可以在多个线程中同时（异步）遍历多个数字。</li>
+<li>无论是在串行队列，还是并发队列中，dispatch_apply 都会等待全部任务执行完毕。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 快速迭代方法 dispatch_apply</span><br><span class="line"> */</span><br><span class="line">- (void)apply &#123;</span><br><span class="line">    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;apply---begin&quot;);</span><br><span class="line">    dispatch_apply(6, queue, ^(size_t index) &#123;</span><br><span class="line">        NSLog(@&quot;%zd---%@&quot;,index, [NSThread currentThread]);</span><br><span class="line">    &#125;);</span><br><span class="line">    NSLog(@&quot;apply---end&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="5-5-队列组：dispatch-group"><a href="#5-5-队列组：dispatch-group" class="headerlink" title="5.5 队列组：dispatch_group"></a>5.5 队列组：dispatch_group</h5><p>有时候我们会有这样的需求：分别异步执行2个耗时任务，然后当2个耗时任务都执行完毕后再回到主线程执行任务。这时候我们可以用到 GCD 的队列组。</p>
+<ul>
+<li>调用队列组的 dispatch_group_async 先把任务放到队列中，然后将队列放入队列组中。或者使用队列组的 dispatch_group_enter、dispatch_group_leave 组合来实现 dispatch_group_async。</li>
+<li>调用队列组的 dispatch_group_notify 回到指定线程执行任务。或者使用 dispatch_group_wait 回到当前线程继续向下执行（会阻塞当前线程）。</li>
+</ul>
+<h6 id="5-5-1-dispatch-group-notify"><a href="#5-5-1-dispatch-group-notify" class="headerlink" title="5.5.1 dispatch_group_notify"></a>5.5.1 dispatch_group_notify</h6><ul>
+<li>监听 group 中任务的完成状态，当所有的任务都执行完成后，追加任务到 group 中，并执行任务。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 队列组 dispatch_group_notify</span><br><span class="line"> */</span><br><span class="line">- (void)groupNotify &#123;</span><br><span class="line">    NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]);  // 打印当前线程</span><br><span class="line">    NSLog(@&quot;group---begin&quot;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_t group =  dispatch_group_create();</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">        // 追加任务 1</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">        // 追加任务 2</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;2---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_notify(group, dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        // 等前面的异步任务 1、任务 2 都执行完毕后，回到主线程执行下边任务</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;3---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line"></span><br><span class="line">        NSLog(@&quot;group---end&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="5-5-2-dispatch-group-wait"><a href="#5-5-2-dispatch-group-wait" class="headerlink" title="5.5.2 dispatch_group_wait"></a>5.5.2 dispatch_group_wait</h6><ul>
+<li>暂停当前线程（阻塞当前线程），等待指定的 group 中的任务执行完成后，才会往下继续执行。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 队列组 dispatch_group_wait</span><br><span class="line"> */</span><br><span class="line">- (void)groupWait &#123;</span><br><span class="line">    NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]);  // 打印当前线程</span><br><span class="line">    NSLog(@&quot;group---begin&quot;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_t group =  dispatch_group_create();</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">        // 追加任务 1</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">        // 追加任务 2</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;2---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    // 等待上面的任务全部完成后，会往下继续执行（会阻塞当前线程）</span><br><span class="line">    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;group---end&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="5-5-3-dispatch-group-enter、dispatch-group-leave"><a href="#5-5-3-dispatch-group-enter、dispatch-group-leave" class="headerlink" title="5.5.3 dispatch_group_enter、dispatch_group_leave"></a>5.5.3 dispatch_group_enter、dispatch_group_leave</h6><ul>
+<li>dispatch_group_enter 标志着一个任务追加到 group，执行一次，相当于 group 中未执行完毕任务数 +1</li>
+<li>dispatch_group_leave 标志着一个任务离开了 group，执行一次，相当于 group 中未执行完毕任务数 -1。</li>
+<li>当 group 中未执行完毕任务数为0的时候，才会使 dispatch_group_wait 解除阻塞，以及执行追加到 dispatch_group_notify 中的任务。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 队列组 dispatch_group_enter、dispatch_group_leave</span><br><span class="line"> */</span><br><span class="line">- (void)groupEnterAndLeave &#123;</span><br><span class="line">    NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]);  // 打印当前线程</span><br><span class="line">    NSLog(@&quot;group---begin&quot;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_t group = dispatch_group_create();</span><br><span class="line">    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务 1</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line"></span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务 2</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;2---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">        </span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_notify(group, dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        // 等前面的异步操作都执行完毕后，回到主线程.</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;3---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">    </span><br><span class="line">        NSLog(@&quot;group---end&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="5-6-信号量：dispatch-semaphore"><a href="#5-6-信号量：dispatch-semaphore" class="headerlink" title="5.6 信号量：dispatch_semaphore"></a>5.6 信号量：dispatch_semaphore</h5><ul>
+<li>dispatch_semaphore_create：创建一个 Semaphore 并初始化信号的总量</li>
+<li>dispatch_semaphore_signal：发送一个信号，让信号总量加 1</li>
+<li>dispatch_semaphore_wait：可以使总信号量减 1，信号总量小于 0 时就会一直等待（阻塞所在线程），否则就可以正常执行。</li>
+</ul>
+<h6 id="5-6-1-线程同步"><a href="#5-6-1-线程同步" class="headerlink" title="5.6.1 线程同步"></a>5.6.1 线程同步</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * semaphore 线程同步</span><br><span class="line"> */</span><br><span class="line">- (void)semaphoreSync &#123;</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]);  // 打印当前线程</span><br><span class="line">    NSLog(@&quot;semaphore---begin&quot;);</span><br><span class="line">    </span><br><span class="line">    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</span><br><span class="line">    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);</span><br><span class="line">    </span><br><span class="line">    __block int number = 0;</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务 1</span><br><span class="line">        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作</span><br><span class="line">        NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程</span><br><span class="line">        </span><br><span class="line">        number = 100;</span><br><span class="line">        </span><br><span class="line">        dispatch_semaphore_signal(semaphore);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</span><br><span class="line">    NSLog(@&quot;semaphore---end,number = %zd&quot;,number);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="5-6-2-线程安全"><a href="#5-6-2-线程安全" class="headerlink" title="5.6.2 线程安全"></a>5.6.2 线程安全</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 线程安全：使用 semaphore 加锁</span><br><span class="line"> * 初始化火车票数量、卖票窗口（线程安全）、并开始卖票</span><br><span class="line"> */</span><br><span class="line">- (void)initTicketStatusSave &#123;</span><br><span class="line">    NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]);  // 打印当前线程</span><br><span class="line">    NSLog(@&quot;semaphore---begin&quot;);</span><br><span class="line">    </span><br><span class="line">    semaphoreLock = dispatch_semaphore_create(1);</span><br><span class="line">    </span><br><span class="line">    self.ticketSurplusCount = 50;</span><br><span class="line">    </span><br><span class="line">    // queue1 代表北京火车票售卖窗口</span><br><span class="line">    dispatch_queue_t queue1 = dispatch_queue_create(&quot;com.luohs.serial.queue-1&quot;, DISPATCH_QUEUE_SERIAL);</span><br><span class="line">    // queue2 代表上海火车票售卖窗口</span><br><span class="line">    dispatch_queue_t queue2 = dispatch_queue_create(&quot;com.luohs.serial.queue-2&quot;, DISPATCH_QUEUE_SERIAL);</span><br><span class="line">    </span><br><span class="line">    __weak typeof(self) weakSelf = self;</span><br><span class="line">    dispatch_async(queue1, ^&#123;</span><br><span class="line">        [weakSelf saleTicketSafe];</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_async(queue2, ^&#123;</span><br><span class="line">        [weakSelf saleTicketSafe];</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 售卖火车票（线程安全）</span><br><span class="line"> */</span><br><span class="line">- (void)saleTicketSafe &#123;</span><br><span class="line">    while (1) &#123;</span><br><span class="line">        // 相当于加锁</span><br><span class="line">        dispatch_semaphore_wait(semaphoreLock, DISPATCH_TIME_FOREVER);</span><br><span class="line">        </span><br><span class="line">        if (self.ticketSurplusCount &gt; 0) &#123;  // 如果还有票，继续售卖</span><br><span class="line">            self.ticketSurplusCount--;</span><br><span class="line">            NSLog(@&quot;%@&quot;, [NSString stringWithFormat:@&quot;剩余票数：%d 窗口：%@&quot;, self.ticketSurplusCount, [NSThread currentThread]]);</span><br><span class="line">            [NSThread sleepForTimeInterval:0.2];</span><br><span class="line">        &#125; else &#123; // 如果已卖完，关闭售票窗口</span><br><span class="line">            NSLog(@&quot;所有火车票均已售完&quot;);</span><br><span class="line">            </span><br><span class="line">            // 相当于解锁</span><br><span class="line">            dispatch_semaphore_signal(semaphoreLock);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        // 相当于解锁</span><br><span class="line">        dispatch_semaphore_signal(semaphoreLock);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('./dowload_sdk.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                已有原生项目集成 flutter 源码混合开发指南
-            </h3>
+        <div class="post-reply">
             
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutt..
-            </p>
-            <p class="date text-shadow is-marginless">2020-01-01</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-build-compline-link/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./flutter-platforms-support.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 编译原理</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 编译原理花生-sniper
-
-学习 Flutter 编译原理的目的
-区分 Flutter 针对不同平台编译后的产物。
-理解 Flutter Hot Reload 机制。
-理解 Flutter 跨平台原理。
-Flutter 底层优化提供支持。
-Flutter 二进制文件集成提供支持。
-Flutter 工程化提供支持。
-
-Flutter 支持..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-add-to-existing-apps/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./dowload_sdk.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>已有原生项目集成 flutter 源码混合开发指南</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            已有原生项目集成 flutter 混合开发指南
-
-1、Flutter 环境配置1.1 Flutter 安装一、直接下载安装包Flutter 官网Flutter Github解压安装包到你想安装的目录，如：
-二、直接通过 git 命令下载安装包
-1.2 Flutter 环境设置一、环境变量设置
-二、设置镜像（可选）
-注意: 此镜像为临时镜像，并不能保证一直..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-reactnative-hybrid-technology-choice/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>移动跨平台技术选型</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            移动跨平台技术选型
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，可通过..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-revolutions/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./mobile-cross-platform-history.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter 的革命性</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter 的革命性
-
-移动跨平台历史
-移动跨平台技术类型1、Web技术：主要依赖于WebView的技术，功能支持受限，性能体验很差，代表有PhoneGap、Cordova、小程序。2、原生渲染：使用JavaScript作为编程语言，通过中间层转化为原生控件来渲染UI界面，代表有ReactNative、Weex。3、自渲染技术：自行实现一套渲染框架，..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/git-modify-gitignore-effective-immediately/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>修改 .gitignore 文件如何立即生效</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            修改 .gitignore 文件如何立即生效
-
-# 有时候需要突然修改 .gitignore 文件，随后要立即生效# 注意后面的 &quot;.&quot;，它代表当前目录的根目录。git rm -r --cached .  #清除缓存， git add . #重新trace file  git commit -m &quot;update .gitig..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/01/01/flutter-module-project-can-not-open-with-android-studio/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile" style="margin: 10px; background-size: cover;background-image: url('./1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Flutter module 项目无法打开的一种情况以及解决办法</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Flutter module 项目无法打开的一种情况以及解决办法
-
-配置 Git 的 .gitignore 文件时将 .iml 文件忽略后，导致本地使用 Flutter module 方式创建的项目提交文件时未将项目内的 .iml 提交到 Git 服务器上。
-Flutter module 项目内没有如下两个文件 “项目名称_android.iml，项目名..
-                                        </p>
-                                        <p>2020-01-01</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
             
         </div>
     </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>
